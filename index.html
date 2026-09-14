@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>English Islands — Learn English by Islands</title>
+
+  <!-- PWA / Mobile Web App -->
+  <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0F172A" media="(prefers-color-scheme: dark)">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="English Islands" />
+  <meta name="description" content="Learn English with the Islands Method — vocabulary, sentences, speaking and more." />
+
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header id="app-header">
+    <div class="brand">
+      <h1><i class="ph ph-island" aria-hidden="true"></i> English Islands</h1>
+      
+    </div>
+    <div class="header-actions">
+      <button id="theme-toggle" class="icon-btn" onclick="App.toggleTheme()" aria-label="Toggle dark mode">
+        <i class="ph ph-sun" aria-hidden="true"></i>
+      </button>
+      <div class="xp-pill">
+        <i class="ph ph-star-fill" aria-hidden="true"></i>
+        <span id="xp-pill-value">0</span> XP
+      </div>
+    </div>
+  </header>
+
+  <main id="view"><!-- rendered by app.js --></main>
+
+  <nav id="bottom-nav" aria-label="Main navigation">
+    <button data-view="home" data-nav="home" aria-label="Home">
+      <span class="ic"><i class="ph ph-house"></i></span>Home
+    </button>
+    <button data-view="islands" data-nav="islands" aria-label="Islands">
+      <span class="ic"><i class="ph ph-island"></i></span>Islands
+    </button>
+    <button data-view="review" data-nav="review" aria-label="Review">
+      <span class="ic"><i class="ph ph-arrows-clockwise"></i></span>Review
+    </button>
+    <button data-view="speaking" data-nav="speaking" aria-label="Speaking">
+      <span class="ic"><i class="ph ph-microphone"></i></span>Speaking
+    </button>
+    <button data-view="progress" data-nav="progress" aria-label="Progress">
+      <span class="ic"><i class="ph ph-chart-bar"></i></span>Progress
+    </button>
+    <button data-view="settings" data-nav="settings" aria-label="Settings">
+      <span class="ic"><i class="ph ph-gear"></i></span>Settings
+    </button>
+  </nav>
+
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <script src="data/islands.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
