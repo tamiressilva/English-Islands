@@ -81,6 +81,197 @@ const App = (function () {
   }
 
   function getIsland(id) { return ISLANDS.find(i => i.id === id); }
+
+  // ---------------------------------------------------------
+  // CUSTOM / AI ISLAND BUILDER
+  // ---------------------------------------------------------
+
+  function customIslands() {
+    try { return JSON.parse(localStorage.getItem("englishIslandsCustom_v1") || "[]"); }
+    catch (_) { return []; }
+  }
+
+  function saveCustomIsland(isl) {
+    const list = customIslands().filter(x => x.id !== isl.id);
+    list.push(isl);
+    localStorage.setItem("englishIslandsCustom_v1", JSON.stringify(list));
+  }
+
+  function hydrateCustomIslands() {
+    customIslands().forEach(isl => {
+      if (!ISLANDS.some(x => x.id === isl.id)) ISLANDS.push(isl);
+    });
+    customIslands().forEach(isl => {
+      if (!state.islands[isl.id]) state.islands[isl.id] = defaultIslandState(true);
+    });
+    save();
+  }
+
+  function normalizeCustomIsland(raw, number) {
+    const clean = (v, fallback) => typeof v === "string" && v.trim() ? v.trim() : fallback;
+    const arr = (v) => Array.isArray(v) ? v : [];
+    const id = clean(raw.id, "custom-" + Date.now());
+    const vocabulary = arr(raw.vocabulary).slice(0, 30).map(x => ({
+      en: clean(x.en, "word"), pt: clean(x.pt, "tradução"),
+      approx: clean(x.approx, ""), ipa: clean(x.ipa, "")
+    }));
+    const coreSentences = arr(raw.coreSentences).slice(0, 25).map(x => ({
+      en: clean(x.en, ""), pt: clean(x.pt, "")
+    })).filter(x => x.en);
+    const questions = arr(raw.questions).slice(0, 15).map(x => ({
+      q: clean(x.q, ""), sample: clean(x.sample, "")
+    })).filter(x => x.q);
+    const exercises = raw.exercises || {};
+    return {
+      id, number: number || (ISLANDS.length + 1),
+      name: clean(raw.name, "My Custom Island"),
+      emoji: clean(raw.emoji, "🏝️"),
+      description: clean(raw.description, "A personalized English practice island."),
+      unlockedByDefault: true,
+      custom: true,
+      vocabulary,
+      coreSentences,
+      patterns: arr(raw.patterns).slice(0, 8),
+      variations: arr(raw.variations).slice(0, 8),
+      questions,
+      exercises: {
+        translate: arr(exercises.translate).slice(0, 8),
+        fillBlank: arr(exercises.fillBlank).slice(0, 8),
+        multipleChoice: arr(exercises.multipleChoice).slice(0, 8),
+        rearrange: arr(exercises.rearrange).slice(0, 8),
+        listening: arr(exercises.listening).slice(0, 8)
+      },
+      speakingSentences: arr(raw.speakingSentences).slice(0, 8),
+      talkPrompts: arr(raw.talkPrompts).slice(0, 8)
+    };
+  }
+
+  function buildAIPrompt() {
+    const get = id => document.getElementById(id)?.value?.trim() || "";
+    const checks = [...document.querySelectorAll("#builder-form input[type=checkbox]:checked")].map(x => x.value);
+    const level = get("ai-level") || "A2";
+    const languageMode = get("ai-mode") || "both";
+    const topic = get("ai-topic") || "daily conversation";
+    const goal = get("ai-goal") || "conversation";
+    const format = get("ai-format") || "dialogue";
+    const extra = get("ai-extra") || "";
+    return `Create ONE English Islands learning island as valid JSON only.
+
+Learner level: ${level}
+Topic/interests: ${checks.join(", ") || topic}
+Custom topic: ${topic}
+Goal: ${goal}
+Format: ${format}
+Language mode: ${languageMode}
+Extra context: ${extra}
+
+The island must be useful for a Brazilian learner studying with English-speaking friends on Discord.
+Use natural, modern English. Keep vocabulary appropriate to the level.
+Every core sentence must have an accurate Brazilian Portuguese translation.
+Include pronunciation approximation for Brazilian learners only when useful.
+Return exactly this JSON shape:
+{
+  "name": "...",
+  "emoji": "🏝️",
+  "description": "...",
+  "vocabulary": [{"en":"...","pt":"...","approx":"...","ipa":"..."}],
+  "coreSentences": [{"en":"...","pt":"..."}],
+  "patterns": [{"title":"...","examples":["..."],"variationBank":["..."]}],
+  "variations": [{"base":"...","affirmative":"...","negative":"...","question":"...","past":"...","future":"..."}],
+  "questions": [{"q":"...","sample":"..."}],
+  "exercises": {
+    "translate":[{"pt":"...","en":"..."}],
+    "fillBlank":[{"sentence":"...","options":["...","...","...","..."],"answer":"..."}],
+    "multipleChoice":[{"q":"...","options":["...","...","...","..."],"answer":"..."}],
+    "rearrange":[{"scrambled":["...","...","..."],"answer":"..."}],
+    "listening":[{"audio":"...","options":["...","...","..."],"answer":"..."}]
+  },
+  "speakingSentences":["..."],
+  "talkPrompts":["..."]
+}
+No markdown, no comments, no extra text.`;
+  }
+
+  function copyAIPrompt() {
+    const prompt = buildAIPrompt();
+    navigator.clipboard?.writeText(prompt).then(
+      () => toast("AI prompt copied."),
+      () => toast("Select and copy the prompt manually.")
+    );
+  }
+
+  function importAIIsland() {
+    const box = document.getElementById("ai-json");
+    if (!box || !box.value.trim()) { toast("Paste the AI JSON first."); return; }
+    try {
+      const raw = JSON.parse(box.value);
+      const isl = normalizeCustomIsland(raw);
+      const existing = ISLANDS.find(x => x.id === isl.id);
+      if (existing) isl.id = "custom-" + Date.now();
+      isl.number = Math.max(...ISLANDS.map(x => x.number || 0)) + 1;
+      saveCustomIsland(isl);
+      ISLANDS.push(isl);
+      state.islands[isl.id] = defaultIslandState(true);
+      save();
+      toast("Island created.");
+      navigate("islandDetail", {id: isl.id});
+    } catch (e) {
+      toast("Invalid JSON. Ask the AI for JSON only.");
+    }
+  }
+
+  function generateLocalIsland() {
+    const get = id => document.getElementById(id)?.value?.trim() || "";
+    const topic = get("ai-topic") || "Everyday Conversation";
+    const level = get("ai-level") || "A2";
+    const emoji = get("ai-emoji") || "🏝️";
+    const interests = [...document.querySelectorAll("#builder-form input[type=checkbox]:checked")].map(x => x.value);
+    const words = [
+      ["conversation","conversa","con-ver-sêi-shon","/ˌkɒnvəˈseɪʃən/"],
+      ["question","pergunta","kués-tchon","/ˈkwestʃən/"],
+      ["answer","resposta","ân-ser","/ˈɑːnsər/"],
+      ["usually","geralmente","iú-jua-li","/ˈjuːʒuəli/"],
+      ["really","realmente","rí-li","/ˈriːəli/"],
+      ["because","porque","bi-cóz","/bɪˈkɒz/"],
+      ["favorite","favorito","fêi-vo-rit","/ˈfeɪvərɪt/"],
+      ["learn","aprender","lérn","/lɜːrn/"]
+    ];
+    const core = [
+      [`I'm interested in ${topic.toLowerCase()}.`,`Eu me interesso por ${topic.toLowerCase()}.`],
+      ["I want to talk about it in English.","Eu quero falar sobre isso em inglês."],
+      ["What do you think about it?","O que você acha disso?"],
+      ["I usually learn something new every day.","Eu geralmente aprendo algo novo todos os dias."],
+      ["Can you explain that to me?","Você pode me explicar isso?"]
+    ];
+    const isl = normalizeCustomIsland({
+      id: "custom-" + Date.now(), name: topic, emoji,
+      description: `Personalized ${level} island about ${topic}.`,
+      vocabulary: words.map(([en,pt,approx,ipa])=>({en,pt,approx,ipa})),
+      coreSentences: core.map(([en,pt])=>({en,pt})),
+      questions: [
+        {q:`What do you think about ${topic.toLowerCase()}?`,sample:"I think it is interesting."},
+        {q:"Why are you interested in it?",sample:"Because I want to learn more."},
+        {q:"Can you explain it?",sample:"Sure. I can explain it."}
+      ],
+      exercises: {
+        translate: [{pt:"Eu quero falar sobre isso em inglês.",en:"I want to talk about it in English."}],
+        fillBlank: [{sentence:"I am ___ in this topic.",options:["interested","interest","interesting","interests"],answer:"interested"}],
+        multipleChoice: [{q:'What does "usually" mean?',options:["geralmente","nunca","ontem","amanhã"],answer:"geralmente"}],
+        rearrange: [{scrambled:["English","in","it","talk","I","want","to","about"],answer:"I want to talk about it in English"}],
+        listening: [{audio:"I am interested in this topic.",options:["I am interested in this topic.","I am from this topic.","I study this topic tomorrow."],answer:"I am interested in this topic."}]
+      },
+      speakingSentences: core.map(x=>x[0]),
+      talkPrompts: [`Talk about ${topic.toLowerCase()} for 30 seconds.`, "Ask your friend one question.", "Give your opinion and explain why."]
+    });
+    isl.number = Math.max(...ISLANDS.map(x=>x.number || 0)) + 1;
+    saveCustomIsland(isl);
+    ISLANDS.push(isl);
+    state.islands[isl.id] = defaultIslandState(true);
+    save();
+    toast("Personalized island created.");
+    navigate("islandDetail", {id: isl.id});
+  }
+
   function getIslandState(id) { return state.islands[id]; }
 
   function touchActivity(islandId) {
@@ -415,6 +606,7 @@ const App = (function () {
         <button class="btn" onclick="App.navigate('speaking')">${icon("microphone")} Speaking</button>
         <button class="btn" onclick="App.openConnect()">${icon("bridge")} Connect Islands</button>
         <button class="btn" onclick="App.openConversation()">${icon("chats")} Conversation Mode</button>
+        <button class="btn primary" onclick="App.navigate('createIsland')">${icon("sparkle")} Create My Island</button>
       </div>
     `;
   };
@@ -830,6 +1022,98 @@ const App = (function () {
 
   // ---- Settings ----
 
+  Views.createIsland = function () {
+    const checked = ["Technology","Music","Movies & series","Science","Travel","Work","Daily life","Philosophy","Games","Discord"];
+    return `
+      <div class="builder-hero">
+        <div class="eyebrow">${icon("sparkle")} PERSONALIZED LEARNING</div>
+        <h2>Create your island</h2>
+        <p>Tell the site what you want to learn. You can generate a ready-made island now or copy a structured prompt to any AI and paste its JSON back here.</p>
+      </div>
+
+      <form id="builder-form" onsubmit="event.preventDefault(); App.generateLocalIsland()">
+        <div class="builder-card">
+          <label>English level
+            <select id="ai-level">
+              <option value="A1">A1 — Beginner</option>
+              <option value="A2" selected>A2 — Basic conversation</option>
+              <option value="B1">B1 — Intermediate</option>
+              <option value="B2">B2 — Upper-intermediate</option>
+              <option value="C1">C1 — Advanced</option>
+            </select>
+          </label>
+
+          <label>What do you want to talk about?
+            <input id="ai-topic" type="text" placeholder="e.g. astronomy, work, movies, Discord..." value="">
+          </label>
+
+          <label>Island emoji
+            <input id="ai-emoji" type="text" maxlength="4" placeholder="🏝️" value="🏝️">
+          </label>
+
+          <div class="builder-label">Interests</div>
+          <div class="check-grid">
+            ${checked.map(x => `<label class="check-chip"><input type="checkbox" value="${x}"> <span>${x}</span></label>`).join("")}
+          </div>
+
+          <label>Goal
+            <select id="ai-goal">
+              <option value="conversation">Conversation</option>
+              <option value="Discord">Discord / friends</option>
+              <option value="pronunciation">Pronunciation</option>
+              <option value="travel">Travel</option>
+              <option value="work">Work</option>
+              <option value="reading">Reading</option>
+            </select>
+          </label>
+
+          <label>Format
+            <select id="ai-format">
+              <option value="dialogue">Dialogue</option>
+              <option value="story">Short story</option>
+              <option value="real-life situation">Real-life situation</option>
+              <option value="questions and answers">Questions & answers</option>
+            </select>
+          </label>
+
+          <label>Language mode
+            <select id="ai-mode">
+              <option value="both" selected>English + Portuguese</option>
+              <option value="english">English first, Portuguese support</option>
+              <option value="exchange">Two-way exchange for friends</option>
+            </select>
+          </label>
+
+          <label>Extra instructions
+            <textarea id="ai-extra" rows="3" placeholder="Example: keep it natural for a Discord conversation and include phrases native speakers actually use."></textarea>
+          </label>
+
+          <div class="builder-actions">
+            <button type="submit" class="btn primary">${icon("magic-wand")} Create now</button>
+            <button type="button" class="btn" onclick="App.copyAIPrompt()">${icon("copy")} Copy AI prompt</button>
+          </div>
+        </div>
+
+        <div class="builder-card ai-import">
+          <div class="section-heading compact"><h3>${icon("brackets-curly")} AI JSON</h3><span class="meta">For advanced generation</span></div>
+          <p class="helper">Copy the prompt above to your preferred AI. Ask for JSON only, then paste the response here.</p>
+          <textarea id="ai-json" rows="10" placeholder='{"name":"...","vocabulary":[...],"coreSentences":[...]}'></textarea>
+          <button type="button" class="btn primary" onclick="App.importAIIsland()">${icon("download-simple")} Import AI island</button>
+        </div>
+      </form>
+
+      <div class="builder-card">
+        <div class="section-heading compact"><h3>${icon("users-three")} Same island, two languages</h3></div>
+        <p class="helper">Use the generated island with your gringo friends: you practice the English version, they practice the Portuguese translation, and both can use the same conversation prompts.</p>
+        <div class="exchange-example">
+          <span>🇧🇷</span><strong>Você:</strong> “Eu quero falar sobre astronomia.”
+          <span>↔</span>
+          <span>🇺🇸</span><strong>Friend:</strong> “I want to talk about astronomy.”
+        </div>
+      </div>
+    `;
+  };
+
   Views.settings = function () {
     const voices = voicesCache.filter(v => v.lang && v.lang.startsWith("en"));
     return `
@@ -1211,6 +1495,7 @@ const App = (function () {
   // ---------------------------------------------------------
 
   function init() {
+    hydrateCustomIslands();
     initTheme();
     document.querySelectorAll("#bottom-nav button").forEach(btn => {
       btn.addEventListener("click", () => navigate(btn.dataset.view));
@@ -1228,7 +1513,8 @@ const App = (function () {
     startTalkTimer, stopTalkTimer,
     runChallenge, retryChallenge,
     setVoice, setAccent, setRate, toggleSetting, resetProgress,
-    openConnect, openConversation, nextConvo
+    openConnect, openConversation, nextConvo,
+    copyAIPrompt, importAIIsland, generateLocalIsland
   };
 })();
 

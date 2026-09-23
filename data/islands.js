@@ -1,2070 +1,8508 @@
-/* ============================================================
-   English Islands — Island Data
-   Add new islands by pushing a new object into the ISLANDS array.
-   Each island is self-contained: vocabulary, sentences, patterns,
-   questions, exercises, speaking prompts and a final challenge.
-   Content is intentionally kept SEPARATE from app.js (the engine).
-   ============================================================ */
-
+/* English Islands — Personalized curriculum for Tamires */
 const ISLANDS = [
   {
-    id: "island01",
-    number: 1,
-    name: "About Me",
-    emoji: "🏝️",
-    description: "Talk about who you are, where you're from and what you like.",
-    unlockedByDefault: true,
-
-    vocabulary: [
-      { en: "name", pt: "nome", approx: "néim", ipa: "/neɪm/" },
-      { en: "age", pt: "idade", approx: "eidj", ipa: "/eɪdʒ/" },
-      { en: "from", pt: "de / originário de", approx: "fróm", ipa: "/frʌm/" },
-      { en: "country", pt: "país", approx: "cân-tri", ipa: "/ˈkʌntri/" },
-      { en: "state", pt: "estado", approx: "steit", ipa: "/steɪt/" },
-      { en: "to live", pt: "morar, viver", approx: "liv", ipa: "/lɪv/" },
-      { en: "to study", pt: "estudar", approx: "stá-di", ipa: "/ˈstʌdi/" },
-      { en: "to work", pt: "trabalhar", approx: "uôrk", ipa: "/wɜːrk/" },
-      { en: "quality", pt: "qualidade", approx: "cuó-li-ti", ipa: "/ˈkwɒləti/" },
-      { en: "technology", pt: "tecnologia", approx: "tek-nó-lo-dji", ipa: "/tekˈnɒlədʒi/" },
-      { en: "psychology", pt: "psicologia", approx: "sai-kó-lo-dji", ipa: "/saɪˈkɒlədʒi/" },
-      { en: "to learn", pt: "aprender", approx: "lérn", ipa: "/lɜːrn/" },
-      { en: "movie", pt: "filme", approx: "mú-vi", ipa: "/ˈmuːvi/" },
-      { en: "series", pt: "série", approx: "sí-riz", ipa: "/ˈsɪəriːz/" },
-      { en: "suspense", pt: "suspense", approx: "sas-péns", ipa: "/səˈspens/" },
-      { en: "story", pt: "história", approx: "stó-ri", ipa: "/ˈstɔːri/" },
-      { en: "music", pt: "música", approx: "miú-zik", ipa: "/ˈmjuːzɪk/" },
-      { en: "astronomy", pt: "astronomia", approx: "as-trô-no-mi", ipa: "/əˈstrɒnəmi/" },
-      { en: "science", pt: "ciência", approx: "sái-ens", ipa: "/ˈsaɪəns/" },
-      { en: "favorite", pt: "favorito", approx: "féi-vo-rit", ipa: "/ˈfeɪvərɪt/" },
-      { en: "group", pt: "grupo", approx: "grúp", ipa: "/ɡruːp/" },
-      { en: "small", pt: "pequeno", approx: "smól", ipa: "/smɔːl/" },
-      { en: "confidence", pt: "confiança", approx: "cón-fi-dens", ipa: "/ˈkɒnfɪdəns/" },
-      { en: "naturally", pt: "naturalmente", approx: "ná-tchu-ra-li", ipa: "/ˈnætʃrəli/" },
-      { en: "pronunciation", pt: "pronúncia", approx: "pro-nân-si-êi-xon", ipa: "/prəˌnʌnsiˈeɪʃn/" }
-    ],
-
-    coreSentences: [
-      { en: "My name is Tatá.", pt: "Meu nome é Tatá." },
-      { en: "I am 23 years old.", pt: "Eu tenho 23 anos." },
-      { en: "I am from Brazil.", pt: "Eu sou do Brasil." },
-      { en: "I live in Bahia.", pt: "Eu moro na Bahia." },
-      { en: "I studied Systems Analysis and Development.", pt: "Eu estudei Análise e Desenvolvimento de Sistemas." },
-      { en: "I work with quality and documentation.", pt: "Eu trabalho com qualidade e documentação." },
-      { en: "I like technology and psychology.", pt: "Eu gosto de tecnologia e psicologia." },
-      { en: "I enjoy learning new things.", pt: "Eu gosto de aprender coisas novas." },
-      { en: "I like watching movies and series.", pt: "Eu gosto de assistir filmes e séries." },
-      { en: "I really like suspense stories.", pt: "Eu gosto muito de histórias de suspense." },
-      { en: "I like intelligent stories.", pt: "Eu gosto de histórias inteligentes." },
-      { en: "My favorite movie is Interstellar.", pt: "Meu filme favorito é Interestelar." },
-      { en: "I like music.", pt: "Eu gosto de música." },
-      { en: "I'm interested in astronomy and science.", pt: "Eu me interesso por astronomia e ciência." },
-      { en: "I prefer small groups.", pt: "Eu prefiro grupos pequenos." },
-      { en: "I don't like big groups.", pt: "Eu não gosto de grupos grandes." },
-      { en: "I want to speak English naturally.", pt: "Eu quero falar inglês naturalmente." },
-      { en: "I want to improve my pronunciation.", pt: "Eu quero melhorar minha pronúncia." },
-      { en: "I want to understand spoken English better.", pt: "Eu quero entender melhor o inglês falado." },
-      { en: "I want to feel confident speaking English.", pt: "Eu quero me sentir confiante falando inglês." }
-    ],
-
-    patterns: [
+    "id": "island01",
+    "number": 1,
+    "name": "Who I Am",
+    "emoji": "🏝️",
+    "description": "Talk about yourself, your interests, background and goals.",
+    "unlockedByDefault": true,
+    "goal": "Introduce yourself and keep a basic conversation going.",
+    "vocabulary": [
       {
-        title: "I like + noun / verb-ing",
-        examples: [
-          "I like technology.",
-          "I like watching movies.",
-          "I like learning new things.",
-          "I like music."
+        "en": "name",
+        "pt": "nome",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "age",
+        "pt": "idade",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "country",
+        "pt": "país",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "city",
+        "pt": "cidade",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "hometown",
+        "pt": "cidade natal",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "state",
+        "pt": "estado",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "to live",
+        "pt": "morar",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "to work",
+        "pt": "trabalhar",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "to study",
+        "pt": "estudar",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "degree",
+        "pt": "formação/diploma",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "career",
+        "pt": "carreira",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "hobby",
+        "pt": "hobby",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "interest",
+        "pt": "interesse",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "goal",
+        "pt": "objetivo",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "dream",
+        "pt": "sonho",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "plan",
+        "pt": "plano",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "future",
+        "pt": "futuro",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "personality",
+        "pt": "personalidade",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "favorite",
+        "pt": "favorito",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "usually",
+        "pt": "geralmente",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "especially",
+        "pt": "especialmente",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "currently",
+        "pt": "atualmente",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "recently",
+        "pt": "recentemente",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "experience",
+        "pt": "experiência",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "project",
+        "pt": "projeto",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "to enjoy",
+        "pt": "gostar/aproveitar",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "to learn",
+        "pt": "aprender",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "to improve",
+        "pt": "melhorar",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "to prefer",
+        "pt": "preferir",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "to hope",
+        "pt": "esperar/ter esperança",
+        "approx": "",
+        "ipa": ""
+      }
+    ],
+    "coreSentences": [
+      {
+        "en": "My name is Tamires.",
+        "pt": "Meu nome é Tamires."
+      },
+      {
+        "en": "I'm 23 years old.",
+        "pt": "Eu tenho 23 anos."
+      },
+      {
+        "en": "I'm from Brazil.",
+        "pt": "Eu sou do Brasil."
+      },
+      {
+        "en": "I live in Bahia.",
+        "pt": "Eu moro na Bahia."
+      },
+      {
+        "en": "I work with quality management.",
+        "pt": "Eu trabalho com gestão da qualidade."
+      },
+      {
+        "en": "I have a degree in Systems Analysis and Development.",
+        "pt": "Eu sou formada em Análise e Desenvolvimento de Sistemas."
+      },
+      {
+        "en": "I'm interested in technology and artificial intelligence.",
+        "pt": "Eu me interesso por tecnologia e inteligência artificial."
+      },
+      {
+        "en": "I also like psychology and philosophy.",
+        "pt": "Eu também gosto de psicologia e filosofia."
+      },
+      {
+        "en": "I enjoy learning new things.",
+        "pt": "Eu gosto de aprender coisas novas."
+      },
+      {
+        "en": "I'm currently improving my English.",
+        "pt": "Atualmente estou melhorando meu inglês."
+      },
+      {
+        "en": "I want to speak English without translating everything.",
+        "pt": "Quero falar inglês sem traduzir tudo."
+      },
+      {
+        "en": "I like talking to people from other countries.",
+        "pt": "Gosto de conversar com pessoas de outros países."
+      },
+      {
+        "en": "I prefer small groups.",
+        "pt": "Prefiro grupos pequenos."
+      },
+      {
+        "en": "I'm a little shy about making mistakes in English.",
+        "pt": "Fico um pouco tímida em cometer erros em inglês."
+      },
+      {
+        "en": "But I really want to improve.",
+        "pt": "Mas eu realmente quero melhorar."
+      },
+      {
+        "en": "I like intelligent stories.",
+        "pt": "Gosto de histórias inteligentes."
+      },
+      {
+        "en": "My favorite movie is Interstellar.",
+        "pt": "Meu filme favorito é Interestelar."
+      },
+      {
+        "en": "I like suspense and science fiction.",
+        "pt": "Gosto de suspense e ficção científica."
+      },
+      {
+        "en": "I'm curious about how things work.",
+        "pt": "Tenho curiosidade sobre como as coisas funcionam."
+      },
+      {
+        "en": "I like creating projects.",
+        "pt": "Gosto de criar projetos."
+      },
+      {
+        "en": "I'm learning how to use AI tools.",
+        "pt": "Estou aprendendo a usar ferramentas de IA."
+      },
+      {
+        "en": "One of my goals is to work internationally.",
+        "pt": "Um dos meus objetivos é trabalhar internacionalmente."
+      },
+      {
+        "en": "I want to travel and meet people from different cultures.",
+        "pt": "Quero viajar e conhecer pessoas de culturas diferentes."
+      },
+      {
+        "en": "I have many interests.",
+        "pt": "Tenho muitos interesses."
+      },
+      {
+        "en": "I'm still figuring out exactly what I want to do.",
+        "pt": "Ainda estou descobrindo exatamente o que quero fazer."
+      }
+    ],
+    "patterns": [
+      {
+        "title": "I'm + [information]",
+        "examples": [
+          "I'm from Brazil.",
+          "Where are you from?"
         ],
-        variationBank: [
-          "I like series.",
-          "I like suspense stories.",
-          "I like astronomy.",
-          "I like small groups.",
-          "I like studying at night.",
-          "I like intelligent stories."
+        "variationBank": [
+          "I'm from Brazil.",
+          "I'm not from...",
+          "Where are you from?"
         ]
       },
       {
-        title: "I am from + country / I live in + place",
-        examples: [
-          "I am from Brazil.",
-          "I live in Bahia."
+        "title": "I work/study + [area]",
+        "examples": [
+          "I work in quality.",
+          "What do you do?"
         ],
-        variationBank: [
-          "I am from Bahia.",
-          "I live in Brazil.",
-          "I am originally from Brazil."
+        "variationBank": [
+          "I work in quality.",
+          "I don't work in...",
+          "What do you do?"
         ]
       },
       {
-        title: "I want to + verb",
-        examples: [
-          "I want to speak English naturally.",
-          "I want to improve my pronunciation.",
-          "I want to feel confident speaking English."
+        "title": "I'm interested in + [topic]",
+        "examples": [
+          "I'm interested in AI.",
+          "What are you interested in?"
         ],
-        variationBank: [
-          "I want to understand movies without subtitles.",
-          "I want to travel and speak English.",
-          "I want to use English at work.",
-          "I want to stop translating in my head."
+        "variationBank": [
+          "I'm interested in AI.",
+          "I'm not interested in...",
+          "What are you interested in?"
+        ]
+      },
+      {
+        "title": "I like + [activity]",
+        "examples": [
+          "I like watching series.",
+          "What do you like doing?"
+        ],
+        "variationBank": [
+          "I like watching series.",
+          "I don't like...",
+          "What do you like doing?"
+        ]
+      },
+      {
+        "title": "I want to + [verb]",
+        "examples": [
+          "I want to travel.",
+          "What do you want to do?"
+        ],
+        "variationBank": [
+          "I want to travel.",
+          "I don't want to...",
+          "What do you want to do?"
+        ]
+      },
+      {
+        "title": "I'm learning + [thing]",
+        "examples": [
+          "I'm learning English.",
+          "What are you learning?"
+        ],
+        "variationBank": [
+          "I'm learning English.",
+          "I'm not learning...",
+          "What are you learning?"
+        ]
+      },
+      {
+        "title": "One of my goals is to + [verb]",
+        "examples": [
+          "One of my goals is to work internationally.",
+          "What are your goals?"
+        ],
+        "variationBank": [
+          "One of my goals is to work internationally.",
+          "One of my goals isn't to...",
+          "What are your goals?"
+        ]
+      },
+      {
+        "title": "I prefer + [noun/activity]",
+        "examples": [
+          "I prefer small groups.",
+          "What do you prefer?"
+        ],
+        "variationBank": [
+          "I prefer small groups.",
+          "I don't prefer...",
+          "What do you prefer?"
         ]
       }
     ],
-
-    variations: [
+    "variations": [
       {
-        base: "I usually study English at night.",
-        affirmative: "I usually study English at night.",
-        negative: "I don't usually study English at night.",
-        question: "Do you usually study English at night?",
-        past: "I studied English last night.",
-        future: "I'm going to study English tonight."
+        "base": "I'm from Brazil.",
+        "affirmative": "I'm from Brazil.",
+        "negative": "I'm not from...",
+        "question": "Where are you from?",
+        "past": "",
+        "future": ""
       },
       {
-        base: "I like watching movies.",
-        affirmative: "I like watching movies.",
-        negative: "I don't like watching movies alone.",
-        question: "Do you like watching movies?",
-        past: null,
-        future: null
+        "base": "I work in quality.",
+        "affirmative": "I work in quality.",
+        "negative": "I don't work in...",
+        "question": "What do you do?",
+        "past": "",
+        "future": ""
+      },
+      {
+        "base": "I'm interested in AI.",
+        "affirmative": "I'm interested in AI.",
+        "negative": "I'm not interested in...",
+        "question": "What are you interested in?",
+        "past": "",
+        "future": ""
+      },
+      {
+        "base": "I like watching series.",
+        "affirmative": "I like watching series.",
+        "negative": "I don't like...",
+        "question": "What do you like doing?",
+        "past": "",
+        "future": ""
+      },
+      {
+        "base": "I want to travel.",
+        "affirmative": "I want to travel.",
+        "negative": "I don't want to...",
+        "question": "What do you want to do?",
+        "past": "",
+        "future": ""
       }
     ],
-
-    questions: [
-      { q: "What is your name?", sample: "My name is Tatá." },
-      { q: "How old are you?", sample: "I am 23 years old." },
-      { q: "Where are you from?", sample: "I am from Brazil." },
-      { q: "Where do you live?", sample: "I live in Bahia." },
-      { q: "What did you study?", sample: "I studied Systems Analysis and Development." },
-      { q: "What do you do?", sample: "I work with quality and documentation." },
-      { q: "What do you like?", sample: "I like technology, psychology and learning new things." },
-      { q: "What kind of movies do you like?", sample: "I like suspense and intelligent stories." },
-      { q: "What is your favorite movie?", sample: "My favorite movie is Interstellar." },
-      { q: "Why do you like Interstellar?", sample: "Because it has an intelligent and emotional story." },
-      { q: "What are you interested in?", sample: "I'm interested in astronomy and science." },
-      { q: "Do you prefer small groups or big groups?", sample: "I prefer small groups." },
-      { q: "Why are you learning English?", sample: "I want to speak naturally and feel confident." },
-      { q: "What do you want to improve?", sample: "I want to improve my pronunciation." },
-      { q: "Do you like music?", sample: "Yes, I like music a lot." },
-      { q: "What do you do in your free time?", sample: "I watch movies, series, and learn new things." }
+    "questions": [
+      {
+        "q": "What's your name?",
+        "sample": "My name is Tamires."
+      },
+      {
+        "q": "Where are you from?",
+        "sample": "I'm 23 years old."
+      },
+      {
+        "q": "Where do you live?",
+        "sample": "I'm from Brazil."
+      },
+      {
+        "q": "What do you do?",
+        "sample": "I live in Bahia."
+      },
+      {
+        "q": "What are you interested in?",
+        "sample": "I work with quality management."
+      },
+      {
+        "q": "What do you like doing in your free time?",
+        "sample": "I have a degree in Systems Analysis and Development."
+      },
+      {
+        "q": "What kind of movies do you like?",
+        "sample": "I'm interested in technology and artificial intelligence."
+      },
+      {
+        "q": "Why are you learning English?",
+        "sample": "I also like psychology and philosophy."
+      },
+      {
+        "q": "What are your goals?",
+        "sample": "I enjoy learning new things."
+      },
+      {
+        "q": "What would you like to do internationally?",
+        "sample": "I'm currently improving my English."
+      },
+      {
+        "q": "What is something you are learning right now?",
+        "sample": "I want to speak English without translating everything."
+      },
+      {
+        "q": "What kind of people do you enjoy talking to?",
+        "sample": "I like talking to people from other countries."
+      },
+      {
+        "q": "What is something you want to improve?",
+        "sample": "I prefer small groups."
+      },
+      {
+        "q": "What makes you curious?",
+        "sample": "I'm a little shy about making mistakes in English."
+      },
+      {
+        "q": "Tell me something interesting about yourself.",
+        "sample": "But I really want to improve."
+      }
     ],
-
-    exercises: {
-      translate: [
-        { pt: "Eu moro na Bahia.", en: "I live in Bahia." },
-        { pt: "Eu tenho 23 anos.", en: "I am 23 years old." },
-        { pt: "Eu gosto de tecnologia.", en: "I like technology." },
-        { pt: "Eu prefiro grupos pequenos.", en: "I prefer small groups." },
-        { pt: "Meu filme favorito é Interestelar.", en: "My favorite movie is Interstellar." }
+    "exercises": {
+      "translate": [
+        {
+          "pt": "Meu nome é Tamires.",
+          "answer": "My name is Tamires."
+        },
+        {
+          "pt": "Eu tenho 23 anos.",
+          "answer": "I'm 23 years old."
+        },
+        {
+          "pt": "Eu sou do Brasil.",
+          "answer": "I'm from Brazil."
+        },
+        {
+          "pt": "Eu moro na Bahia.",
+          "answer": "I live in Bahia."
+        },
+        {
+          "pt": "Eu trabalho com gestão da qualidade.",
+          "answer": "I work with quality management."
+        },
+        {
+          "pt": "Eu sou formada em Análise e Desenvolvimento de Sistemas.",
+          "answer": "I have a degree in Systems Analysis and Development."
+        },
+        {
+          "pt": "Eu me interesso por tecnologia e inteligência artificial.",
+          "answer": "I'm interested in technology and artificial intelligence."
+        },
+        {
+          "pt": "Eu também gosto de psicologia e filosofia.",
+          "answer": "I also like psychology and philosophy."
+        }
       ],
-      fillBlank: [
-        { sentence: "I usually ___ English at night.", options: ["study", "eat", "go", "watch"], answer: "study" },
-        { sentence: "I am ___ Brazil.", options: ["from", "in", "on", "at"], answer: "from" },
-        { sentence: "I ___ in Bahia.", options: ["live", "am", "do", "have"], answer: "live" },
-        { sentence: "I am interested ___ astronomy.", options: ["in", "on", "at", "for"], answer: "in" }
+      "fillBlank": [
+        {
+          "sentence": "I enjoy ___ new things.",
+          "options": [
+            "learning",
+            "work",
+            "like",
+            "know"
+          ],
+          "answer": "learning"
+        },
+        {
+          "sentence": "I'm currently ___ my English.",
+          "options": [
+            "improving",
+            "work",
+            "like",
+            "know"
+          ],
+          "answer": "improving"
+        },
+        {
+          "sentence": "I want ___ speak English without translating everything.",
+          "options": [
+            "to",
+            "work",
+            "like",
+            "know"
+          ],
+          "answer": "to"
+        },
+        {
+          "sentence": "I like ___ to people from other countries.",
+          "options": [
+            "talking",
+            "work",
+            "like",
+            "know"
+          ],
+          "answer": "talking"
+        },
+        {
+          "sentence": "I'm a ___ shy about making mistakes in English.",
+          "options": [
+            "little",
+            "work",
+            "like",
+            "know"
+          ],
+          "answer": "little"
+        },
+        {
+          "sentence": "But I ___ want to improve.",
+          "options": [
+            "really",
+            "work",
+            "like",
+            "know"
+          ],
+          "answer": "really"
+        }
       ],
-      multipleChoice: [
-        { q: 'What does "usually" mean?', options: ["nunca", "geralmente", "ontem", "amanhã"], answer: "geralmente" },
-        { q: 'What does "confidence" mean?', options: ["confiança", "confusão", "conforto", "conflito"], answer: "confiança" },
-        { q: 'What does "favorite" mean?', options: ["favorito", "favor", "fávula", "fama"], answer: "favorito" }
+      "multipleChoice": [
+        {
+          "q": "What does \"My favorite movie is Interstellar.\" mean?",
+          "options": [
+            "Meu filme favorito é Interestelar.",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Meu filme favorito é Interestelar."
+        },
+        {
+          "q": "What does \"I like suspense and science fiction.\" mean?",
+          "options": [
+            "Gosto de suspense e ficção científica.",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Gosto de suspense e ficção científica."
+        },
+        {
+          "q": "What does \"I'm curious about how things work.\" mean?",
+          "options": [
+            "Tenho curiosidade sobre como as coisas funcionam.",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Tenho curiosidade sobre como as coisas funcionam."
+        },
+        {
+          "q": "What does \"I like creating projects.\" mean?",
+          "options": [
+            "Gosto de criar projetos.",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Gosto de criar projetos."
+        },
+        {
+          "q": "What does \"I'm learning how to use AI tools.\" mean?",
+          "options": [
+            "Estou aprendendo a usar ferramentas de IA.",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Estou aprendendo a usar ferramentas de IA."
+        },
+        {
+          "q": "What does \"One of my goals is to work internationally.\" mean?",
+          "options": [
+            "Um dos meus objetivos é trabalhar internacionalmente.",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Um dos meus objetivos é trabalhar internacionalmente."
+        },
+        {
+          "q": "What does \"I want to travel and meet people from different cultures.\" mean?",
+          "options": [
+            "Quero viajar e conhecer pessoas de culturas diferentes.",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Quero viajar e conhecer pessoas de culturas diferentes."
+        },
+        {
+          "q": "What does \"I have many interests.\" mean?",
+          "options": [
+            "Tenho muitos interesses.",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Tenho muitos interesses."
+        }
       ],
-      rearrange: [
-        { scrambled: ["Bahia", "in", "I", "live"], answer: "I live in Bahia" },
-        { scrambled: ["technology", "like", "I"], answer: "I like technology" },
-        { scrambled: ["23", "am", "old", "I", "years"], answer: "I am 23 years old" }
+      "rearrange": [
+        {
+          "scrambled": [
+            "Tamires",
+            "is",
+            "name",
+            "My"
+          ],
+          "answer": "My name is Tamires"
+        },
+        {
+          "scrambled": [
+            "old",
+            "years",
+            "23",
+            "I'm"
+          ],
+          "answer": "I'm 23 years old"
+        },
+        {
+          "scrambled": [
+            "Bahia",
+            "in",
+            "live",
+            "I"
+          ],
+          "answer": "I live in Bahia"
+        },
+        {
+          "scrambled": [
+            "management",
+            "quality",
+            "with",
+            "work",
+            "I"
+          ],
+          "answer": "I work with quality management"
+        },
+        {
+          "scrambled": [
+            "Development",
+            "and",
+            "Analysis",
+            "Systems",
+            "in",
+            "degree",
+            "a",
+            "have",
+            "I"
+          ],
+          "answer": "I have a degree in Systems Analysis and Development"
+        },
+        {
+          "scrambled": [
+            "intelligence",
+            "artificial",
+            "and",
+            "technology",
+            "in",
+            "interested",
+            "I'm"
+          ],
+          "answer": "I'm interested in technology and artificial intelligence"
+        },
+        {
+          "scrambled": [
+            "philosophy",
+            "and",
+            "psychology",
+            "like",
+            "also",
+            "I"
+          ],
+          "answer": "I also like psychology and philosophy"
+        }
       ],
-      listening: [
-        { audio: "I am from Brazil.", options: ["I am from Brazil.", "I am from France.", "I am from Bahia."], answer: "I am from Brazil." },
-        { audio: "I like watching movies.", options: ["I like watching movies.", "I like watching the news.", "I like watching series."], answer: "I like watching movies." },
-        { audio: "My favorite movie is Interstellar.", options: ["My favorite movie is Interstellar.", "My favorite series is Interstellar.", "My favorite story is Interstellar."], answer: "My favorite movie is Interstellar." }
+      "listening": [
+        {
+          "audio": "My name is Tamires.",
+          "options": [
+            "My name is Tamires.",
+            "I'm 23 years old.",
+            "I'm from Brazil."
+          ],
+          "answer": "My name is Tamires."
+        },
+        {
+          "audio": "I'm 23 years old.",
+          "options": [
+            "I'm 23 years old.",
+            "I'm from Brazil.",
+            "I live in Bahia."
+          ],
+          "answer": "I'm 23 years old."
+        },
+        {
+          "audio": "I'm from Brazil.",
+          "options": [
+            "I'm from Brazil.",
+            "I live in Bahia.",
+            "I work with quality management."
+          ],
+          "answer": "I'm from Brazil."
+        },
+        {
+          "audio": "I live in Bahia.",
+          "options": [
+            "I live in Bahia.",
+            "I work with quality management.",
+            "I have a degree in Systems Analysis and Development."
+          ],
+          "answer": "I live in Bahia."
+        },
+        {
+          "audio": "I work with quality management.",
+          "options": [
+            "I work with quality management.",
+            "I have a degree in Systems Analysis and Development.",
+            "I'm interested in technology and artificial intelligence."
+          ],
+          "answer": "I work with quality management."
+        },
+        {
+          "audio": "I have a degree in Systems Analysis and Development.",
+          "options": [
+            "I have a degree in Systems Analysis and Development.",
+            "I'm interested in technology and artificial intelligence.",
+            "I also like psychology and philosophy."
+          ],
+          "answer": "I have a degree in Systems Analysis and Development."
+        },
+        {
+          "audio": "I'm interested in technology and artificial intelligence.",
+          "options": [
+            "I'm interested in technology and artificial intelligence.",
+            "I also like psychology and philosophy.",
+            "I enjoy learning new things."
+          ],
+          "answer": "I'm interested in technology and artificial intelligence."
+        },
+        {
+          "audio": "I also like psychology and philosophy.",
+          "options": [
+            "I also like psychology and philosophy.",
+            "I enjoy learning new things.",
+            "I'm currently improving my English."
+          ],
+          "answer": "I also like psychology and philosophy."
+        }
       ]
     },
-
-    speakingSentences: [
-      "I usually wake up late.",
+    "speakingSentences": [
+      "My name is Tamires.",
+      "I'm 23 years old.",
+      "I'm from Brazil.",
       "I live in Bahia.",
-      "I like technology and psychology.",
-      "My favorite movie is Interstellar.",
-      "I want to speak English naturally."
+      "I work with quality management.",
+      "I have a degree in Systems Analysis and Development.",
+      "I'm interested in technology and artificial intelligence.",
+      "I also like psychology and philosophy."
     ],
-
-    talkPrompts: [
-      "Who are you?",
+    "talkPrompts": [
+      "What's your name?",
       "Where are you from?",
+      "Where do you live?",
       "What do you do?",
-      "What do you like?",
-      "What are you learning?",
+      "What are you interested in?",
+      "What do you like doing in your free time?",
+      "What kind of movies do you like?",
       "Why are you learning English?"
-    ]
+    ],
+    "reading": []
   },
-
-  // -------------------------------------------------------------
-  // Islands 02–10: structured and locked, ready to receive content.
-  // Fill vocabulary / coreSentences / patterns / questions / exercises
-  // following the exact same shape as Island 01 above.
-  // -------------------------------------------------------------
-  // ── Island 02: My Family ──────────────────────────────
   {
-    id: "island02", number: 2, name: "My Family", emoji: "👨‍👩‍👧",
-    description: "Talk about your family, relatives and the people close to you.",
-    unlockedByDefault: false,
-
-    vocabulary: [
-      { en: "family", pt: "família", approx: "fá-mi-li", ipa: "/ˈfæməli/" },
-      { en: "mother", pt: "mãe", approx: "má-der", ipa: "/ˈmʌðər/" },
-      { en: "father", pt: "pai", approx: "fá-der", ipa: "/ˈfɑːðər/" },
-      { en: "sister", pt: "irmã", approx: "sís-ter", ipa: "/ˈsɪstər/" },
-      { en: "brother", pt: "irmão", approx: "bró-der", ipa: "/ˈbrʌðər/" },
-      { en: "grandmother", pt: "avó", approx: "grán-mó-der", ipa: "/ˈɡrænmʌðər/" },
-      { en: "grandfather", pt: "avô", approx: "grán-fá-der", ipa: "/ˈɡrænfɑːðər/" },
-      { en: "cousin", pt: "primo / prima", approx: "có-zin", ipa: "/ˈkʌzɪn/" },
-      { en: "aunt", pt: "tia", approx: "ánt", ipa: "/ɑːnt/" },
-      { en: "uncle", pt: "tio", approx: "ún-cou", ipa: "/ˈʌŋkl/" },
-      { en: "son", pt: "filho", approx: "són", ipa: "/sʌn/" },
-      { en: "daughter", pt: "filha", approx: "dó-ter", ipa: "/ˈdɔːtər/" },
-      { en: "husband", pt: "marido", approx: "ház-band", ipa: "/ˈhʌzbənd/" },
-      { en: "wife", pt: "esposa", approx: "uáif", ipa: "/waɪf/" },
-      { en: "parent", pt: "pais", approx: "pé-rents", ipa: "/ˈpeərənt/" },
-      { en: "child", pt: "criança / filho", approx: "tcháild", ipa: "/tʃaɪld/" },
-      { en: "sibling", pt: "irmão / irmã", approx: "sí-bling", ipa: "/ˈsɪblɪŋ/" },
-      { en: "relative", pt: "parente", approx: "ré-lê-tiv", ipa: "/ˈrelətɪv/" },
-      { en: "together", pt: "juntos", approx: "tu-gé-der", ipa: "/təˈɡeðər/" },
-      { en: "support", pt: "apoiar / apoio", approx: "su-pórt", ipa: "/səˈpɔːrt/" },
-      { en: "close", pt: "próximo / próximo(a)", approx: "clóz", ipa: "/kləʊz/" },
-      { en: "relationship", pt: "relacionamento", approx: "ri-lêi-xon-ship", ipa: "/rɪˈleɪʃnʃɪp/" },
-      { en: "reunion", pt: "encontro", approx: "riú-nion", ipa: "/riːˈjuːnjən/" },
-      { en: "to visit", pt: "visitar", approx: "ví-zit", ipa: "/ˈvɪzɪt/" },
-      { en: "to support", pt: "apoiar", approx: "su-pórt", ipa: "/səˈpɔːrt/" }
-    ],
-
-    coreSentences: [
-      { en: "My mother lives in Bahia.", pt: "Minha mãe mora na Bahia." },
-      { en: "My father works in Salvador.", pt: "Meu pai trabalha em Salvador." },
-      { en: "I have one sister.", pt: "Eu tenho uma irmã." },
-      { en: "My sister is younger than me.", pt: "Minha irmã é mais nova que eu." },
-      { en: "My grandmother is very sweet.", pt: "Minha avó é muito carinhosa." },
-      { en: "My grandfather tells great stories.", pt: "Meu avô conta ótimas histórias." },
-      { en: "I have two cousins.", pt: "Eu tenho dois primos." },
-      { en: "My cousins live in São Paulo.", pt: "Meus primos moram em São Paulo." },
-      { en: "We have family reunions on holidays.", pt: "Nós temos encontros de família em feriados." },
-      { en: "My family is very important to me.", pt: "Minha família é muito importante para mim." },
-      { en: "I am close to my mother.", pt: "Eu sou próximo da minha mãe." },
-      { en: "My brother likes technology too.", pt: "Meu irmão também gosta de tecnologia." },
-      { en: "We spend time together on weekends.", pt: "Nós passamos tempo juntos nos fins de semana." },
-      { en: "My family supports my decisions.", pt: "Minha família apoia minhas decisões." },
-      { en: "I visit my grandmother every month.", pt: "Eu visito minha avó todo mês." },
-      { en: "My aunt cooks amazing food.", pt: "Minha tia cozinha comida maravilhosa." },
-      { en: "My uncle is very funny.", pt: "Meu tio é muito engraçado." },
-      { en: "Family is everything to me.", pt: "Família é tudo para mim." },
-      { en: "We always eat dinner together.", pt: "Nós sempre jantamos juntos." },
-      { en: "My father taught me to be honest.", pt: "Meu pai me ensinou a ser honesto." }
-    ],
-
-    patterns: [
+    "id": "island02",
+    "number": 2,
+    "name": "My Everyday Life",
+    "emoji": "🌅",
+    "description": "Describe your routine, habits, schedule and everyday situations.",
+    "unlockedByDefault": false,
+    "goal": "Describe your routine and everyday activities.",
+    "vocabulary": [
       {
-        title: "I have + number + family member",
-        examples: [
-          "I have one sister.",
-          "I have two cousins.",
-          "I have a big family.",
-          "I have a small family."
+        "en": "routine",
+        "pt": "rotina",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "morning",
+        "pt": "manhã",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "afternoon",
+        "pt": "tarde",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "evening",
+        "pt": "noite/início da noite",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "night",
+        "pt": "noite",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "wake up",
+        "pt": "acordar",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "get up",
+        "pt": "levantar",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "sleep",
+        "pt": "dormir",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "breakfast",
+        "pt": "café da manhã",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "lunch",
+        "pt": "almoço",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "dinner",
+        "pt": "jantar",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "snack",
+        "pt": "lanche",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "hungry",
+        "pt": "com fome",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "tired",
+        "pt": "cansado",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "busy",
+        "pt": "ocupado",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "free time",
+        "pt": "tempo livre",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "usually",
+        "pt": "geralmente",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "sometimes",
+        "pt": "às vezes",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "often",
+        "pt": "frequentemente",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "rarely",
+        "pt": "raramente",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "early",
+        "pt": "cedo",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "late",
+        "pt": "tarde",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "right now",
+        "pt": "agora",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "already",
+        "pt": "já",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "yet",
+        "pt": "ainda/já",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "break",
+        "pt": "pausa",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "housework",
+        "pt": "tarefas de casa",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "relax",
+        "pt": "relaxar",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "schedule",
+        "pt": "horário/agenda",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "habit",
+        "pt": "hábito",
+        "approx": "",
+        "ipa": ""
+      }
+    ],
+    "coreSentences": [
+      {
+        "en": "I usually wake up late.",
+        "pt": "Geralmente acordo tarde."
+      },
+      {
+        "en": "I have coffee in the morning.",
+        "pt": "Tomo café de manhã."
+      },
+      {
+        "en": "I usually eat breakfast at home.",
+        "pt": "Geralmente tomo café da manhã em casa."
+      },
+      {
+        "en": "What are you doing right now?",
+        "pt": "O que você está fazendo agora?"
+      },
+      {
+        "en": "I'm working on my computer.",
+        "pt": "Estou trabalhando no computador."
+      },
+      {
+        "en": "I'm taking a break.",
+        "pt": "Estou fazendo uma pausa."
+      },
+      {
+        "en": "I haven't eaten yet.",
+        "pt": "Ainda não comi."
+      },
+      {
+        "en": "I'm hungry, but I don't feel like cooking.",
+        "pt": "Estou com fome, mas não estou com vontade de cozinhar."
+      },
+      {
+        "en": "I usually study at night.",
+        "pt": "Geralmente estudo à noite."
+      },
+      {
+        "en": "I sometimes stay up late.",
+        "pt": "Às vezes fico acordada até tarde."
+      },
+      {
+        "en": "I need to fix my sleep schedule.",
+        "pt": "Preciso consertar meu horário de sono."
+      },
+      {
+        "en": "I have a lot to do today.",
+        "pt": "Tenho muita coisa para fazer hoje."
+      },
+      {
+        "en": "I'm busy right now.",
+        "pt": "Estou ocupada agora."
+      },
+      {
+        "en": "I'm free this evening.",
+        "pt": "Estou livre esta noite."
+      },
+      {
+        "en": "I usually take a break after lunch.",
+        "pt": "Geralmente faço uma pausa depois do almoço."
+      },
+      {
+        "en": "I'm feeling tired today.",
+        "pt": "Estou me sentindo cansada hoje."
+      },
+      {
+        "en": "I don't have much energy today.",
+        "pt": "Não estou com muita energia hoje."
+      },
+      {
+        "en": "I like having a quiet morning.",
+        "pt": "Gosto de ter uma manhã tranquila."
+      },
+      {
+        "en": "I spend a lot of time on my computer.",
+        "pt": "Passo muito tempo no computador."
+      },
+      {
+        "en": "I usually watch something before bed.",
+        "pt": "Geralmente assisto a alguma coisa antes de dormir."
+      },
+      {
+        "en": "What time do you usually go to bed?",
+        "pt": "Que horas você geralmente vai dormir?"
+      },
+      {
+        "en": "I haven't finished it yet.",
+        "pt": "Ainda não terminei."
+      },
+      {
+        "en": "I'll do it later.",
+        "pt": "Vou fazer isso mais tarde."
+      },
+      {
+        "en": "I'm just relaxing.",
+        "pt": "Só estou relaxando."
+      },
+      {
+        "en": "That's part of my routine.",
+        "pt": "Isso faz parte da minha rotina."
+      }
+    ],
+    "patterns": [
+      {
+        "title": "I usually + verb",
+        "examples": [
+          "I usually study at night.",
+          "What do you usually do?"
         ],
-        variationBank: [
-          "I have three aunts.",
-          "I have one brother and one sister.",
-          "I have a lot of relatives.",
-          "I have a close family."
+        "variationBank": [
+          "I usually study at night.",
+          "I don't usually...",
+          "What do you usually do?"
         ]
       },
       {
-        title: "My [family member] + verb",
-        examples: [
-          "My mother lives in Bahia.",
-          "My father works in Salvador.",
-          "My sister is younger than me.",
-          "My brother likes technology."
+        "title": "I'm + -ing",
+        "examples": [
+          "I'm working right now.",
+          "What are you doing?"
         ],
-        variationBank: [
-          "My grandmother tells stories.",
-          "My cousins live in São Paulo.",
-          "My aunt cooks amazing food.",
-          "My uncle is very funny."
+        "variationBank": [
+          "I'm working right now.",
+          "I'm not working right now.",
+          "What are you doing?"
         ]
       },
       {
-        title: "I am close to + person",
-        examples: [
-          "I am close to my mother.",
-          "I am close to my grandmother.",
-          "I am close to my sister."
+        "title": "I haven't + past participle + yet",
+        "examples": [
+          "I haven't eaten yet.",
+          "Have you finished yet?"
         ],
-        variationBank: [
-          "I am very close to my family.",
-          "I am not that close to my cousins.",
-          "I am closer to my mother than my father."
+        "variationBank": [
+          "I haven't eaten yet.",
+          "I haven't finished yet.",
+          "Have you finished yet?"
+        ]
+      },
+      {
+        "title": "I need to + verb",
+        "examples": [
+          "I need to study.",
+          "What do you need to do?"
+        ],
+        "variationBank": [
+          "I need to study.",
+          "I don't need to...",
+          "What do you need to do?"
+        ]
+      },
+      {
+        "title": "I have to + verb",
+        "examples": [
+          "I have to work.",
+          "What do you have to do?"
+        ],
+        "variationBank": [
+          "I have to work.",
+          "I don't have to...",
+          "What do you have to do?"
+        ]
+      },
+      {
+        "title": "I like + -ing",
+        "examples": [
+          "I like watching shows.",
+          "What do you like doing?"
+        ],
+        "variationBank": [
+          "I like watching shows.",
+          "I don't like...",
+          "What do you like doing?"
+        ]
+      },
+      {
+        "title": "I often/sometimes/rarely + verb",
+        "examples": [
+          "I sometimes stay up late.",
+          "How often do you...?"
+        ],
+        "variationBank": [
+          "I sometimes stay up late.",
+          "I rarely...",
+          "How often do you...?"
+        ]
+      },
+      {
+        "title": "What time do you + verb?",
+        "examples": [
+          "What time do you wake up?",
+          "What time do you usually...?"
+        ],
+        "variationBank": [
+          "What time do you wake up?",
+          "What time don't you...?",
+          "What time do you usually...?"
         ]
       }
     ],
-
-    variations: [
+    "variations": [
       {
-        base: "My mother lives in Bahia.",
-        affirmative: "My mother lives in Bahia.",
-        negative: "My mother doesn't live in São Paulo.",
-        question: "Does your mother live in Bahia?",
-        past: "My mother lived in Salvador before.",
-        future: "My mother is going to visit me next month."
+        "base": "I usually study at night.",
+        "affirmative": "I usually study at night.",
+        "negative": "I don't usually...",
+        "question": "What do you usually do?",
+        "past": "",
+        "future": ""
       },
       {
-        base: "I have one sister.",
-        affirmative: "I have one sister.",
-        negative: "I don't have any brothers.",
-        question: "Do you have any siblings?",
-        past: "I had two cousins living here before.",
-        future: null
+        "base": "I'm working right now.",
+        "affirmative": "I'm working right now.",
+        "negative": "I'm not working right now.",
+        "question": "What are you doing?",
+        "past": "",
+        "future": ""
       },
       {
-        base: "We always eat dinner together.",
-        affirmative: "We always eat dinner together.",
-        negative: "We don't always eat together.",
-        question: "Do you always eat dinner together?",
-        past: "We always ate dinner together when I was young.",
-        future: "We are going to eat dinner together tonight."
+        "base": "I haven't eaten yet.",
+        "affirmative": "I haven't eaten yet.",
+        "negative": "I haven't finished yet.",
+        "question": "Have you finished yet?",
+        "past": "",
+        "future": ""
+      },
+      {
+        "base": "I need to study.",
+        "affirmative": "I need to study.",
+        "negative": "I don't need to...",
+        "question": "What do you need to do?",
+        "past": "",
+        "future": ""
+      },
+      {
+        "base": "I have to work.",
+        "affirmative": "I have to work.",
+        "negative": "I don't have to...",
+        "question": "What do you have to do?",
+        "past": "",
+        "future": ""
       }
     ],
-
-    questions: [
-      { q: "Do you have brothers or sisters?", sample: "I have one sister. She is younger than me." },
-      { q: "How many cousins do you have?", sample: "I have two cousins. They live in São Paulo." },
-      { q: "Who do you live with?", sample: "I live with my mother right now." },
-      { q: "Are you close to your family?", sample: "Yes, I am very close to my family." },
-      { q: "Who is the funniest person in your family?", sample: "My uncle is the funniest person in my family." },
-      { q: "What does your mother do?", sample: "My mother works in a school." },
-      { q: "What does your father do?", sample: "My father works in Salvador." },
-      { q: "Do you visit your family often?", sample: "Yes, I visit my grandmother every month." },
-      { q: "Who taught you the most important things?", sample: "My father taught me to be honest." },
-      { q: "Do you have family reunions?", sample: "Yes, we have family reunions on holidays." },
-      { q: "Who cooks in your family?", sample: "My aunt cooks amazing food." },
-      { q: "Do you spend time with your family on weekends?", sample: "Yes, we spend time together on weekends." },
-      { q: "Is your family big or small?", sample: "My family is small but very close." },
-      { q: "Who is the oldest person in your family?", sample: "My grandmother is the oldest person in my family." },
-      { q: "Does your family support your decisions?", sample: "Yes, my family supports all my decisions." }
+    "questions": [
+      {
+        "q": "What time do you usually wake up?",
+        "sample": "I usually wake up late."
+      },
+      {
+        "q": "What do you usually do in the morning?",
+        "sample": "I have coffee in the morning."
+      },
+      {
+        "q": "What do you eat for breakfast?",
+        "sample": "I usually eat breakfast at home."
+      },
+      {
+        "q": "What are you doing right now?",
+        "sample": "What are you doing right now?"
+      },
+      {
+        "q": "What do you usually do at night?",
+        "sample": "I'm working on my computer."
+      },
+      {
+        "q": "What time do you usually go to bed?",
+        "sample": "I'm taking a break."
+      },
+      {
+        "q": "How often do you study English?",
+        "sample": "I haven't eaten yet."
+      },
+      {
+        "q": "What do you do when you're tired?",
+        "sample": "I'm hungry, but I don't feel like cooking."
+      },
+      {
+        "q": "What do you do when you're bored?",
+        "sample": "I usually study at night."
+      },
+      {
+        "q": "What is your favorite part of the day?",
+        "sample": "I sometimes stay up late."
+      },
+      {
+        "q": "Do you prefer mornings or nights? Why?",
+        "sample": "I need to fix my sleep schedule."
+      },
+      {
+        "q": "What habit would you like to change?",
+        "sample": "I have a lot to do today."
+      },
+      {
+        "q": "How do you organize your day?",
+        "sample": "I'm busy right now."
+      },
+      {
+        "q": "What do you usually do on weekends?",
+        "sample": "I'm free this evening."
+      },
+      {
+        "q": "Describe a normal day in your life.",
+        "sample": "I usually take a break after lunch."
+      }
     ],
-
-    exercises: {
-      translate: [
-        { pt: "Minha mãe mora na Bahia.", en: "My mother lives in Bahia." },
-        { pt: "Eu tenho uma irmã.", en: "I have one sister." },
-        { pt: "Minha família é muito importante para mim.", en: "My family is very important to mim." },
-        { pt: "Nós sempre jantamos juntos.", en: "We always eat dinner together." },
-        { pt: "Eu visito minha avó todo mês.", en: "I visit my grandmother every month." },
-        { pt: "Meu pai me ensinou a ser honesto.", en: "My father taught me to be honest." }
+    "exercises": {
+      "translate": [
+        {
+          "pt": "Geralmente acordo tarde.",
+          "answer": "I usually wake up late."
+        },
+        {
+          "pt": "Tomo café de manhã.",
+          "answer": "I have coffee in the morning."
+        },
+        {
+          "pt": "Geralmente tomo café da manhã em casa.",
+          "answer": "I usually eat breakfast at home."
+        },
+        {
+          "pt": "O que você está fazendo agora?",
+          "answer": "What are you doing right now?"
+        },
+        {
+          "pt": "Estou trabalhando no computador.",
+          "answer": "I'm working on my computer."
+        },
+        {
+          "pt": "Estou fazendo uma pausa.",
+          "answer": "I'm taking a break."
+        },
+        {
+          "pt": "Ainda não comi.",
+          "answer": "I haven't eaten yet."
+        },
+        {
+          "pt": "Estou com fome, mas não estou com vontade de cozinhar.",
+          "answer": "I'm hungry, but I don't feel like cooking."
+        }
       ],
-      fillBlank: [
-        { sentence: "I have one ___.", options: ["sister", "car", "house", "book"], answer: "sister" },
-        { sentence: "My mother ___ in Bahia.", options: ["lives", "live", "living", "lived"], answer: "lives" },
-        { sentence: "We always eat dinner ___.", options: ["together", "alone", "fast", "slowly"], answer: "together" },
-        { sentence: "I am close ___ my grandmother.", options: ["to", "in", "on", "at"], answer: "to" },
-        { sentence: "My father ___ me to be honest.", options: ["taught", "teach", "teaches", "teaching"], answer: "taught" }
+      "fillBlank": [
+        {
+          "sentence": "I usually ___ at night.",
+          "options": [
+            "study",
+            "work",
+            "like",
+            "know"
+          ],
+          "answer": "study"
+        },
+        {
+          "sentence": "I sometimes ___ up late.",
+          "options": [
+            "stay",
+            "work",
+            "like",
+            "know"
+          ],
+          "answer": "stay"
+        },
+        {
+          "sentence": "I need ___ fix my sleep schedule.",
+          "options": [
+            "to",
+            "work",
+            "like",
+            "know"
+          ],
+          "answer": "to"
+        },
+        {
+          "sentence": "I have ___ lot to do today.",
+          "options": [
+            "a",
+            "work",
+            "like",
+            "know"
+          ],
+          "answer": "a"
+        },
+        {
+          "sentence": "I usually ___ a break after lunch.",
+          "options": [
+            "take",
+            "work",
+            "like",
+            "know"
+          ],
+          "answer": "take"
+        }
       ],
-      multipleChoice: [
-        { q: 'What does "relative" mean?', options: ["parente", "amigo", "vizinho", "colega"], answer: "parente" },
-        { q: 'What does "sibling" mean?', options: ["irmão/irmã", "pai", "mãe", "primo"], answer: "irmão/irmã" },
-        { q: 'What does "reunion" mean?', options: ["encontro", "viagem", "comida", "trabalho"], answer: "encontro" }
+      "multipleChoice": [
+        {
+          "q": "What does \"I don't have much energy today.\" mean?",
+          "options": [
+            "Não estou com muita energia hoje.",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Não estou com muita energia hoje."
+        },
+        {
+          "q": "What does \"I like having a quiet morning.\" mean?",
+          "options": [
+            "Gosto de ter uma manhã tranquila.",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Gosto de ter uma manhã tranquila."
+        },
+        {
+          "q": "What does \"I spend a lot of time on my computer.\" mean?",
+          "options": [
+            "Passo muito tempo no computador.",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Passo muito tempo no computador."
+        },
+        {
+          "q": "What does \"I usually watch something before bed.\" mean?",
+          "options": [
+            "Geralmente assisto a alguma coisa antes de dormir.",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Geralmente assisto a alguma coisa antes de dormir."
+        },
+        {
+          "q": "What does \"What time do you usually go to bed?\" mean?",
+          "options": [
+            "Que horas você geralmente vai dormir?",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Que horas você geralmente vai dormir?"
+        },
+        {
+          "q": "What does \"I haven't finished it yet.\" mean?",
+          "options": [
+            "Ainda não terminei.",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Ainda não terminei."
+        },
+        {
+          "q": "What does \"I'll do it later.\" mean?",
+          "options": [
+            "Vou fazer isso mais tarde.",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Vou fazer isso mais tarde."
+        },
+        {
+          "q": "What does \"I'm just relaxing.\" mean?",
+          "options": [
+            "Só estou relaxando.",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Só estou relaxando."
+        }
       ],
-      rearrange: [
-        { scrambled: ["lives", "mother", "My", "Bahia", "in"], answer: "My mother lives in Bahia" },
-        { scrambled: ["have", "I", "sister", "one"], answer: "I have one sister" },
-        { scrambled: ["family", "is", "My", "important", "very"], answer: "My family is very important" },
-        { scrambled: ["dinner", "eat", "We", "together", "always"], answer: "We always eat dinner together" }
+      "rearrange": [
+        {
+          "scrambled": [
+            "late",
+            "up",
+            "wake",
+            "usually",
+            "I"
+          ],
+          "answer": "I usually wake up late"
+        },
+        {
+          "scrambled": [
+            "morning",
+            "the",
+            "in",
+            "coffee",
+            "have",
+            "I"
+          ],
+          "answer": "I have coffee in the morning"
+        },
+        {
+          "scrambled": [
+            "home",
+            "at",
+            "breakfast",
+            "eat",
+            "usually",
+            "I"
+          ],
+          "answer": "I usually eat breakfast at home"
+        },
+        {
+          "scrambled": [
+            "now",
+            "right",
+            "doing",
+            "you",
+            "are",
+            "What"
+          ],
+          "answer": "What are you doing right now"
+        },
+        {
+          "scrambled": [
+            "computer",
+            "my",
+            "on",
+            "working",
+            "I'm"
+          ],
+          "answer": "I'm working on my computer"
+        },
+        {
+          "scrambled": [
+            "break",
+            "a",
+            "taking",
+            "I'm"
+          ],
+          "answer": "I'm taking a break"
+        },
+        {
+          "scrambled": [
+            "yet",
+            "eaten",
+            "haven't",
+            "I"
+          ],
+          "answer": "I haven't eaten yet"
+        },
+        {
+          "scrambled": [
+            "cooking",
+            "like",
+            "feel",
+            "don't",
+            "I",
+            "but",
+            "hungry",
+            "I'm"
+          ],
+          "answer": "I'm hungry, but I don't feel like cooking"
+        }
       ],
-      listening: [
-        { audio: "My mother lives in Bahia.", options: ["My mother lives in Bahia.", "My father lives in Bahia.", "My sister lives in Bahia."], answer: "My mother lives in Bahia." },
-        { audio: "I have one sister.", options: ["I have one sister.", "I have two sisters.", "I have one brother."], answer: "I have one sister." },
-        { audio: "My family is very important.", options: ["My family is very important.", "My work is very important.", "My friends are very important."], answer: "My family is very important." }
+      "listening": [
+        {
+          "audio": "I usually wake up late.",
+          "options": [
+            "I usually wake up late.",
+            "I have coffee in the morning.",
+            "I usually eat breakfast at home."
+          ],
+          "answer": "I usually wake up late."
+        },
+        {
+          "audio": "I have coffee in the morning.",
+          "options": [
+            "I have coffee in the morning.",
+            "I usually eat breakfast at home.",
+            "What are you doing right now?"
+          ],
+          "answer": "I have coffee in the morning."
+        },
+        {
+          "audio": "I usually eat breakfast at home.",
+          "options": [
+            "I usually eat breakfast at home.",
+            "What are you doing right now?",
+            "I'm working on my computer."
+          ],
+          "answer": "I usually eat breakfast at home."
+        },
+        {
+          "audio": "What are you doing right now?",
+          "options": [
+            "What are you doing right now?",
+            "I'm working on my computer.",
+            "I'm taking a break."
+          ],
+          "answer": "What are you doing right now?"
+        },
+        {
+          "audio": "I'm working on my computer.",
+          "options": [
+            "I'm working on my computer.",
+            "I'm taking a break.",
+            "I haven't eaten yet."
+          ],
+          "answer": "I'm working on my computer."
+        },
+        {
+          "audio": "I'm taking a break.",
+          "options": [
+            "I'm taking a break.",
+            "I haven't eaten yet.",
+            "I'm hungry, but I don't feel like cooking."
+          ],
+          "answer": "I'm taking a break."
+        },
+        {
+          "audio": "I haven't eaten yet.",
+          "options": [
+            "I haven't eaten yet.",
+            "I'm hungry, but I don't feel like cooking.",
+            "I usually study at night."
+          ],
+          "answer": "I haven't eaten yet."
+        },
+        {
+          "audio": "I'm hungry, but I don't feel like cooking.",
+          "options": [
+            "I'm hungry, but I don't feel like cooking.",
+            "I usually study at night.",
+            "I sometimes stay up late."
+          ],
+          "answer": "I'm hungry, but I don't feel like cooking."
+        }
       ]
     },
-
-    speakingSentences: [
-      "I have one sister.",
-      "My mother lives in Bahia.",
-      "We always eat dinner together.",
-      "My family is very important to me.",
-      "I visit my grandmother every month."
+    "speakingSentences": [
+      "I usually wake up late.",
+      "I have coffee in the morning.",
+      "I usually eat breakfast at home.",
+      "What are you doing right now?",
+      "I'm working on my computer.",
+      "I'm taking a break.",
+      "I haven't eaten yet.",
+      "I'm hungry, but I don't feel like cooking."
     ],
-
-    talkPrompts: [
-      "Do you have brothers or sisters?",
-      "Who do you live with?",
-      "Are you close to your family?",
-      "What does your mother do?",
-      "Do you visit your family often?",
-      "Who is the funniest person in your family?"
-    ]
-  },
-
-  // ── Island 03: My Daily Routine ──────────────────────
-  {
-    id: "island03", number: 3, name: "My Daily Routine", emoji: "⏰",
-    description: "Your daily routine, from morning to night.",
-    unlockedByDefault: false,
-
-    vocabulary: [
-      { en: "to wake up", pt: "acordar", approx: "uéik ap", ipa: "/weɪk ʌp/" },
-      { en: "to get up", pt: "levantar", approx: "guét ap", ipa: "/ɡet ʌp/" },
-      { en: "morning", pt: "manhã", approx: "mór-ning", ipa: "/ˈmɔːrnɪŋ/" },
-      { en: "afternoon", pt: "tarde", approx: "áf-ter-nún", ipa: "/ˌɑːftərˈnuːn/" },
-      { en: "night", pt: "noite", approx: "náit", ipa: "/naɪt/" },
-      { en: "breakfast", pt: "café da manhã", approx: "bré-fest", ipa: "/ˈbrekfəst/" },
-      { en: "lunch", pt: "almoço", approx: "lónch", ipa: "/lʌntʃ/" },
-      { en: "dinner", pt: "jantar", approx: "dí-ner", ipa: "/ˈdɪnər/" },
-      { en: "to shower", pt: "tomar banho", approx: "shá-uer", ipa: "/ˈʃaʊər/" },
-      { en: "to commute", pt: "ir de / ir para", approx: "comiúti", ipa: "/kəˈmjuːt/" },
-      { en: "to arrive", pt: "chegar", approx: "u-ráiv", ipa: "/əˈraɪv/" },
-      { en: "to leave", pt: "sair / ir embora", approx: "líiv", ipa: "/liːv/" },
-      { en: "schedule", pt: "horário / agenda", approx: "shé-djul", ipa: "/ˈʃedjuːl/" },
-      { en: "routine", pt: "rotina", approx: "ru-tí-na", ipa: "/ruːˈtiːn/" },
-      { en: "always", pt: "sempre", approx: "ól-ueis", ipa: "/ˈɔːlweɪz/" },
-      { en: "sometimes", pt: "às vezes", approx: "sóms-táims", ipa: "/ˈsʌmtaɪmz/" },
-      { en: "never", pt: "nunca", approx: "né-ver", ipa: "/ˈnevər/" },
-      { en: "usually", pt: "geralmente", approx: "iú-ju-ali", ipa: "/ˈjuːʒuəli/" },
-      { en: "early", pt: "cedo", approx: "ér-li", ipa: "/ˈɜːrli/" },
-      { en: "late", pt: "atrasado / tarde", approx: "léit", ipa: "/leɪt/" },
-      { en: "ready", pt: "pronto", approx: "ré-di", ipa: "/ˈredi/" },
-      { en: "to work", pt: "trabalhar", approx: "uórk", ipa: "/wɜːrk/" },
-      { en: "to study", pt: "estudar", approx: "stá-di", ipa: "/ˈstʌdi/" },
-      { en: "to sleep", pt: "dormir", approx: "slíp", ipa: "/sliːp/" },
-      { en: "tired", pt: "cansado", approx: "tái-erd", ipa: "/ˈtaɪərd/" }
-    ],
-
-    coreSentences: [
-      { en: "I usually wake up at 7 AM.", pt: "Eu geralmente acordo às 7 da manhã." },
-      { en: "I get up and take a shower.", pt: "Eu levanto e tomo banho." },
-      { en: "I have breakfast at 7:30.", pt: "Eu tomo café da manhã às 7:30." },
-      { en: "I leave home at 8 AM.", pt: "Eu saio de casa às 8 da manhã." },
-      { en: "I arrive at work at 9 AM.", pt: "Eu chego no trabalho às 9 da manhã." },
-      { en: "I work from 9 to 6.", pt: "Eu trabalho das 9 às 6." },
-      { en: "I have lunch at noon.", pt: "Eu almoço ao meio-dia." },
-      { en: "I usually eat rice and beans for lunch.", pt: "Eu geralmente como arroz e feijão no almoço." },
-      { en: "I get off work at 6 PM.", pt: "Eu saio do trabalho às 6 da tarde." },
-      { en: "I study English at night.", pt: "Eu estudo inglês à noite." },
-      { en: "I usually study for two hours.", pt: "Eu geralmente estudo por duas horas." },
-      { en: "I have dinner at 8 PM.", pt: "Eu janto às 8 da noite." },
-      { en: "I watch series before sleeping.", pt: "Eu assisto séries antes de dormir." },
-      { en: "I usually go to bed at 11 PM.", pt: "Eu geralmente vou dormir às 11 da noite." },
-      { en: "I am usually tired at night.", pt: "Eu geralmente estou cansado à noite." },
-      { en: "On weekends, I wake up late.", pt: "Nos fins de semana, eu acordo tarde." },
-      { en: "I never skip breakfast.", pt: "Eu nunca pulo o café da manhã." },
-      { en: "Sometimes I study in the morning.", pt: "Às vezes eu estudo de manhã." },
-      { en: "I always drink coffee before work.", pt: "Eu sempre tomo café antes do trabalho." },
-      { en: "My routine is very busy.", pt: "Minha rotina é muito corrida." }
-    ],
-
-    patterns: [
-      {
-        title: "I usually/always/never + verb",
-        examples: [
-          "I usually wake up at 7 AM.",
-          "I always drink coffee before work.",
-          "I never skip breakfast.",
-          "I sometimes study in the morning."
-        ],
-        variationBank: [
-          "I usually eat rice and beans for lunch.",
-          "I always take a shower in the morning.",
-          "I never eat junk food.",
-          "I sometimes watch series at night."
-        ]
-      },
-      {
-        title: "I + verb + at + time",
-        examples: [
-          "I have breakfast at 7:30.",
-          "I leave home at 8 AM.",
-          "I arrive at work at 9 AM.",
-          "I have dinner at 8 PM."
-        ],
-        variationBank: [
-          "I wake up at 7 AM.",
-          "I go to bed at 11 PM.",
-          "I get off work at 6 PM.",
-          "I study at night."
-        ]
-      },
-      {
-        title: "I + verb + for + duration",
-        examples: [
-          "I usually study for two hours.",
-          "I work for eight hours a day.",
-          "I sleep for seven hours."
-        ],
-        variationBank: [
-          "I commute for one hour.",
-          "I exercise for thirty minutes.",
-          "I study English for two hours."
-        ]
-      }
-    ],
-
-    variations: [
-      {
-        base: "I usually wake up at 7 AM.",
-        affirmative: "I usually wake up at 7 AM.",
-        negative: "I don't usually wake up early.",
-        question: "Do you usually wake up at 7 AM?",
-        past: "I usually woke up at 6 AM last year.",
-        future: "I'm going to wake up at 6 AM tomorrow."
-      },
-      {
-        base: "I study English at night.",
-        affirmative: "I study English at night.",
-        negative: "I don't study English at night.",
-        question: "Do you study English at night?",
-        past: "I studied English at night last week.",
-        future: "I'm going to study English tonight."
-      },
-      {
-        base: "I always drink coffee before work.",
-        affirmative: "I always drink coffee before work.",
-        negative: "I don't always drink coffee.",
-        question: "Do you always drink coffee before work?",
-        past: "I always drank coffee before work.",
-        future: null
-      }
-    ],
-
-    questions: [
-      { q: "What time do you usually wake up?", sample: "I usually wake up at 7 AM." },
-      { q: "What is the first thing you do in the morning?", sample: "The first thing I do is take a shower." },
-      { q: "What do you usually have for breakfast?", sample: "I usually have coffee and bread." },
-      { q: "What time do you leave home?", sample: "I leave home at 8 AM." },
-      { q: "How do you get to work?", sample: "I commute by bus." },
-      { q: "What time do you start work?", sample: "I start work at 9 AM." },
-      { q: "What do you usually have for lunch?", sample: "I usually have rice and beans for lunch." },
-      { q: "What time do you get off work?", sample: "I get off work at 6 PM." },
-      { q: "What do you do at night?", sample: "I study English at night." },
-      { q: "What time do you go to bed?", sample: "I usually go to bed at 11 PM." },
-      { q: "Do you always eat breakfast?", sample: "Yes, I never skip breakfast." },
-      { q: "Do you study on weekends?", sample: "Sometimes I study on weekends." },
-      { q: "Are you a morning person or a night person?", sample: "I am more of a night person." },
-      { q: "Do you exercise regularly?", sample: "Sometimes I exercise in the morning." },
-      { q: "How many hours do you sleep?", sample: "I sleep for about seven hours." },
-      { q: "What is the busiest part of your day?", sample: "The afternoon is the busiest part of my day." }
-    ],
-
-    exercises: {
-      translate: [
-        { pt: "Eu geralmente acordo às 7 da manhã.", en: "I usually wake up at 7 AM." },
-        { pt: "Eu sempre tomo café antes do trabalho.", en: "I always drink coffee before work." },
-        { pt: "Eu nunca pulo o café da manhã.", en: "I never skip breakfast." },
-        { pt: "Eu estudo inglês à noite.", en: "I study English at night." },
-        { pt: "Minha rotina é muito corrida.", en: "My routine is very busy." }
-      ],
-      fillBlank: [
-        { sentence: "I usually ___ up at 7 AM.", options: ["wake", "work", "eat", "sleep"], answer: "wake" },
-        { sentence: "I always ___ coffee before work.", options: ["drink", "eat", "make", "buy"], answer: "drink" },
-        { sentence: "I never ___ breakfast.", options: ["skip", "eat", "have", "drink"], answer: "skip" },
-        { sentence: "I study English ___ night.", options: ["at", "in", "on", "for"], answer: "at" },
-        { sentence: "I ___ home at 8 AM.", options: ["leave", "leave", "left", "leaving"], answer: "leave" }
-      ],
-      multipleChoice: [
-        { q: 'What does "commute" mean?', options: ["ir de um lugar para outro", "trabalhar", "estudar", "dormir"], answer: "ir de um lugar para outro" },
-        { q: 'What does "routine" mean?', options: ["rotina", "reunião", "viagem", "comida"], answer: "rotina" },
-        { q: 'What does "skip" mean here?', options: ["pular / não fazer", "pular corda", "correr", "andar"], answer: "pular / não fazer" }
-      ],
-      rearrange: [
-        { scrambled: ["usually", "I", "at", "wake", "7", "up", "AM"], answer: "I usually wake up at 7 AM" },
-        { scrambled: ["always", "I", "before", "drink", "coffee", "work"], answer: "I always drink coffee before work" },
-        { scrambled: ["English", "I", "at", "study", "night"], answer: "I study English at night" },
-        { scrambled: ["breakfast", "I", "never", "skip"], answer: "I never skip breakfast" }
-      ],
-      listening: [
-        { audio: "I usually wake up at 7 AM.", options: ["I usually wake up at 7 AM.", "I usually wake up at 8 AM.", "I usually wake up at 6 AM."], answer: "I usually wake up at 7 AM." },
-        { audio: "I always drink coffee before work.", options: ["I always drink coffee before work.", "I sometimes drink coffee before work.", "I never drink coffee before work."], answer: "I always drink coffee before work." },
-        { audio: "I study English at night.", options: ["I study English at night.", "I study English in the morning.", "I study English at noon."], answer: "I study English at night." }
-      ]
-    },
-
-    speakingSentences: [
-      "I usually wake up at 7 AM.",
-      "I always drink coffee before work.",
-      "I study English at night.",
-      "I never skip breakfast.",
-      "My routine is very busy."
-    ],
-
-    talkPrompts: [
+    "talkPrompts": [
       "What time do you usually wake up?",
-      "What do you usually have for breakfast?",
-      "What time do you get off work?",
-      "What do you do at night?",
-      "Are you a morning person or a night person?",
-      "How many hours do you sleep?"
-    ]
+      "What do you usually do in the morning?",
+      "What do you eat for breakfast?",
+      "What are you doing right now?",
+      "What do you usually do at night?",
+      "What time do you usually go to bed?",
+      "How often do you study English?",
+      "What do you do when you're tired?"
+    ],
+    "reading": []
   },
-
-  // ── Island 04: Likes & Dislikes ──────────────────────
   {
-    id: "island04", number: 4, name: "Likes & Dislikes", emoji: "💜",
-    description: "Preferences, tastes, and things you don't enjoy.",
-    unlockedByDefault: false,
-
-    vocabulary: [
-      { en: "to love", pt: "amar / adorar", approx: "láv", ipa: "/lʌv/" },
-      { en: "to enjoy", pt: "apreciar / gostar", approx: "en-djói", ipa: "/ɪnˈdʒɔɪ/" },
-      { en: "to hate", pt: "odeiar", approx: "héit", ipa: "/heɪt/" },
-      { en: "to prefer", pt: "preferir", approx: "pri-fér", ipa: "/prɪˈfɜːr/" },
-      { en: "to mind", pt: "importar-se", approx: "máind", ipa: "/maɪnd/" },
-      { en: "boring", pt: "chato / entediante", approx: "bó-ring", ipa: "/ˈbɔːrɪŋ/" },
-      { en: "exciting", pt: "empolgante", approx: "ek-sáiting", ipa: "/ɪkˈsaɪtɪŋ/" },
-      { en: "relaxing", pt: "relaxante", approx: "ri-lá-king", ipa: "/rɪˈlæksɪŋ/" },
-      { en: "challenging", pt: "desafiador", approx: "chá-lin-djing", ipa: "/ˈtʃælɪndʒɪŋ/" },
-      { en: "amazing", pt: "incrível", approx: "u-méi-zing", ipa: "/əˈmeɪzɪŋ/" },
-      { en: "terrible", pt: "terrível", approx: "té-ri-boul", ipa: "/ˈterəbl/" },
-      { en: "favorite", pt: "favorito", approx: "féi-vo-rit", ipa: "/ˈfeɪvərɪt/" },
-      { en: "taste", pt: "gosto", approx: "teist", ipa: "/teɪst/" },
-      { en: "opinion", pt: "opinião", approx: "o-pi-nion", ipa: "/əˈpɪnjən/" },
-      { en: "into", pt: "gostar muito de", approx: "ín-tu", ipa: "/ˈɪntu/" },
-      { en: "fan", pt: "fã", approx: "fán", ipa: "/fæn/" },
-      { en: "obsessed", pt: "obcecado", approx: "ob-sés-t", ipa: "/əbˈsest/" },
-      { en: "can't stand", pt: "não suporto", approx: "cánt stand", ipa: "/kɑːnt stænd/" },
-      { en: "stupid", pt: "estúpido", approx: "stiú-pid", ipa: "/ˈstjuːpɪd/" },
-      { en: "pointless", pt: "sem sentido", approx: "póint-less", ipa: "/ˈpɔɪntləs/" },
-      { en: "awesome", pt: "incrível / demais", approx: "ó-som", ipa: "/ˈɔːsəm/" },
-      { en: "awful", pt: "horrível", approx: "ó-foul", ipa: "/ˈɔːfl/" },
-      { en: "really", pt: "realmente", approx: "rí-li", ipa: "/ˈriːəli/" },
-      { en: "honestly", pt: "honestamente", approx: "ó-nest-li", ipa: "/ˈɒnɪstli/" },
-      { en: "although", pt: "embora", approx: "ól-dó", ipa: "/ɔːlˈðəʊ/" }
-    ],
-
-    coreSentences: [
-      { en: "I love learning new things.", pt: "Eu adoro aprender coisas novas." },
-      { en: "I enjoy watching suspense movies.", pt: "Eu gosto de assistir filmes de suspense." },
-      { en: "I really like astronomy.", pt: "Eu realmente gosto de astronomia." },
-      { en: "I am into technology.", pt: "Eu sou fã de tecnologia." },
-      { en: "I am a big fan of Interstellar.", pt: "Eu sou grande fã de Interestelar." },
-      { en: "I am obsessed with psychology.", pt: "Eu sou obcecado por psicologia." },
-      { en: "I prefer small groups.", pt: "Eu prefiro grupos pequenos." },
-      { en: "I don't like big groups.", pt: "Eu não gosto de grupos grandes." },
-      { en: "I can't stand stupid movies.", pt: "Eu não suporto filmes estúpidos." },
-      { en: "I think that movie is boring.", pt: "Eu acho que esse filme é chato." },
-      { en: "I don't mind studying at night.", pt: "Não me importo de estudar à noite." },
-      { en: "Honestly, I don't like cooking.", pt: "Honestamente, eu não gosto de cozinhar." },
-      { en: "I love intelligent stories.", pt: "Eu adoro histórias inteligentes." },
-      { en: "I hate waking up early.", pt: "Eu odeio acordar cedo." },
-      { en: "I enjoy learning about science.", pt: "Eu gosto de aprender sobre ciência." },
-      { en: "I really like music.", pt: "Eu realmente gosto de música." },
-      { en: "I am not a fan of horror movies.", pt: "Eu não sou fã de filmes de terror." },
-      { en: "I think astronomy is amazing.", pt: "Eu acho astronomia incrível." },
-      { en: "I love watching series at night.", pt: "Eu adoro assistir séries à noite." },
-      { en: "I don't like pointless conversations.", pt: "Eu não gosto de conversas sem sentido." }
-    ],
-
-    patterns: [
+    "id": "island03",
+    "number": 3,
+    "name": "Friends & Discord",
+    "emoji": "🎧",
+    "description": "Start, maintain and repair conversations with international friends.",
+    "unlockedByDefault": false,
+    "goal": "Survive and enjoy a 1-hour Discord conversation.",
+    "vocabulary": [
       {
-        title: "I love / enjoy / like + verb-ing",
-        examples: [
-          "I love learning new things.",
-          "I enjoy watching suspense movies.",
-          "I like intelligent stories.",
-          "I love astronomy."
+        "en": "Discord",
+        "pt": "Discord",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "friend",
+        "pt": "amigo",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "voice channel",
+        "pt": "canal de voz",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "chat",
+        "pt": "conversa/chat",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "conversation",
+        "pt": "conversa",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "to join",
+        "pt": "entrar/participar",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "to leave",
+        "pt": "sair",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "to hang out",
+        "pt": "passar tempo junto",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "what's up",
+        "pt": "e aí",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "not much",
+        "pt": "nada demais",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "by the way",
+        "pt": "a propósito",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "really",
+        "pt": "sério/realmente",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "actually",
+        "pt": "na verdade",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "exactly",
+        "pt": "exatamente",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "maybe",
+        "pt": "talvez",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "I mean",
+        "pt": "quer dizer",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "I guess",
+        "pt": "acho que",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "to understand",
+        "pt": "entender",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "to repeat",
+        "pt": "repetir",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "to explain",
+        "pt": "explicar",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "to catch",
+        "pt": "entender/captar",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "slowly",
+        "pt": "devagar",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "faster",
+        "pt": "mais rápido",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "awkward",
+        "pt": "constrangedor",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "funny",
+        "pt": "engraçado",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "joke",
+        "pt": "piada",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "random",
+        "pt": "aleatório",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "topic",
+        "pt": "assunto",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "conversation starter",
+        "pt": "iniciador de conversa",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "follow-up",
+        "pt": "pergunta de continuação",
+        "approx": "",
+        "ipa": ""
+      }
+    ],
+    "coreSentences": [
+      {
+        "en": "Hey, what's up?",
+        "pt": "E aí, tudo bem?"
+      },
+      {
+        "en": "Not much. What about you?",
+        "pt": "Nada demais. E você?"
+      },
+      {
+        "en": "I'm just chilling.",
+        "pt": "Só estou de boa."
+      },
+      {
+        "en": "I just joined the server.",
+        "pt": "Acabei de entrar no servidor."
+      },
+      {
+        "en": "Nice to meet you.",
+        "pt": "Prazer em conhecer você."
+      },
+      {
+        "en": "How's your day going?",
+        "pt": "Como está seu dia?"
+      },
+      {
+        "en": "What have you been up to?",
+        "pt": "O que você tem feito?"
+      },
+      {
+        "en": "What are you guys talking about?",
+        "pt": "Sobre o que vocês estão falando?"
+      },
+      {
+        "en": "I didn't catch that.",
+        "pt": "Não entendi/captei isso."
+      },
+      {
+        "en": "Could you say that again?",
+        "pt": "Pode falar isso de novo?"
+      },
+      {
+        "en": "Could you speak a little slower?",
+        "pt": "Pode falar um pouco mais devagar?"
+      },
+      {
+        "en": "What does that mean?",
+        "pt": "O que isso significa?"
+      },
+      {
+        "en": "I'm still learning English.",
+        "pt": "Ainda estou aprendendo inglês."
+      },
+      {
+        "en": "I understand, but you speak really fast.",
+        "pt": "Eu entendo, mas você fala muito rápido."
+      },
+      {
+        "en": "Give me a second.",
+        "pt": "Me dá um segundo."
+      },
+      {
+        "en": "I know what you mean.",
+        "pt": "Eu sei o que você quer dizer."
+      },
+      {
+        "en": "That makes sense.",
+        "pt": "Isso faz sentido."
+      },
+      {
+        "en": "Really? Tell me more.",
+        "pt": "Sério? Me conta mais."
+      },
+      {
+        "en": "No way!",
+        "pt": "Não acredito!"
+      },
+      {
+        "en": "That's funny.",
+        "pt": "Isso é engraçado."
+      },
+      {
+        "en": "By the way, where are you from?",
+        "pt": "A propósito, de onde você é?"
+      },
+      {
+        "en": "What do you usually do for fun?",
+        "pt": "O que você costuma fazer para se divertir?"
+      },
+      {
+        "en": "Do you play any games?",
+        "pt": "Você joga algum jogo?"
+      },
+      {
+        "en": "I'm going to grab some water.",
+        "pt": "Vou pegar um pouco de água."
+      },
+      {
+        "en": "I'll be back in a minute.",
+        "pt": "Já volto em um minuto."
+      }
+    ],
+    "patterns": [
+      {
+        "title": "What's up? + response",
+        "examples": [
+          "Not much. What about you?",
+          "What's up?"
         ],
-        variationBank: [
-          "I love listening to music.",
-          "I enjoy reading about science.",
-          "I like learning about psychology.",
-          "I love watching Interstellar."
+        "variationBank": [
+          "Not much. What about you?",
+          "Not much.",
+          "What's up?"
         ]
       },
       {
-        title: "I can't stand + verb-ing / noun",
-        examples: [
-          "I can't stand stupid movies.",
-          "I can't stand waking up early.",
-          "I can't stand big groups.",
-          "I can't stand boring stories."
+        "title": "I'm + -ing",
+        "examples": [
+          "I'm just chilling.",
+          "What are you doing?"
         ],
-        variationBank: [
-          "I can't stand horror movies.",
-          "I can't stand bad pronunciation.",
-          "I can't stand pointless conversations.",
-          "I can't stand waking up late."
+        "variationBank": [
+          "I'm just chilling.",
+          "I'm not...",
+          "What are you doing?"
         ]
       },
       {
-        title: "I am into + noun / I am a fan of + noun",
-        examples: [
-          "I am into technology.",
-          "I am a big fan of Interstellar.",
-          "I am a fan of suspense.",
-          "I am into astronomy."
+        "title": "I didn't + verb",
+        "examples": [
+          "I didn't catch that.",
+          "What did you say?"
         ],
-        variationBank: [
-          "I am into psychology.",
-          "I am a fan of intelligent stories.",
-          "I am really into science fiction.",
-          "I am a big fan of learning."
+        "variationBank": [
+          "I didn't catch that.",
+          "I didn't understand.",
+          "What did you say?"
+        ]
+      },
+      {
+        "title": "Could you + verb?",
+        "examples": [
+          "Could you say that again?",
+          "Could you help me?"
+        ],
+        "variationBank": [
+          "Could you say that again?",
+          "Could you not...?",
+          "Could you help me?"
+        ]
+      },
+      {
+        "title": "What does + word + mean?",
+        "examples": [
+          "What does that mean?",
+          "What does X mean?"
+        ],
+        "variationBank": [
+          "What does that mean?",
+          "I don't know what it means.",
+          "What does X mean?"
+        ]
+      },
+      {
+        "title": "By the way, + question",
+        "examples": [
+          "By the way, where are you from?",
+          "By the way, ...?"
+        ],
+        "variationBank": [
+          "By the way, where are you from?",
+          "—",
+          "By the way, ...?"
+        ]
+      },
+      {
+        "title": "I know what you mean.",
+        "examples": [
+          "I know what you mean.",
+          "Do you know what I mean?"
+        ],
+        "variationBank": [
+          "I know what you mean.",
+          "I don't know what you mean.",
+          "Do you know what I mean?"
+        ]
+      },
+      {
+        "title": "That sounds + adjective",
+        "examples": [
+          "That sounds interesting.",
+          "How does it sound?"
+        ],
+        "variationBank": [
+          "That sounds interesting.",
+          "That doesn't sound...",
+          "How does it sound?"
         ]
       }
     ],
-
-    variations: [
+    "variations": [
       {
-        base: "I love learning new things.",
-        affirmative: "I love learning new things.",
-        negative: "I don't love studying grammar.",
-        question: "Do you love learning new things?",
-        past: "I loved that movie.",
-        future: "I'm going to love this series."
+        "base": "Not much. What about you?",
+        "affirmative": "Not much. What about you?",
+        "negative": "Not much.",
+        "question": "What's up?",
+        "past": "",
+        "future": ""
       },
       {
-        base: "I can't stand stupid movies.",
-        affirmative: "I can't stand stupid movies.",
-        negative: null,
-        question: "What kind of movies can't you stand?",
-        past: "I couldn't stand that class.",
-        future: "I'm not going to stand boring meetings."
+        "base": "I'm just chilling.",
+        "affirmative": "I'm just chilling.",
+        "negative": "I'm not...",
+        "question": "What are you doing?",
+        "past": "",
+        "future": ""
       },
       {
-        base: "I prefer small groups.",
-        affirmative: "I prefer small groups.",
-        negative: "I don't prefer big groups.",
-        question: "Do you prefer small groups or big groups?",
-        past: "I preferred working alone before.",
-        future: null
+        "base": "I didn't catch that.",
+        "affirmative": "I didn't catch that.",
+        "negative": "I didn't understand.",
+        "question": "What did you say?",
+        "past": "",
+        "future": ""
+      },
+      {
+        "base": "Could you say that again?",
+        "affirmative": "Could you say that again?",
+        "negative": "Could you not...?",
+        "question": "Could you help me?",
+        "past": "",
+        "future": ""
+      },
+      {
+        "base": "What does that mean?",
+        "affirmative": "What does that mean?",
+        "negative": "I don't know what it means.",
+        "question": "What does X mean?",
+        "past": "",
+        "future": ""
       }
     ],
-
-    questions: [
-      { q: "What do you love doing?", sample: "I love learning new things and watching movies." },
-      { q: "What kind of movies do you enjoy?", sample: "I enjoy suspense and intelligent stories." },
-      { q: "What are you really into?", sample: "I am really into technology and psychology." },
-      { q: "Are you a fan of anything?", sample: "I am a big fan of Interstellar." },
-      { q: "What can't you stand?", sample: "I can't stand stupid movies." },
-      { q: "Do you prefer small groups or big groups?", sample: "I prefer small groups." },
-      { q: "What do you think about horror movies?", sample: "I am not a fan of horror movies." },
-      { q: "Do you enjoy studying?", sample: "Yes, I enjoy studying English at night." },
-      { q: "What is your favorite genre of movie?", sample: "My favorite genre is suspense." },
-      { q: "Do you mind studying alone?", sample: "No, I don't mind studying alone." },
-      { q: "What do you honestly dislike?", sample: "Honestly, I don't like cooking." },
-      { q: "What is amazing to you?", sample: "I think astronomy is amazing." },
-      { q: "Do you like music?", sample: "Yes, I really like music." },
-      { q: "What do you hate doing?", sample: "I hate waking up early." },
-      { q: "Do you enjoy learning about science?", sample: "Yes, I enjoy learning about science." }
+    "questions": [
+      {
+        "q": "What's up?",
+        "sample": "Hey, what's up?"
+      },
+      {
+        "q": "How's your day going?",
+        "sample": "Not much. What about you?"
+      },
+      {
+        "q": "Where are you from?",
+        "sample": "I'm just chilling."
+      },
+      {
+        "q": "What have you been up to?",
+        "sample": "I just joined the server."
+      },
+      {
+        "q": "What are you guys talking about?",
+        "sample": "Nice to meet you."
+      },
+      {
+        "q": "How did you find this server?",
+        "sample": "How's your day going?"
+      },
+      {
+        "q": "What do you usually do for fun?",
+        "sample": "What have you been up to?"
+      },
+      {
+        "q": "Do you play any games?",
+        "sample": "What are you guys talking about?"
+      },
+      {
+        "q": "What kind of music do you like?",
+        "sample": "I didn't catch that."
+      },
+      {
+        "q": "What shows are you watching?",
+        "sample": "Could you say that again?"
+      },
+      {
+        "q": "What does that word mean?",
+        "sample": "Could you speak a little slower?"
+      },
+      {
+        "q": "Could you say that again?",
+        "sample": "What does that mean?"
+      },
+      {
+        "q": "Why did you decide to learn English?",
+        "sample": "I'm still learning English."
+      },
+      {
+        "q": "What do you usually talk about with your friends?",
+        "sample": "I understand, but you speak really fast."
+      },
+      {
+        "q": "How would you keep a conversation going for ten minutes?",
+        "sample": "Give me a second."
+      }
     ],
-
-    exercises: {
-      translate: [
-        { pt: "Eu adoro aprender coisas novas.", en: "I love learning new things." },
-        { pt: "Eu não suporto filmes estúpidos.", en: "I can't stand stupid movies." },
-        { pt: "Eu prefiro grupos pequenos.", en: "I prefer small groups." },
-        { pt: "Eu sou obcecado por psicologia.", en: "I am obsessed with psychology." },
-        { pt: "Honestamente, eu não gosto de cozinhar.", en: "Honestly, I don't like cooking." }
+    "exercises": {
+      "translate": [
+        {
+          "pt": "E aí, tudo bem?",
+          "answer": "Hey, what's up?"
+        },
+        {
+          "pt": "Nada demais. E você?",
+          "answer": "Not much. What about you?"
+        },
+        {
+          "pt": "Só estou de boa.",
+          "answer": "I'm just chilling."
+        },
+        {
+          "pt": "Acabei de entrar no servidor.",
+          "answer": "I just joined the server."
+        },
+        {
+          "pt": "Prazer em conhecer você.",
+          "answer": "Nice to meet you."
+        },
+        {
+          "pt": "Como está seu dia?",
+          "answer": "How's your day going?"
+        },
+        {
+          "pt": "O que você tem feito?",
+          "answer": "What have you been up to?"
+        },
+        {
+          "pt": "Sobre o que vocês estão falando?",
+          "answer": "What are you guys talking about?"
+        }
       ],
-      fillBlank: [
-        { sentence: "I ___ learning new things.", options: ["love", "hate", "am", "have"], answer: "love" },
-        { sentence: "I can't ___ stupid movies.", options: ["stand", "watch", "like", "enjoy"], answer: "stand" },
-        { sentence: "I am really ___ technology.", options: ["into", "in", "on", "at"], answer: "into" },
-        { sentence: "I ___ small groups.", options: ["prefer", "like", "hate", "love"], answer: "prefer" },
-        { sentence: "I am not ___ fan of horror.", options: ["a", "the", "an", "my"], answer: "a" }
+      "fillBlank": [
+        {
+          "sentence": "Could you ___ that again?",
+          "options": [
+            "say",
+            "work",
+            "like",
+            "know"
+          ],
+          "answer": "say"
+        },
+        {
+          "sentence": "Could you ___ a little slower?",
+          "options": [
+            "speak",
+            "work",
+            "like",
+            "know"
+          ],
+          "answer": "speak"
+        },
+        {
+          "sentence": "I understand, ___ you speak really fast.",
+          "options": [
+            "but",
+            "work",
+            "like",
+            "know"
+          ],
+          "answer": "but"
+        },
+        {
+          "sentence": "I know ___ you mean.",
+          "options": [
+            "what",
+            "work",
+            "like",
+            "know"
+          ],
+          "answer": "what"
+        }
       ],
-      multipleChoice: [
-        { q: 'What does "can\'t stand" mean?', options: ["não suporto", "gosto muito", "não importa", "não sei"], answer: "não suporto" },
-        { q: 'What does "obsessed" mean?', options: ["obcecado", "interessado", "cansado", "feliz"], answer: "obcecado" },
-        { q: 'What does "pointless" mean?', options: ["sem sentido", "interessante", "divertido", "importante"], answer: "sem sentido" }
+      "multipleChoice": [
+        {
+          "q": "What does \"That makes sense.\" mean?",
+          "options": [
+            "Isso faz sentido.",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Isso faz sentido."
+        },
+        {
+          "q": "What does \"Really? Tell me more.\" mean?",
+          "options": [
+            "Sério? Me conta mais.",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Sério? Me conta mais."
+        },
+        {
+          "q": "What does \"No way!\" mean?",
+          "options": [
+            "Não acredito!",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Não acredito!"
+        },
+        {
+          "q": "What does \"That's funny.\" mean?",
+          "options": [
+            "Isso é engraçado.",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Isso é engraçado."
+        },
+        {
+          "q": "What does \"By the way, where are you from?\" mean?",
+          "options": [
+            "A propósito, de onde você é?",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "A propósito, de onde você é?"
+        },
+        {
+          "q": "What does \"What do you usually do for fun?\" mean?",
+          "options": [
+            "O que você costuma fazer para se divertir?",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "O que você costuma fazer para se divertir?"
+        },
+        {
+          "q": "What does \"Do you play any games?\" mean?",
+          "options": [
+            "Você joga algum jogo?",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Você joga algum jogo?"
+        },
+        {
+          "q": "What does \"I'm going to grab some water.\" mean?",
+          "options": [
+            "Vou pegar um pouco de água.",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Vou pegar um pouco de água."
+        }
       ],
-      rearrange: [
-        { scrambled: ["love", "I", "learning", "new", "things"], answer: "I love learning new things" },
-        { scrambled: ["stand", "can't", "I", "stupid", "movies"], answer: "I can't stand stupid movies" },
-        { scrambled: ["prefer", "I", "groups", "small"], answer: "I prefer small groups" },
-        { scrambled: ["into", "am", "I", "technology"], answer: "I am into technology" }
+      "rearrange": [
+        {
+          "scrambled": [
+            "you",
+            "about",
+            "What",
+            "much",
+            "Not"
+          ],
+          "answer": "Not much. What about you"
+        },
+        {
+          "scrambled": [
+            "server",
+            "the",
+            "joined",
+            "just",
+            "I"
+          ],
+          "answer": "I just joined the server"
+        },
+        {
+          "scrambled": [
+            "you",
+            "meet",
+            "to",
+            "Nice"
+          ],
+          "answer": "Nice to meet you"
+        },
+        {
+          "scrambled": [
+            "going",
+            "day",
+            "your",
+            "How's"
+          ],
+          "answer": "How's your day going"
+        },
+        {
+          "scrambled": [
+            "to",
+            "up",
+            "been",
+            "you",
+            "have",
+            "What"
+          ],
+          "answer": "What have you been up to"
+        },
+        {
+          "scrambled": [
+            "about",
+            "talking",
+            "guys",
+            "you",
+            "are",
+            "What"
+          ],
+          "answer": "What are you guys talking about"
+        }
       ],
-      listening: [
-        { audio: "I love learning new things.", options: ["I love learning new things.", "I hate learning new things.", "I don't mind learning new things."], answer: "I love learning new things." },
-        { audio: "I can't stand stupid movies.", options: ["I can't stand stupid movies.", "I love stupid movies.", "I don't mind stupid movies."], answer: "I can't stand stupid movies." },
-        { audio: "I prefer small groups.", options: ["I prefer small groups.", "I prefer big groups.", "I don't prefer any groups."], answer: "I prefer small groups." }
+      "listening": [
+        {
+          "audio": "Hey, what's up?",
+          "options": [
+            "Hey, what's up?",
+            "Not much. What about you?",
+            "I'm just chilling."
+          ],
+          "answer": "Hey, what's up?"
+        },
+        {
+          "audio": "Not much. What about you?",
+          "options": [
+            "Not much. What about you?",
+            "I'm just chilling.",
+            "I just joined the server."
+          ],
+          "answer": "Not much. What about you?"
+        },
+        {
+          "audio": "I'm just chilling.",
+          "options": [
+            "I'm just chilling.",
+            "I just joined the server.",
+            "Nice to meet you."
+          ],
+          "answer": "I'm just chilling."
+        },
+        {
+          "audio": "I just joined the server.",
+          "options": [
+            "I just joined the server.",
+            "Nice to meet you.",
+            "How's your day going?"
+          ],
+          "answer": "I just joined the server."
+        },
+        {
+          "audio": "Nice to meet you.",
+          "options": [
+            "Nice to meet you.",
+            "How's your day going?",
+            "What have you been up to?"
+          ],
+          "answer": "Nice to meet you."
+        },
+        {
+          "audio": "How's your day going?",
+          "options": [
+            "How's your day going?",
+            "What have you been up to?",
+            "What are you guys talking about?"
+          ],
+          "answer": "How's your day going?"
+        },
+        {
+          "audio": "What have you been up to?",
+          "options": [
+            "What have you been up to?",
+            "What are you guys talking about?",
+            "I didn't catch that."
+          ],
+          "answer": "What have you been up to?"
+        },
+        {
+          "audio": "What are you guys talking about?",
+          "options": [
+            "What are you guys talking about?",
+            "I didn't catch that.",
+            "Could you say that again?"
+          ],
+          "answer": "What are you guys talking about?"
+        }
       ]
     },
-
-    speakingSentences: [
-      "I love learning new things.",
-      "I can't stand stupid movies.",
-      "I prefer small groups.",
-      "I am obsessed with psychology.",
-      "I really like astronomy."
+    "speakingSentences": [
+      "Hey, what's up?",
+      "Not much. What about you?",
+      "I'm just chilling.",
+      "I just joined the server.",
+      "Nice to meet you.",
+      "How's your day going?",
+      "What have you been up to?",
+      "What are you guys talking about?"
     ],
-
-    talkPrompts: [
-      "What do you love doing?",
-      "What kind of movies do you enjoy?",
-      "What can't you stand?",
-      "Are you into technology?",
-      "Do you prefer small groups or big groups?",
-      "What do you honestly dislike?"
-    ]
+    "talkPrompts": [
+      "What's up?",
+      "How's your day going?",
+      "Where are you from?",
+      "What have you been up to?",
+      "What are you guys talking about?",
+      "How did you find this server?",
+      "What do you usually do for fun?",
+      "Do you play any games?"
+    ],
+    "reading": []
   },
-
-  // ── Island 05: My Home ──────────────────────────────
   {
-    id: "island05", number: 5, name: "My Home", emoji: "🏠",
-    description: "Your house, room, and belongings.",
-    unlockedByDefault: false,
-
-    vocabulary: [
-      { en: "apartment", pt: "apartamento", approx: "a-part-ment", ipa: "/əˈpɑːrtmənt/" },
-      { en: "house", pt: "casa", approx: "háus", ipa: "/haʊs/" },
-      { en: "room", pt: "quarto", approx: "rúm", ipa: "/ruːm/" },
-      { en: "kitchen", pt: "cozinha", approx: "quí-tchen", ipa: "/ˈkɪtʃɪn/" },
-      { en: "bathroom", pt: "banheiro", approx: "báz-rúm", ipa: "/ˈbɑːθruːm/" },
-      { en: "bedroom", pt: "quarto", approx: "béd-rúm", ipa: "/ˈbedruːm/" },
-      { en: "living room", pt: "sala", approx: "lí-ving rúm", ipa: "/ˈlɪvɪŋ ruːm/" },
-      { en: "balcony", pt: "varanda", approx: "bál-co-ni", ipa: "/ˈbælkəni/" },
-      { en: "furniture", pt: "móveis", approx: "fér-ni-ter", ipa: "/ˈfɜːrnɪtʃər/" },
-      { en: "bed", pt: "cama", approx: "béd", ipa: "/bed/" },
-      { en: "sofa", pt: "sofá", approx: "só-fa", ipa: "/ˈsoʊfə/" },
-      { en: "table", pt: "mesa", approx: "téi-boul", ipa: "/ˈteɪbl/" },
-      { en: "chair", pt: "cadeira", approx: "tchéir", ipa: "/tʃeər/" },
-      { en: "window", pt: "janela", approx: "uín-dou", ipa: "/ˈwɪndoʊ/" },
-      { en: "door", pt: "porta", approx: "dór", ipa: "/dɔːr/" },
-      { en: "floor", pt: "chão", approx: "flór", ipa: "/flɔːr/" },
-      { en: "wall", pt: "parede", approx: "uól", ipa: "/wɔːl/" },
-      { en: "neighborhood", pt: "bairro", approx: "néi-ber-hud", ipa: "/ˈneɪbərhʊd/" },
-      { en: "building", pt: "prédio", approx: "bíl-ding", ipa: "/ˈbɪldɪŋ/" },
-      { en: "elevator", pt: "elevador", approx: "é-le-vei-ter", ipa: "/ˈelɪveɪtər/" },
-      { en: "rent", pt: "aluguel", approx: "rént", ipa: "/rent/" },
-      { en: "comfortable", pt: "confortável", approx: "cóm-fer-ta-boul", ipa: "/ˈkʌmftəbl/" },
-      { en: "spacious", pt: "amplo / espaçoso", approx: "spéi-xos", ipa: "/ˈspeɪʃəs/" },
-      { en: "quiet", pt: "silencioso", approx: "cuá-et", ipa: "/ˈkwaɪət/" },
-      { en: "clean", pt: "limpo", approx: "clín", ipa: "/kliːn/" }
-    ],
-
-    coreSentences: [
-      { en: "I live in an apartment.", pt: "Eu moro em um apartamento." },
-      { en: "My apartment has two bedrooms.", pt: "Meu apartamento tem dois quartos." },
-      { en: "I have a small kitchen.", pt: "Eu tenho uma cozinha pequena." },
-      { en: "My bedroom is very comfortable.", pt: "Meu quarto é muito confortável." },
-      { en: "I have a balcony with a nice view.", pt: "Eu tenho uma varanda com uma vista legal." },
-      { en: "The living room is spacious.", pt: "A sala é ampla." },
-      { en: "My apartment is in a quiet neighborhood.", pt: "Meu apartamento fica num bairro tranquilo." },
-      { en: "The building has an elevator.", pt: "O prédio tem elevador." },
-      { en: "I pay rent every month.", pt: "Eu pago aluguel todo mês." },
-      { en: "I need to buy more furniture.", pt: "Eu preciso comprar mais móveis." },
-      { en: "My room has a big window.", pt: "Meu quarto tem uma janela grande." },
-      { en: "I like keeping my home clean.", pt: "Eu gosto de manter minha casa limpa." },
-      { en: "There is a table in the kitchen.", pt: "Tem uma mesa na cozinha." },
-      { en: "I have a sofa in the living room.", pt: "Eu tenho um sofá na sala." },
-      { en: "The walls are white.", pt: "As paredes são brancas." },
-      { en: "I live on the third floor.", pt: "Eu moro no terceiro andar." },
-      { en: "My neighborhood is very safe.", pt: "Meu bairro é muito seguro." },
-      { en: "I love my apartment.", pt: "Eu amo meu apartamento." },
-      { en: "There is a bed and a desk in my room.", pt: "Tem uma cama e uma mesa no meu quarto." },
-      { en: "My home is very cozy.", pt: "Minha casa é muito aconchegante." }
-    ],
-
-    patterns: [
+    "id": "island04",
+    "number": 4,
+    "name": "Stories & Experiences",
+    "emoji": "📖",
+    "description": "Tell stories, describe experiences and talk about what happened.",
+    "unlockedByDefault": false,
+    "goal": "Tell clear stories about past experiences.",
+    "vocabulary": [
       {
-        title: "There is / There are + noun",
-        examples: [
-          "There is a table in the kitchen.",
-          "There is a bed in my room.",
-          "There are two bedrooms.",
-          "There is a balcony."
+        "en": "story",
+        "pt": "história",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "experience",
+        "pt": "experiência",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "memory",
+        "pt": "memória/lembrança",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "childhood",
+        "pt": "infância",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "past",
+        "pt": "passado",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "once",
+        "pt": "uma vez",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "suddenly",
+        "pt": "de repente",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "then",
+        "pt": "então/depois",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "while",
+        "pt": "enquanto",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "before",
+        "pt": "antes",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "after",
+        "pt": "depois",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "first",
+        "pt": "primeiro",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "finally",
+        "pt": "finalmente",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "happen",
+        "pt": "acontecer",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "happened",
+        "pt": "aconteceu",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "feel",
+        "pt": "sentir",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "felt",
+        "pt": "sentiu",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "realize",
+        "pt": "perceber",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "decide",
+        "pt": "decidir",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "try",
+        "pt": "tentar",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "fail",
+        "pt": "falhar",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "succeed",
+        "pt": "ter sucesso",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "remember",
+        "pt": "lembrar",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "forget",
+        "pt": "esquecer",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "learn",
+        "pt": "aprender",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "mistake",
+        "pt": "erro",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "lesson",
+        "pt": "lição",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "challenge",
+        "pt": "desafio",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "unexpected",
+        "pt": "inesperado",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "embarrassing",
+        "pt": "constrangedor",
+        "approx": "",
+        "ipa": ""
+      }
+    ],
+    "coreSentences": [
+      {
+        "en": "Last year, I worked on a big project.",
+        "pt": "No ano passado, trabalhei em um projeto grande."
+      },
+      {
+        "en": "Something unexpected happened.",
+        "pt": "Algo inesperado aconteceu."
+      },
+      {
+        "en": "At first, I didn't know what to do.",
+        "pt": "No começo, eu não sabia o que fazer."
+      },
+      {
+        "en": "Then I realized I had a problem.",
+        "pt": "Então percebi que tinha um problema."
+      },
+      {
+        "en": "I decided to ask for help.",
+        "pt": "Decidi pedir ajuda."
+      },
+      {
+        "en": "We talked about the problem.",
+        "pt": "Nós conversamos sobre o problema."
+      },
+      {
+        "en": "In the end, we found a solution.",
+        "pt": "No fim, encontramos uma solução."
+      },
+      {
+        "en": "I learned a lot from that experience.",
+        "pt": "Aprendi muito com essa experiência."
+      },
+      {
+        "en": "When I was younger, I liked different things.",
+        "pt": "Quando eu era mais nova, eu gostava de coisas diferentes."
+      },
+      {
+        "en": "I remember that day very clearly.",
+        "pt": "Lembro daquele dia com muita clareza."
+      },
+      {
+        "en": "I made a mistake, but I learned from it.",
+        "pt": "Cometi um erro, mas aprendi com ele."
+      },
+      {
+        "en": "I've had some difficult experiences.",
+        "pt": "Já tive algumas experiências difíceis."
+      },
+      {
+        "en": "One of the funniest things happened by accident.",
+        "pt": "Uma das coisas mais engraçadas aconteceu por acidente."
+      },
+      {
+        "en": "I didn't expect that to happen.",
+        "pt": "Eu não esperava que aquilo acontecesse."
+      },
+      {
+        "en": "Suddenly, everything changed.",
+        "pt": "De repente, tudo mudou."
+      },
+      {
+        "en": "After that, I became more careful.",
+        "pt": "Depois disso, fiquei mais cuidadosa."
+      },
+      {
+        "en": "Before that, I had never done it.",
+        "pt": "Antes disso, eu nunca tinha feito aquilo."
+      },
+      {
+        "en": "I've never forgotten that experience.",
+        "pt": "Nunca esqueci aquela experiência."
+      },
+      {
+        "en": "It was embarrassing at the time.",
+        "pt": "Foi constrangedor na época."
+      },
+      {
+        "en": "Now I can laugh about it.",
+        "pt": "Agora consigo rir disso."
+      },
+      {
+        "en": "What happened next?",
+        "pt": "O que aconteceu depois?"
+      },
+      {
+        "en": "What did you learn from it?",
+        "pt": "O que você aprendeu com isso?"
+      },
+      {
+        "en": "Have you ever experienced something similar?",
+        "pt": "Você já passou por algo parecido?"
+      },
+      {
+        "en": "That reminds me of something that happened to me.",
+        "pt": "Isso me lembra algo que aconteceu comigo."
+      },
+      {
+        "en": "Let me tell you what happened.",
+        "pt": "Deixa eu te contar o que aconteceu."
+      }
+    ],
+    "patterns": [
+      {
+        "title": "First, + event",
+        "examples": [
+          "First, I arrived at work.",
+          "What happened first?"
         ],
-        variationBank: [
-          "There is a sofa in the living room.",
-          "There are big windows.",
-          "There is an elevator in the building.",
-          "There are three chairs."
+        "variationBank": [
+          "First, I arrived at work.",
+          "First, I didn't...",
+          "What happened first?"
         ]
       },
       {
-        title: "I have + adjective + noun",
-        examples: [
-          "I have a small kitchen.",
-          "I have a big window.",
-          "I have a comfortable bed.",
-          "I have a nice view."
+        "title": "Then, + event",
+        "examples": [
+          "Then, we found a problem.",
+          "What happened then?"
         ],
-        variationBank: [
-          "I have a spacious living room.",
-          "I have a clean bathroom.",
-          "I have a quiet neighborhood.",
-          "I have a cozy apartment."
+        "variationBank": [
+          "Then, we found a problem.",
+          "Then, we didn't...",
+          "What happened then?"
         ]
       },
       {
-        title: "My + noun + is + adjective",
-        examples: [
-          "My bedroom is very comfortable.",
-          "My apartment is in a quiet neighborhood.",
-          "My neighborhood is very safe.",
-          "My home is very cozy."
+        "title": "Suddenly, + event",
+        "examples": [
+          "Suddenly, the lights went out.",
+          "What happened suddenly?"
         ],
-        variationBank: [
-          "My kitchen is small but clean.",
-          "My living room is spacious.",
-          "My balcony has a nice view.",
-          "My apartment is on the third floor."
+        "variationBank": [
+          "Suddenly, the lights went out.",
+          "—",
+          "What happened suddenly?"
+        ]
+      },
+      {
+        "title": "I realized + clause",
+        "examples": [
+          "I realized I had a problem.",
+          "When did you realize it?"
+        ],
+        "variationBank": [
+          "I realized I had a problem.",
+          "I didn't realize...",
+          "When did you realize it?"
+        ]
+      },
+      {
+        "title": "I decided to + verb",
+        "examples": [
+          "I decided to ask for help.",
+          "What did you decide?"
+        ],
+        "variationBank": [
+          "I decided to ask for help.",
+          "I decided not to...",
+          "What did you decide?"
+        ]
+      },
+      {
+        "title": "In the end, + result",
+        "examples": [
+          "In the end, we solved it.",
+          "What happened in the end?"
+        ],
+        "variationBank": [
+          "In the end, we solved it.",
+          "In the end, we didn't...",
+          "What happened in the end?"
+        ]
+      },
+      {
+        "title": "I learned + lesson",
+        "examples": [
+          "I learned a lot from it.",
+          "What did you learn?"
+        ],
+        "variationBank": [
+          "I learned a lot from it.",
+          "I didn't learn...",
+          "What did you learn?"
+        ]
+      },
+      {
+        "title": "Have you ever + past participle?",
+        "examples": [
+          "Have you ever traveled abroad?",
+          "Have you ever...?"
+        ],
+        "variationBank": [
+          "Have you ever traveled abroad?",
+          "I've never...",
+          "Have you ever...?"
         ]
       }
     ],
-
-    variations: [
+    "variations": [
       {
-        base: "I live in an apartment.",
-        affirmative: "I live in an apartment.",
-        negative: "I don't live in a house.",
-        question: "Do you live in an apartment?",
-        past: "I lived in a house before.",
-        future: "I'm going to live in a bigger apartment."
+        "base": "First, I arrived at work.",
+        "affirmative": "First, I arrived at work.",
+        "negative": "First, I didn't...",
+        "question": "What happened first?",
+        "past": "",
+        "future": ""
       },
       {
-        base: "My apartment has two bedrooms.",
-        affirmative: "My apartment has two bedrooms.",
-        negative: "My apartment doesn't have a balcony.",
-        question: "Does your apartment have a balcony?",
-        past: "My apartment had one bedroom before.",
-        future: null
+        "base": "Then, we found a problem.",
+        "affirmative": "Then, we found a problem.",
+        "negative": "Then, we didn't...",
+        "question": "What happened then?",
+        "past": "",
+        "future": ""
       },
       {
-        base: "I pay rent every month.",
-        affirmative: "I pay rent every month.",
-        negative: "I don't pay rent.",
-        question: "Do you pay rent?",
-        past: "I paid rent last month.",
-        future: "I'm going to pay rent next week."
+        "base": "Suddenly, the lights went out.",
+        "affirmative": "Suddenly, the lights went out.",
+        "negative": "",
+        "question": "What happened suddenly?",
+        "past": "",
+        "future": ""
+      },
+      {
+        "base": "I realized I had a problem.",
+        "affirmative": "I realized I had a problem.",
+        "negative": "I didn't realize...",
+        "question": "When did you realize it?",
+        "past": "",
+        "future": ""
+      },
+      {
+        "base": "I decided to ask for help.",
+        "affirmative": "I decided to ask for help.",
+        "negative": "I decided not to...",
+        "question": "What did you decide?",
+        "past": "",
+        "future": ""
       }
     ],
-
-    questions: [
-      { q: "Do you live in an apartment or a house?", sample: "I live in an apartment." },
-      { q: "How many bedrooms does your apartment have?", sample: "My apartment has two bedrooms." },
-      { q: "Is your neighborhood quiet?", sample: "Yes, my neighborhood is very quiet and safe." },
-      { q: "What is your favorite room?", sample: "My bedroom is my favorite room." },
-      { q: "Do you have a balcony?", sample: "Yes, I have a balcony with a nice view." },
-      { q: "What floor do you live on?", sample: "I live on the third floor." },
-      { q: "Do you have an elevator in your building?", sample: "Yes, the building has an elevator." },
-      { q: "Do you pay rent?", sample: "Yes, I pay rent every month." },
-      { q: "Is your home comfortable?", sample: "Yes, my home is very cozy and comfortable." },
-      { q: "What furniture do you have?", sample: "I have a bed, a sofa, a table, and chairs." },
-      { q: "Do you like keeping your home clean?", sample: "Yes, I like keeping my home clean." },
-      { q: "What would you like to change about your home?", sample: "I would like to have more space." },
-      { q: "Do you live alone?", sample: "No, I live with my family." },
-      { q: "Is your kitchen big or small?", sample: "My kitchen is small but functional." },
-      { q: "What color are the walls?", sample: "The walls are white." }
+    "questions": [
+      {
+        "q": "What happened?",
+        "sample": "Last year, I worked on a big project."
+      },
+      {
+        "q": "What happened next?",
+        "sample": "Something unexpected happened."
+      },
+      {
+        "q": "What did you do?",
+        "sample": "At first, I didn't know what to do."
+      },
+      {
+        "q": "How did you feel?",
+        "sample": "Then I realized I had a problem."
+      },
+      {
+        "q": "What did you learn?",
+        "sample": "I decided to ask for help."
+      },
+      {
+        "q": "Have you ever made a big mistake?",
+        "sample": "We talked about the problem."
+      },
+      {
+        "q": "Have you ever had an embarrassing moment?",
+        "sample": "In the end, we found a solution."
+      },
+      {
+        "q": "What's a funny memory from your childhood?",
+        "sample": "I learned a lot from that experience."
+      },
+      {
+        "q": "What was your first job like?",
+        "sample": "When I was younger, I liked different things."
+      },
+      {
+        "q": "What was the most difficult experience you've had at work?",
+        "sample": "I remember that day very clearly."
+      },
+      {
+        "q": "What is something unexpected that happened to you?",
+        "sample": "I made a mistake, but I learned from it."
+      },
+      {
+        "q": "Have you ever changed your mind about something important?",
+        "sample": "I've had some difficult experiences."
+      },
+      {
+        "q": "What experience taught you the most?",
+        "sample": "One of the funniest things happened by accident."
+      },
+      {
+        "q": "What would you do differently?",
+        "sample": "I didn't expect that to happen."
+      },
+      {
+        "q": "Tell me a story that you remember clearly.",
+        "sample": "Suddenly, everything changed."
+      }
     ],
-
-    exercises: {
-      translate: [
-        { pt: "Eu moro em um apartamento.", en: "I live in an apartment." },
-        { pt: "Meu quarto é muito confortável.", en: "My bedroom is very comfortable." },
-        { pt: "Tem uma mesa na cozinha.", en: "There is a table in the kitchen." },
-        { pt: "Eu pago aluguel todo mês.", en: "I pay rent every month." },
-        { pt: "Minha casa é muito aconchegante.", en: "My home is very cozy." },
-        { pt: "Meu bairro é muito seguro.", en: "My neighborhood is very safe." }
+    "exercises": {
+      "translate": [
+        {
+          "pt": "No ano passado, trabalhei em um projeto grande.",
+          "answer": "Last year, I worked on a big project."
+        },
+        {
+          "pt": "Algo inesperado aconteceu.",
+          "answer": "Something unexpected happened."
+        },
+        {
+          "pt": "No começo, eu não sabia o que fazer.",
+          "answer": "At first, I didn't know what to do."
+        },
+        {
+          "pt": "Então percebi que tinha um problema.",
+          "answer": "Then I realized I had a problem."
+        },
+        {
+          "pt": "Decidi pedir ajuda.",
+          "answer": "I decided to ask for help."
+        },
+        {
+          "pt": "Nós conversamos sobre o problema.",
+          "answer": "We talked about the problem."
+        },
+        {
+          "pt": "No fim, encontramos uma solução.",
+          "answer": "In the end, we found a solution."
+        },
+        {
+          "pt": "Aprendi muito com essa experiência.",
+          "answer": "I learned a lot from that experience."
+        }
       ],
-      fillBlank: [
-        { sentence: "I live ___ an apartment.", options: ["in", "on", "at", "to"], answer: "in" },
-        { sentence: "There ___ a table in the kitchen.", options: ["is", "are", "has", "have"], answer: "is" },
-        { sentence: "My bedroom is very ___.", options: ["comfortable", "furniture", "kitchen", "balcony"], answer: "comfortable" },
-        { sentence: "I ___ rent every month.", options: ["pay", "pay", "paying", "paid"], answer: "pay" },
-        { sentence: "The building has an ___.", options: ["elevator", "apartment", "bedroom", "kitchen"], answer: "elevator" }
+      "fillBlank": [
+        {
+          "sentence": "When I ___ younger, I liked different things.",
+          "options": [
+            "was",
+            "work",
+            "like",
+            "know"
+          ],
+          "answer": "was"
+        },
+        {
+          "sentence": "I remember ___ day very clearly.",
+          "options": [
+            "that",
+            "work",
+            "like",
+            "know"
+          ],
+          "answer": "that"
+        },
+        {
+          "sentence": "I made ___ mistake, but I learned from it.",
+          "options": [
+            "a",
+            "work",
+            "like",
+            "know"
+          ],
+          "answer": "a"
+        },
+        {
+          "sentence": "I've had ___ difficult experiences.",
+          "options": [
+            "some",
+            "work",
+            "like",
+            "know"
+          ],
+          "answer": "some"
+        },
+        {
+          "sentence": "One of ___ funniest things happened by accident.",
+          "options": [
+            "the",
+            "work",
+            "like",
+            "know"
+          ],
+          "answer": "the"
+        },
+        {
+          "sentence": "I didn't ___ that to happen.",
+          "options": [
+            "expect",
+            "work",
+            "like",
+            "know"
+          ],
+          "answer": "expect"
+        },
+        {
+          "sentence": "After that, ___ became more careful.",
+          "options": [
+            "I",
+            "work",
+            "like",
+            "know"
+          ],
+          "answer": "I"
+        }
       ],
-      multipleChoice: [
-        { q: 'What does "spacious" mean?', options: ["amplo / espaçoso", "pequeno", "escuro", "barato"], answer: "amplo / espaçoso" },
-        { q: 'What does "neighborhood" mean?', options: ["bairro", "apartamento", "cidade", "rua"], answer: "bairro" },
-        { q: 'What does "furniture" mean?', options: ["móveis", "comida", "roupas", "livros"], answer: "móveis" }
+      "multipleChoice": [
+        {
+          "q": "What does \"Before that, I had never done it.\" mean?",
+          "options": [
+            "Antes disso, eu nunca tinha feito aquilo.",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Antes disso, eu nunca tinha feito aquilo."
+        },
+        {
+          "q": "What does \"I've never forgotten that experience.\" mean?",
+          "options": [
+            "Nunca esqueci aquela experiência.",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Nunca esqueci aquela experiência."
+        },
+        {
+          "q": "What does \"It was embarrassing at the time.\" mean?",
+          "options": [
+            "Foi constrangedor na época.",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Foi constrangedor na época."
+        },
+        {
+          "q": "What does \"Now I can laugh about it.\" mean?",
+          "options": [
+            "Agora consigo rir disso.",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Agora consigo rir disso."
+        },
+        {
+          "q": "What does \"What happened next?\" mean?",
+          "options": [
+            "O que aconteceu depois?",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "O que aconteceu depois?"
+        },
+        {
+          "q": "What does \"What did you learn from it?\" mean?",
+          "options": [
+            "O que você aprendeu com isso?",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "O que você aprendeu com isso?"
+        },
+        {
+          "q": "What does \"Have you ever experienced something similar?\" mean?",
+          "options": [
+            "Você já passou por algo parecido?",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Você já passou por algo parecido?"
+        },
+        {
+          "q": "What does \"That reminds me of something that happened to me.\" mean?",
+          "options": [
+            "Isso me lembra algo que aconteceu comigo.",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Isso me lembra algo que aconteceu comigo."
+        }
       ],
-      rearrange: [
-        { scrambled: ["in", "live", "I", "apartment", "an"], answer: "I live in an apartment" },
-        { scrambled: ["a", "There", "table", "is", "kitchen", "in", "the"], answer: "There is a table in the kitchen" },
-        { scrambled: ["bedroom", "My", "comfortable", "is", "very"], answer: "My bedroom is very comfortable" },
-        { scrambled: ["every", "I", "rent", "month", "pay"], answer: "I pay rent every month" }
+      "rearrange": [
+        {
+          "scrambled": [
+            "project",
+            "big",
+            "a",
+            "on",
+            "worked",
+            "I",
+            "year",
+            "Last"
+          ],
+          "answer": "Last year, I worked on a big project"
+        },
+        {
+          "scrambled": [
+            "do",
+            "to",
+            "what",
+            "know",
+            "didn't",
+            "I",
+            "first",
+            "At"
+          ],
+          "answer": "At first, I didn't know what to do"
+        },
+        {
+          "scrambled": [
+            "problem",
+            "a",
+            "had",
+            "I",
+            "realized",
+            "I",
+            "Then"
+          ],
+          "answer": "Then I realized I had a problem"
+        },
+        {
+          "scrambled": [
+            "help",
+            "for",
+            "ask",
+            "to",
+            "decided",
+            "I"
+          ],
+          "answer": "I decided to ask for help"
+        },
+        {
+          "scrambled": [
+            "problem",
+            "the",
+            "about",
+            "talked",
+            "We"
+          ],
+          "answer": "We talked about the problem"
+        },
+        {
+          "scrambled": [
+            "solution",
+            "a",
+            "found",
+            "we",
+            "end",
+            "the",
+            "In"
+          ],
+          "answer": "In the end, we found a solution"
+        },
+        {
+          "scrambled": [
+            "experience",
+            "that",
+            "from",
+            "lot",
+            "a",
+            "learned",
+            "I"
+          ],
+          "answer": "I learned a lot from that experience"
+        }
       ],
-      listening: [
-        { audio: "I live in an apartment.", options: ["I live in an apartment.", "I live in a house.", "I live in a hotel."], answer: "I live in an apartment." },
-        { audio: "There is a table in the kitchen.", options: ["There is a table in the kitchen.", "There is a bed in the kitchen.", "There is a sofa in the kitchen."], answer: "There is a table in the kitchen." },
-        { audio: "My neighborhood is very safe.", options: ["My neighborhood is very safe.", "My neighborhood is very noisy.", "My neighborhood is very big."], answer: "My neighborhood is very safe." }
+      "listening": [
+        {
+          "audio": "Last year, I worked on a big project.",
+          "options": [
+            "Last year, I worked on a big project.",
+            "Something unexpected happened.",
+            "At first, I didn't know what to do."
+          ],
+          "answer": "Last year, I worked on a big project."
+        },
+        {
+          "audio": "Something unexpected happened.",
+          "options": [
+            "Something unexpected happened.",
+            "At first, I didn't know what to do.",
+            "Then I realized I had a problem."
+          ],
+          "answer": "Something unexpected happened."
+        },
+        {
+          "audio": "At first, I didn't know what to do.",
+          "options": [
+            "At first, I didn't know what to do.",
+            "Then I realized I had a problem.",
+            "I decided to ask for help."
+          ],
+          "answer": "At first, I didn't know what to do."
+        },
+        {
+          "audio": "Then I realized I had a problem.",
+          "options": [
+            "Then I realized I had a problem.",
+            "I decided to ask for help.",
+            "We talked about the problem."
+          ],
+          "answer": "Then I realized I had a problem."
+        },
+        {
+          "audio": "I decided to ask for help.",
+          "options": [
+            "I decided to ask for help.",
+            "We talked about the problem.",
+            "In the end, we found a solution."
+          ],
+          "answer": "I decided to ask for help."
+        },
+        {
+          "audio": "We talked about the problem.",
+          "options": [
+            "We talked about the problem.",
+            "In the end, we found a solution.",
+            "I learned a lot from that experience."
+          ],
+          "answer": "We talked about the problem."
+        },
+        {
+          "audio": "In the end, we found a solution.",
+          "options": [
+            "In the end, we found a solution.",
+            "I learned a lot from that experience.",
+            "When I was younger, I liked different things."
+          ],
+          "answer": "In the end, we found a solution."
+        },
+        {
+          "audio": "I learned a lot from that experience.",
+          "options": [
+            "I learned a lot from that experience.",
+            "When I was younger, I liked different things.",
+            "I remember that day very clearly."
+          ],
+          "answer": "I learned a lot from that experience."
+        }
       ]
     },
-
-    speakingSentences: [
-      "I live in an apartment.",
-      "My bedroom is very comfortable.",
-      "There is a table in the kitchen.",
-      "My neighborhood is very safe.",
-      "I love my apartment."
+    "speakingSentences": [
+      "Last year, I worked on a big project.",
+      "Something unexpected happened.",
+      "At first, I didn't know what to do.",
+      "Then I realized I had a problem.",
+      "I decided to ask for help.",
+      "We talked about the problem.",
+      "In the end, we found a solution.",
+      "I learned a lot from that experience."
     ],
-
-    talkPrompts: [
-      "Do you live in an apartment or a house?",
-      "Is your neighborhood quiet?",
-      "What is your favorite room?",
-      "Do you have a balcony?",
-      "What furniture do you have?",
-      "What would you like to change about your home?"
-    ]
+    "talkPrompts": [
+      "What happened?",
+      "What happened next?",
+      "What did you do?",
+      "How did you feel?",
+      "What did you learn?",
+      "Have you ever made a big mistake?",
+      "Have you ever had an embarrassing moment?",
+      "What's a funny memory from your childhood?"
+    ],
+    "reading": []
   },
-
-  // ── Island 06: Food & Drinks ─────────────────────────
   {
-    id: "island06", number: 6, name: "Food & Drinks", emoji: "🍽️",
-    description: "Food, drinks and eating habits.",
-    unlockedByDefault: false,
-
-    vocabulary: [
-      { en: "meal", pt: "refeição", approx: "míl", ipa: "/miːl/" },
-      { en: "snack", pt: "lanchinho", approx: "snék", ipa: "/snæk/" },
-      { en: "rice", pt: "arroz", approx: "ráis", ipa: "/raɪs/" },
-      { en: "beans", pt: "feijão", approx: "bíns", ipa: "/biːnz/" },
-      { en: "meat", pt: "carne", approx: "mít", ipa: "/miːt/" },
-      { en: "chicken", pt: "frango", approx: "chí-ken", ipa: "/ˈtʃɪkɪn/" },
-      { en: "fish", pt: "peixe", approx: "físh", ipa: "/fɪʃ/" },
-      { en: "salad", pt: "salada", approx: "sá-led", ipa: "/səˈlɑːd/" },
-      { en: "fruit", pt: "fruta", approx: "frút", ipa: "/fruːt/" },
-      { en: "bread", pt: "pão", approx: "bréd", ipa: "/bred/" },
-      { en: "coffee", pt: "café", approx: "có-fi", ipa: "/ˈkɒfi/" },
-      { en: "water", pt: "água", approx: "ó-ter", ipa: "/ˈwɔːtər/" },
-      { en: "juice", pt: "suco", approx: "djúss", ipa: "/dʒuːs/" },
-      { en: "milk", pt: "leite", approx: "mílk", ipa: "/mɪlk/" },
-      { en: "sweet", pt: "doce", approx: "suít", ipa: "/swiːt/" },
-      { en: "salty", pt: "salgado", approx: "sól-ti", ipa: "/ˈsɔːlti/" },
-      { en: "spicy", pt: "apimentado", approx: "spáis-si", ipa: "/ˈspaɪsi/" },
-      { en: "hungry", pt: "com fome", approx: "hún-gri", ipa: "/ˈhʌŋɡri/" },
-      { en: "thirsty", pt: "com sede", approx: "thérs-ti", ipa: "/ˈθɜːrsti/" },
-      { en: "to cook", pt: "cozinhar", approx: "cúc", ipa: "/kʊk/" },
-      { en: "to order", pt: "pedir", approx: "ór-der", ipa: "/ˈɔːrdər/" },
-      { en: "restaurant", pt: "restaurante", approx: "rés-tu-rant", ipa: "/ˈrestərɒnt/" },
-      { en: "breakfast", pt: "café da manhã", approx: "bré-fest", ipa: "/ˈbrekfəst/" },
-      { en: "lunch", pt: "almoço", approx: "lónch", ipa: "/lʌntʃ/" },
-      { en: "dinner", pt: "jantar", approx: "dí-ner", ipa: "/ˈdɪnər/" }
-    ],
-
-    coreSentences: [
-      { en: "I usually have rice and beans for lunch.", pt: "Eu geralmente como arroz e feijão no almoço." },
-      { en: "I love eating chicken.", pt: "Eu adoro comer frango." },
-      { en: "I am not a big fan of fish.", pt: "Eu não sou muito fã de peixe." },
-      { en: "I usually have coffee in the morning.", pt: "Eu geralmente tomo café de manhã." },
-      { en: "I drink a lot of water.", pt: "Eu bebo muita água." },
-      { en: "I like sweet food.", pt: "Eu gosto de comida doce." },
-      { en: "I don't like very salty food.", pt: "Eu não gosto de comida muito salgada." },
-      { en: "I can't eat very spicy food.", pt: "Eu não consigo comer comida muito apimentada." },
-      { en: "I am hungry right now.", pt: "Eu estou com fome agora." },
-      { en: "I am thirsty.", pt: "Eu estou com sede." },
-      { en: "I cook dinner three times a week.", pt: "Eu cozinho o jantar três vezes por semana." },
-      { en: "I usually order food online.", pt: "Eu geralmente peço comida online." },
-      { en: "I like trying new restaurants.", pt: "Eu gosto de experimentar novos restaurantes." },
-      { en: "My favorite food is rice with beans.", pt: "Minha comida favorita é arroz com feijão." },
-      { en: "I usually have a snack at 4 PM.", pt: "Eu geralmente como um lanche às 4 da tarde." },
-      { en: "I like eating fruit for breakfast.", pt: "Eu gosto de comer fruta no café da manhã." },
-      { en: "I don't eat meat every day.", pt: "Eu não como carne todo dia." },
-      { en: "I love Brazilian food.", pt: "Eu adoro comida brasileira." },
-      { en: "I usually eat salad for lunch.", pt: "Eu geralmente como salada no almoço." },
-      { en: "I prefer homemade food.", pt: "Eu prefiro comida caseira." }
-    ],
-
-    patterns: [
+    "id": "island05",
+    "number": 5,
+    "name": "Travel & Culture",
+    "emoji": "✈️",
+    "description": "Handle travel situations and talk about Brazil and other cultures.",
+    "unlockedByDefault": false,
+    "goal": "Handle travel situations and discuss cultures.",
+    "vocabulary": [
       {
-        title: "I usually + verb + for + meal",
-        examples: [
-          "I usually have rice and beans for lunch.",
-          "I usually have coffee in the morning.",
-          "I usually eat salad for dinner.",
-          "I usually have a snack at 4 PM."
+        "en": "trip",
+        "pt": "viagem",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "travel",
+        "pt": "viajar",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "airport",
+        "pt": "aeroporto",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "flight",
+        "pt": "voo",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "passport",
+        "pt": "passaporte",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "boarding pass",
+        "pt": "cartão de embarque",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "luggage",
+        "pt": "bagagem",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "hotel",
+        "pt": "hotel",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "reservation",
+        "pt": "reserva",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "room",
+        "pt": "quarto",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "check-in",
+        "pt": "check-in",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "checkout",
+        "pt": "check-out",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "ticket",
+        "pt": "bilhete/passagem",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "station",
+        "pt": "estação",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "bus",
+        "pt": "ônibus",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "train",
+        "pt": "trem",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "restaurant",
+        "pt": "restaurante",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "menu",
+        "pt": "cardápio",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "bill",
+        "pt": "conta",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "beach",
+        "pt": "praia",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "culture",
+        "pt": "cultura",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "custom",
+        "pt": "costume",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "local",
+        "pt": "local",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "tourist",
+        "pt": "turista",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "language",
+        "pt": "idioma",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "country",
+        "pt": "país",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "abroad",
+        "pt": "no exterior",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "nearby",
+        "pt": "por perto",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "direction",
+        "pt": "direção",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "landmark",
+        "pt": "ponto turístico",
+        "approx": "",
+        "ipa": ""
+      }
+    ],
+    "coreSentences": [
+      {
+        "en": "I'd like to travel abroad.",
+        "pt": "Eu gostaria de viajar para o exterior."
+      },
+      {
+        "en": "I've never been to the United States.",
+        "pt": "Nunca fui aos Estados Unidos."
+      },
+      {
+        "en": "Where is the nearest hotel?",
+        "pt": "Onde fica o hotel mais próximo?"
+      },
+      {
+        "en": "I have a reservation.",
+        "pt": "Eu tenho uma reserva."
+      },
+      {
+        "en": "I'd like to check in.",
+        "pt": "Gostaria de fazer check-in."
+      },
+      {
+        "en": "Could you help me with my luggage?",
+        "pt": "Pode me ajudar com minha bagagem?"
+      },
+      {
+        "en": "Where is the train station?",
+        "pt": "Onde fica a estação de trem?"
+      },
+      {
+        "en": "How much is a ticket?",
+        "pt": "Quanto custa uma passagem?"
+      },
+      {
+        "en": "How long does it take?",
+        "pt": "Quanto tempo leva?"
+      },
+      {
+        "en": "Is there a bus nearby?",
+        "pt": "Tem um ônibus por perto?"
+      },
+      {
+        "en": "Could you recommend a restaurant?",
+        "pt": "Pode recomendar um restaurante?"
+      },
+      {
+        "en": "Could I see the menu, please?",
+        "pt": "Posso ver o cardápio, por favor?"
+      },
+      {
+        "en": "Could I have the bill, please?",
+        "pt": "Pode trazer a conta, por favor?"
+      },
+      {
+        "en": "I'm looking for this address.",
+        "pt": "Estou procurando este endereço."
+      },
+      {
+        "en": "Could you tell me how to get there?",
+        "pt": "Pode me dizer como chegar lá?"
+      },
+      {
+        "en": "I'm visiting Brazil for the first time.",
+        "pt": "Estou visitando o Brasil pela primeira vez."
+      },
+      {
+        "en": "Bahia has beautiful beaches and natural areas.",
+        "pt": "A Bahia tem praias e áreas naturais lindas."
+      },
+      {
+        "en": "Brazil is a very diverse country.",
+        "pt": "O Brasil é um país muito diverso."
+      },
+      {
+        "en": "Every region has its own culture.",
+        "pt": "Cada região tem sua própria cultura."
+      },
+      {
+        "en": "What is your country like?",
+        "pt": "Como é o seu país?"
+      },
+      {
+        "en": "What should I visit there?",
+        "pt": "O que eu deveria visitar lá?"
+      },
+      {
+        "en": "What is the local food like?",
+        "pt": "Como é a comida local?"
+      },
+      {
+        "en": "I'd love to learn about your culture.",
+        "pt": "Eu adoraria aprender sobre sua cultura."
+      },
+      {
+        "en": "I want to experience everyday life, not just tourist attractions.",
+        "pt": "Quero vivenciar a vida cotidiana, não apenas atrações turísticas."
+      },
+      {
+        "en": "Traveling is a good way to learn about people.",
+        "pt": "Viajar é uma boa forma de aprender sobre as pessoas."
+      }
+    ],
+    "patterns": [
+      {
+        "title": "I'd like to + verb",
+        "examples": [
+          "I'd like to travel.",
+          "What would you like to do?"
         ],
-        variationBank: [
-          "I usually eat fruit for breakfast.",
-          "I usually cook dinner at night.",
-          "I usually order lunch at work.",
-          "I usually have juice for breakfast."
+        "variationBank": [
+          "I'd like to travel.",
+          "I wouldn't like to...",
+          "What would you like to do?"
         ]
       },
       {
-        title: "I like / don't like + noun",
-        examples: [
-          "I like sweet food.",
-          "I don't like very salty food.",
-          "I like trying new restaurants.",
-          "I don't eat meat every day."
+        "title": "Where is + place?",
+        "examples": [
+          "Where is the station?",
+          "Where is...?"
         ],
-        variationBank: [
-          "I like homemade food.",
-          "I don't like spicy food.",
-          "I like eating chicken.",
-          "I don't like fish."
+        "variationBank": [
+          "Where is the station?",
+          "Where isn't...?",
+          "Where is...?"
         ]
       },
       {
-        title: "I am + hungry / thirsty",
-        examples: [
-          "I am hungry right now.",
-          "I am thirsty.",
-          "I am not hungry yet.",
-          "I am so hungry."
+        "title": "How much is + thing?",
+        "examples": [
+          "How much is a ticket?",
+          "How much is it?"
         ],
-        variationBank: [
-          "I am very thirsty.",
-          "I am starving.",
-          "I am not thirsty.",
-          "I am a little hungry."
+        "variationBank": [
+          "How much is a ticket?",
+          "—",
+          "How much is it?"
+        ]
+      },
+      {
+        "title": "Could I + verb?",
+        "examples": [
+          "Could I see the menu?",
+          "Could I...?"
+        ],
+        "variationBank": [
+          "Could I see the menu?",
+          "Could I not...?",
+          "Could I...?"
+        ]
+      },
+      {
+        "title": "Could you tell me + question?",
+        "examples": [
+          "Could you tell me how to get there?",
+          "Could you tell me...?"
+        ],
+        "variationBank": [
+          "Could you tell me how to get there?",
+          "—",
+          "Could you tell me...?"
+        ]
+      },
+      {
+        "title": "I'm looking for + thing",
+        "examples": [
+          "I'm looking for my hotel.",
+          "What are you looking for?"
+        ],
+        "variationBank": [
+          "I'm looking for my hotel.",
+          "I'm not looking for...",
+          "What are you looking for?"
+        ]
+      },
+      {
+        "title": "I'd recommend + thing",
+        "examples": [
+          "I'd recommend this restaurant.",
+          "What would you recommend?"
+        ],
+        "variationBank": [
+          "I'd recommend this restaurant.",
+          "I wouldn't recommend...",
+          "What would you recommend?"
+        ]
+      },
+      {
+        "title": "What is + place + like?",
+        "examples": [
+          "What is Brazil like?",
+          "What's it like?"
+        ],
+        "variationBank": [
+          "What is Brazil like?",
+          "—",
+          "What's it like?"
         ]
       }
     ],
-
-    variations: [
+    "variations": [
       {
-        base: "I usually have rice and beans for lunch.",
-        affirmative: "I usually have rice and beans for lunch.",
-        negative: "I don't usually have rice for dinner.",
-        question: "Do you usually have rice and beans for lunch?",
-        past: "I usually had rice and beans for lunch.",
-        future: "I'm going to have rice and beans for lunch."
+        "base": "I'd like to travel.",
+        "affirmative": "I'd like to travel.",
+        "negative": "I wouldn't like to...",
+        "question": "What would you like to do?",
+        "past": "",
+        "future": ""
       },
       {
-        base: "I cook dinner three times a week.",
-        affirmative: "I cook dinner three times a week.",
-        negative: "I don't cook very often.",
-        question: "How often do you cook?",
-        past: "I cooked dinner every day before.",
-        future: "I'm going to cook dinner tonight."
+        "base": "Where is the station?",
+        "affirmative": "Where is the station?",
+        "negative": "Where isn't...?",
+        "question": "Where is...?",
+        "past": "",
+        "future": ""
       },
       {
-        base: "I am hungry right now.",
-        affirmative: "I am hungry right now.",
-        negative: "I am not hungry.",
-        question: "Are you hungry?",
-        past: "I was hungry this morning.",
-        future: "I'm going to be hungry later."
+        "base": "How much is a ticket?",
+        "affirmative": "How much is a ticket?",
+        "negative": "",
+        "question": "How much is it?",
+        "past": "",
+        "future": ""
+      },
+      {
+        "base": "Could I see the menu?",
+        "affirmative": "Could I see the menu?",
+        "negative": "Could I not...?",
+        "question": "Could I...?",
+        "past": "",
+        "future": ""
+      },
+      {
+        "base": "Could you tell me how to get there?",
+        "affirmative": "Could you tell me how to get there?",
+        "negative": "",
+        "question": "Could you tell me...?",
+        "past": "",
+        "future": ""
       }
     ],
-
-    questions: [
-      { q: "What do you usually have for breakfast?", sample: "I usually have coffee and bread." },
-      { q: "What do you usually have for lunch?", sample: "I usually have rice and beans for lunch." },
-      { q: "Do you like cooking?", sample: "Yes, I like cooking dinner." },
-      { q: "How often do you cook?", sample: "I cook three times a week." },
-      { q: "Do you prefer homemade food or restaurant food?", sample: "I prefer homemade food." },
-      { q: "Do you like spicy food?", sample: "No, I can't eat very spicy food." },
-      { q: "Do you eat meat?", sample: "Yes, but not every day." },
-      { q: "What is your favorite food?", sample: "My favorite food is rice with beans." },
-      { q: "Do you like sweet food?", sample: "Yes, I like sweet food." },
-      { q: "Are you a good cook?", sample: "I am okay. I can cook basic things." },
-      { q: "Do you usually eat at a restaurant?", sample: "No, I usually eat at home." },
-      { q: "Do you drink coffee?", sample: "Yes, I usually have coffee in the morning." },
-      { q: "How much water do you drink?", sample: "I drink a lot of water every day." },
-      { q: "What kind of food do you want to try?", sample: "I want to try Japanese food." },
-      { q: "Do you prefer sweet or salty?", sample: "I prefer sweet food." }
+    "questions": [
+      {
+        "q": "Where would you like to travel?",
+        "sample": "I'd like to travel abroad."
+      },
+      {
+        "q": "Have you ever traveled abroad?",
+        "sample": "I've never been to the United States."
+      },
+      {
+        "q": "What country would you like to visit?",
+        "sample": "Where is the nearest hotel?"
+      },
+      {
+        "q": "What would you do there?",
+        "sample": "I have a reservation."
+      },
+      {
+        "q": "What kind of places do you like visiting?",
+        "sample": "I'd like to check in."
+      },
+      {
+        "q": "Do you prefer beaches or cities?",
+        "sample": "Could you help me with my luggage?"
+      },
+      {
+        "q": "What is Brazil like?",
+        "sample": "Where is the train station?"
+      },
+      {
+        "q": "What is Bahia like?",
+        "sample": "How much is a ticket?"
+      },
+      {
+        "q": "What Brazilian food would you recommend?",
+        "sample": "How long does it take?"
+      },
+      {
+        "q": "What should a foreigner know about Brazil?",
+        "sample": "Is there a bus nearby?"
+      },
+      {
+        "q": "What differences between cultures interest you?",
+        "sample": "Could you recommend a restaurant?"
+      },
+      {
+        "q": "Would you live in another country? Why?",
+        "sample": "Could I see the menu, please?"
+      },
+      {
+        "q": "What would you miss about Brazil?",
+        "sample": "Could I have the bill, please?"
+      },
+      {
+        "q": "What would you like to learn from another culture?",
+        "sample": "I'm looking for this address."
+      },
+      {
+        "q": "Plan a five-day trip and explain it.",
+        "sample": "Could you tell me how to get there?"
+      }
     ],
-
-    exercises: {
-      translate: [
-        { pt: "Eu geralmente como arroz e feijão no almoço.", en: "I usually have rice and beans for lunch." },
-        { pt: "Eu adoro comer frango.", en: "I love eating chicken." },
-        { pt: "Eu estou com fome agora.", en: "I am hungry right now." },
-        { pt: "Eu prefiro comida caseira.", en: "I prefer homemade food." },
-        { pt: "Eu não consigo comer comida muito apimentada.", en: "I can't eat very spicy food." },
-        { pt: "Eu bebo muita água.", en: "I drink a lot of water." }
+    "exercises": {
+      "translate": [
+        {
+          "pt": "Eu gostaria de viajar para o exterior.",
+          "answer": "I'd like to travel abroad."
+        },
+        {
+          "pt": "Nunca fui aos Estados Unidos.",
+          "answer": "I've never been to the United States."
+        },
+        {
+          "pt": "Onde fica o hotel mais próximo?",
+          "answer": "Where is the nearest hotel?"
+        },
+        {
+          "pt": "Eu tenho uma reserva.",
+          "answer": "I have a reservation."
+        },
+        {
+          "pt": "Gostaria de fazer check-in.",
+          "answer": "I'd like to check in."
+        },
+        {
+          "pt": "Pode me ajudar com minha bagagem?",
+          "answer": "Could you help me with my luggage?"
+        },
+        {
+          "pt": "Onde fica a estação de trem?",
+          "answer": "Where is the train station?"
+        },
+        {
+          "pt": "Quanto custa uma passagem?",
+          "answer": "How much is a ticket?"
+        }
       ],
-      fillBlank: [
-        { sentence: "I usually have rice ___ beans for lunch.", options: ["and", "or", "but", "with"], answer: "and" },
-        { sentence: "I ___ hungry right now.", options: ["am", "is", "are", "was"], answer: "am" },
-        { sentence: "I like ___ food.", options: ["sweet", "salty", "spicy", "all"], answer: "sweet" },
-        { sentence: "I ___ dinner three times a week.", options: ["cook", "eat", "make", "drink"], answer: "cook" },
-        { sentence: "I prefer ___ food.", options: ["homemade", "frozen", "fast", "raw"], answer: "homemade" }
+      "fillBlank": [
+        {
+          "sentence": "How long ___ it take?",
+          "options": [
+            "does",
+            "work",
+            "like",
+            "know"
+          ],
+          "answer": "does"
+        },
+        {
+          "sentence": "Is there ___ bus nearby?",
+          "options": [
+            "a",
+            "work",
+            "like",
+            "know"
+          ],
+          "answer": "a"
+        },
+        {
+          "sentence": "Could you ___ a restaurant?",
+          "options": [
+            "recommend",
+            "work",
+            "like",
+            "know"
+          ],
+          "answer": "recommend"
+        },
+        {
+          "sentence": "Could I ___ the menu, please?",
+          "options": [
+            "see",
+            "work",
+            "like",
+            "know"
+          ],
+          "answer": "see"
+        },
+        {
+          "sentence": "Could I ___ the bill, please?",
+          "options": [
+            "have",
+            "work",
+            "like",
+            "know"
+          ],
+          "answer": "have"
+        },
+        {
+          "sentence": "I'm looking ___ this address.",
+          "options": [
+            "for",
+            "work",
+            "like",
+            "know"
+          ],
+          "answer": "for"
+        },
+        {
+          "sentence": "Could you ___ me how to get there?",
+          "options": [
+            "tell",
+            "work",
+            "like",
+            "know"
+          ],
+          "answer": "tell"
+        },
+        {
+          "sentence": "I'm visiting ___ for the first time.",
+          "options": [
+            "Brazil",
+            "work",
+            "like",
+            "know"
+          ],
+          "answer": "Brazil"
+        }
       ],
-      multipleChoice: [
-        { q: 'What does "thirsty" mean?', options: ["com sede", "com fome", "cansado", "feliz"], answer: "com sede" },
-        { q: 'What does "spicy" mean?', options: ["apimentado", "doce", "salgado", "frio"], answer: "apimentado" },
-        { q: 'What does "homemade" mean?', options: ["caseiro", "de restaurante", "congelado", "importado"], answer: "caseiro" }
+      "multipleChoice": [
+        {
+          "q": "What does \"Bahia has beautiful beaches and natural areas.\" mean?",
+          "options": [
+            "A Bahia tem praias e áreas naturais lindas.",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "A Bahia tem praias e áreas naturais lindas."
+        },
+        {
+          "q": "What does \"Brazil is a very diverse country.\" mean?",
+          "options": [
+            "O Brasil é um país muito diverso.",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "O Brasil é um país muito diverso."
+        },
+        {
+          "q": "What does \"Every region has its own culture.\" mean?",
+          "options": [
+            "Cada região tem sua própria cultura.",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Cada região tem sua própria cultura."
+        },
+        {
+          "q": "What does \"What is your country like?\" mean?",
+          "options": [
+            "Como é o seu país?",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Como é o seu país?"
+        },
+        {
+          "q": "What does \"What should I visit there?\" mean?",
+          "options": [
+            "O que eu deveria visitar lá?",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "O que eu deveria visitar lá?"
+        },
+        {
+          "q": "What does \"What is the local food like?\" mean?",
+          "options": [
+            "Como é a comida local?",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Como é a comida local?"
+        },
+        {
+          "q": "What does \"I'd love to learn about your culture.\" mean?",
+          "options": [
+            "Eu adoraria aprender sobre sua cultura.",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Eu adoraria aprender sobre sua cultura."
+        },
+        {
+          "q": "What does \"I want to experience everyday life, not just tourist attractions.\" mean?",
+          "options": [
+            "Quero vivenciar a vida cotidiana, não apenas atrações turísticas.",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Quero vivenciar a vida cotidiana, não apenas atrações turísticas."
+        }
       ],
-      rearrange: [
-        { scrambled: ["have", "I", "rice", "usually", "beans", "and"], answer: "I usually have rice and beans" },
-        { scrambled: ["hungry", "am", "I", "right", "now"], answer: "I am hungry right now" },
-        { scrambled: ["like", "I", "eating", "chicken"], answer: "I like eating chicken" },
-        { scrambled: ["cook", "I", "three", "week", "times", "a"], answer: "I cook three times a week" }
+      "rearrange": [
+        {
+          "scrambled": [
+            "abroad",
+            "travel",
+            "to",
+            "like",
+            "I'd"
+          ],
+          "answer": "I'd like to travel abroad"
+        },
+        {
+          "scrambled": [
+            "States",
+            "United",
+            "the",
+            "to",
+            "been",
+            "never",
+            "I've"
+          ],
+          "answer": "I've never been to the United States"
+        },
+        {
+          "scrambled": [
+            "hotel",
+            "nearest",
+            "the",
+            "is",
+            "Where"
+          ],
+          "answer": "Where is the nearest hotel"
+        },
+        {
+          "scrambled": [
+            "reservation",
+            "a",
+            "have",
+            "I"
+          ],
+          "answer": "I have a reservation"
+        },
+        {
+          "scrambled": [
+            "in",
+            "check",
+            "to",
+            "like",
+            "I'd"
+          ],
+          "answer": "I'd like to check in"
+        },
+        {
+          "scrambled": [
+            "luggage",
+            "my",
+            "with",
+            "me",
+            "help",
+            "you",
+            "Could"
+          ],
+          "answer": "Could you help me with my luggage"
+        },
+        {
+          "scrambled": [
+            "station",
+            "train",
+            "the",
+            "is",
+            "Where"
+          ],
+          "answer": "Where is the train station"
+        },
+        {
+          "scrambled": [
+            "ticket",
+            "a",
+            "is",
+            "much",
+            "How"
+          ],
+          "answer": "How much is a ticket"
+        }
       ],
-      listening: [
-        { audio: "I usually have rice and beans for lunch.", options: ["I usually have rice and beans for lunch.", "I usually have pasta for lunch.", "I usually have salad for lunch."], answer: "I usually have rice and beans for lunch." },
-        { audio: "I am hungry right now.", options: ["I am hungry right now.", "I am thirsty right now.", "I am tired right now."], answer: "I am hungry right now." },
-        { audio: "I prefer homemade food.", options: ["I prefer homemade food.", "I prefer restaurant food.", "I prefer fast food."], answer: "I prefer homemade food." }
+      "listening": [
+        {
+          "audio": "I'd like to travel abroad.",
+          "options": [
+            "I'd like to travel abroad.",
+            "I've never been to the United States.",
+            "Where is the nearest hotel?"
+          ],
+          "answer": "I'd like to travel abroad."
+        },
+        {
+          "audio": "I've never been to the United States.",
+          "options": [
+            "I've never been to the United States.",
+            "Where is the nearest hotel?",
+            "I have a reservation."
+          ],
+          "answer": "I've never been to the United States."
+        },
+        {
+          "audio": "Where is the nearest hotel?",
+          "options": [
+            "Where is the nearest hotel?",
+            "I have a reservation.",
+            "I'd like to check in."
+          ],
+          "answer": "Where is the nearest hotel?"
+        },
+        {
+          "audio": "I have a reservation.",
+          "options": [
+            "I have a reservation.",
+            "I'd like to check in.",
+            "Could you help me with my luggage?"
+          ],
+          "answer": "I have a reservation."
+        },
+        {
+          "audio": "I'd like to check in.",
+          "options": [
+            "I'd like to check in.",
+            "Could you help me with my luggage?",
+            "Where is the train station?"
+          ],
+          "answer": "I'd like to check in."
+        },
+        {
+          "audio": "Could you help me with my luggage?",
+          "options": [
+            "Could you help me with my luggage?",
+            "Where is the train station?",
+            "How much is a ticket?"
+          ],
+          "answer": "Could you help me with my luggage?"
+        },
+        {
+          "audio": "Where is the train station?",
+          "options": [
+            "Where is the train station?",
+            "How much is a ticket?",
+            "How long does it take?"
+          ],
+          "answer": "Where is the train station?"
+        },
+        {
+          "audio": "How much is a ticket?",
+          "options": [
+            "How much is a ticket?",
+            "How long does it take?",
+            "Is there a bus nearby?"
+          ],
+          "answer": "How much is a ticket?"
+        }
       ]
     },
-
-    speakingSentences: [
-      "I usually have rice and beans for lunch.",
-      "I love eating chicken.",
-      "I am hungry right now.",
-      "I prefer homemade food.",
-      "I drink a lot of water."
+    "speakingSentences": [
+      "I'd like to travel abroad.",
+      "I've never been to the United States.",
+      "Where is the nearest hotel?",
+      "I have a reservation.",
+      "I'd like to check in.",
+      "Could you help me with my luggage?",
+      "Where is the train station?",
+      "How much is a ticket?"
     ],
-
-    talkPrompts: [
-      "What do you usually have for lunch?",
-      "Do you like cooking?",
-      "Do you prefer homemade food or restaurant food?",
-      "Do you like spicy food?",
-      "What is your favorite food?",
-      "Do you prefer sweet or salty?"
-    ]
+    "talkPrompts": [
+      "Where would you like to travel?",
+      "Have you ever traveled abroad?",
+      "What country would you like to visit?",
+      "What would you do there?",
+      "What kind of places do you like visiting?",
+      "Do you prefer beaches or cities?",
+      "What is Brazil like?",
+      "What is Bahia like?"
+    ],
+    "reading": []
   },
-
-  // ── Island 07: My Work & Studies ─────────────────────
   {
-    id: "island07", number: 7, name: "My Work & Studies", emoji: "💼",
-    description: "Talk about your job, studies, and professional life.",
-    unlockedByDefault: false,
-
-    vocabulary: [
-      { en: "to work", pt: "trabalhar", approx: "uórk", ipa: "/wɜːrk/" },
-      { en: "office", pt: "escritório", approx: "ó-fis", ipa: "/ˈɒfɪs/" },
-      { en: "meeting", pt: "reunião", approx: "mí-ting", ipa: "/ˈmiːtɪŋ/" },
-      { en: "project", pt: "projeto", approx: "pró-djet", ipa: "/ˈprɒdʒekt/" },
-      { en: "deadline", pt: "prazo", approx: "déd-láin", ipa: "/ˈdedlaɪn/" },
-      { en: "colleague", pt: "colega", approx: "có-lig", ipa: "/ˈkɒliːɡ/" },
-      { en: "boss", pt: "chefe", approx: "bóss", ipa: "/bɒs/" },
-      { en: "manager", pt: "gerente", approx: "má-ni-djer", ipa: "/ˈmænɪdʒər/" },
-      { en: "documentation", pt: "documentação", approx: "doc-iu-men-téi-xon", ipa: "/ˌdɒkjumenˈteɪʃn/" },
-      { en: "quality", pt: "qualidade", approx: "cuó-li-ti", ipa: "/ˈkwɒləti/" },
-      { en: "system", pt: "sistema", approx: "sís-tem", ipa: "/ˈsɪstəm/" },
-      { en: "database", pt: "banco de dados", approx: "déi-ta-béiss", ipa: "/ˈdeɪtəbeɪs/" },
-      { en: "analysis", pt: "análise", approx: "u-ná-li-sis", ipa: "/əˈnæləsɪs/" },
-      { en: "report", pt: "relatório", approx: "ri-pórt", ipa: "/rɪˈpɔːrt/" },
-      { en: "task", pt: "tarefa", approx: "tásq", ipa: "/tɑːsk/" },
-      { en: "certificate", pt: "certificado", approx: "ser-ti-fi-cát", ipa: "/sərˈtɪfɪkət/" },
-      { en: "course", pt: "curso", approx: "córs", ipa: "/kɔːrs/" },
-      { en: "university", pt: "universidade", approx: "iu-ni-ver-si-dá-di", ipa: "/ˌjuːnɪˈvɜːrsəti/" },
-      { en: "semester", pt: "semestre", approx: "si-més-ter", ipa: "/sɪˈmestər/" },
-      { en: "assignment", pt: "trabalho / atividade", approx: "u-sáin-ment", ipa: "/əˈsaɪnmənt/" },
-      { en: "career", pt: "carreira", approx: "ká-rír", ipa: "/kəˈrɪər/" },
-      { en: "professional", pt: "profissional", approx: "pro-fe-xo-nal", ipa: "/prəˈfeʃənl/" },
-      { en: "experience", pt: "experiência", approx: "eks-pí-ri-ens", ipa: "/ɪkˈspɪəriəns/" },
-      { en: "to apply", pt: "candidatar-se / aplicar", approx: "u-plái", ipa: "/əˈplaɪ/" },
-      { en: "to interview", pt: "entrevistar", approx: "ín-ter-viu", ipa: "/ˈɪntərvjuː/" }
-    ],
-
-    coreSentences: [
-      { en: "I work with quality and documentation.", pt: "Eu trabalho com qualidade e documentação." },
-      { en: "I studied Systems Analysis and Development.", pt: "Eu estudei Análise e Desenvolvimento de Sistemas." },
-      { en: "I work in an office.", pt: "Eu trabalho em um escritório." },
-      { en: "I have a lot of meetings during the week.", pt: "Eu tenho muitas reuniões durante a semana." },
-      { en: "My boss is very demanding.", pt: "Meu chefe é muito exigente." },
-      { en: "I work with databases and systems.", pt: "Eu trabalho com bancos de dados e sistemas." },
-      { en: "I need to finish this report by Friday.", pt: "Eu preciso terminar este relatório até sexta." },
-      { en: "I have a big project this month.", pt: "Eu tenho um projeto grande este mês." },
-      { en: "I am studying English to improve my career.", pt: "Eu estou estudando inglês para melhorar minha carreira." },
-      { en: "I got a certificate in quality management.", pt: "Eu consegui um certificado em gestão da qualidade." },
-      { en: "I studied at a university in Bahia.", pt: "Eu estudei em uma universidade na Bahia." },
-      { en: "I am a professional in quality management.", pt: "Eu sou profissional em gestão da qualidade." },
-      { en: "I want to work with technology.", pt: "Eu quero trabalhar com tecnologia." },
-      { en: "I have experience with documentation.", pt: "Eu tenho experiência com documentação." },
-      { en: "I applied for a new job last week.", pt: "Eu me candidatei a um novo emprego na semana passada." },
-      { en: "I had an interview yesterday.", pt: "Eu tive uma entrevista ontem." },
-      { en: "I like my job, but I want more challenges.", pt: "Eu gosto do meu trabalho, mas quero mais desafios." },
-      { en: "My colleagues are very nice.", pt: "Meus colegas são muito legais." },
-      { en: "I usually work from 9 to 6.", pt: "Eu geralmente trabalho das 9 às 6." },
-      { en: "I am taking a course in data analysis.", pt: "Estou fazendo um curso de análise de dados." }
-    ],
-
-    patterns: [
+    "id": "island06",
+    "number": 6,
+    "name": "Mind & Relationships",
+    "emoji": "🧠",
+    "description": "Talk about feelings, personality, friendships and human behavior.",
+    "unlockedByDefault": false,
+    "goal": "Talk about emotions, friendships and behavior.",
+    "vocabulary": [
       {
-        title: "I work with + topic / tool",
-        examples: [
-          "I work with quality and documentation.",
-          "I work with databases and systems.",
-          "I work with reports and analysis.",
-          "I work with technology."
+        "en": "feeling",
+        "pt": "sentimento",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "emotion",
+        "pt": "emoção",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "thought",
+        "pt": "pensamento",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "mind",
+        "pt": "mente",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "behavior",
+        "pt": "comportamento",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "habit",
+        "pt": "hábito",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "personality",
+        "pt": "personalidade",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "confidence",
+        "pt": "confiança",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "self-esteem",
+        "pt": "autoestima",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "trust",
+        "pt": "confiança",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "friendship",
+        "pt": "amizade",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "relationship",
+        "pt": "relacionamento",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "boundary",
+        "pt": "limite",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "communication",
+        "pt": "comunicação",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "loneliness",
+        "pt": "solidão",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "happiness",
+        "pt": "felicidade",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "fear",
+        "pt": "medo",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "anger",
+        "pt": "raiva",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "sadness",
+        "pt": "tristeza",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "attachment",
+        "pt": "apego",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "choice",
+        "pt": "escolha",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "desire",
+        "pt": "desejo",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "expectation",
+        "pt": "expectativa",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "support",
+        "pt": "apoio",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "respect",
+        "pt": "respeito",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "honest",
+        "pt": "honesto",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "aware",
+        "pt": "consciente",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "overthink",
+        "pt": "pensar demais",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "cope",
+        "pt": "lidar com",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "change",
+        "pt": "mudança",
+        "approx": "",
+        "ipa": ""
+      }
+    ],
+    "coreSentences": [
+      {
+        "en": "I think people are complicated.",
+        "pt": "Acho que as pessoas são complicadas."
+      },
+      {
+        "en": "I tend to overthink things.",
+        "pt": "Tendo a pensar demais nas coisas."
+      },
+      {
+        "en": "Sometimes I need some time alone.",
+        "pt": "Às vezes preciso de um tempo sozinha."
+      },
+      {
+        "en": "I value honest communication.",
+        "pt": "Valorizo a comunicação honesta."
+      },
+      {
+        "en": "Trust is important in a friendship.",
+        "pt": "Confiança é importante em uma amizade."
+      },
+      {
+        "en": "I think boundaries are important.",
+        "pt": "Acho que limites são importantes."
+      },
+      {
+        "en": "People express feelings in different ways.",
+        "pt": "As pessoas expressam sentimentos de maneiras diferentes."
+      },
+      {
+        "en": "It's hard to know what someone is thinking.",
+        "pt": "É difícil saber o que alguém está pensando."
+      },
+      {
+        "en": "I don't always say what I'm feeling.",
+        "pt": "Nem sempre digo o que estou sentindo."
+      },
+      {
+        "en": "I try to understand other people's perspectives.",
+        "pt": "Tento entender a perspectiva das outras pessoas."
+      },
+      {
+        "en": "What makes someone trustworthy?",
+        "pt": "O que torna alguém confiável?"
+      },
+      {
+        "en": "What makes a good friendship?",
+        "pt": "O que faz uma boa amizade?"
+      },
+      {
+        "en": "Do you think people can change?",
+        "pt": "Você acha que as pessoas podem mudar?"
+      },
+      {
+        "en": "Why do people overthink?",
+        "pt": "Por que as pessoas pensam demais?"
+      },
+      {
+        "en": "How do you deal with stress?",
+        "pt": "Como você lida com estresse?"
+      },
+      {
+        "en": "I think experience changes people.",
+        "pt": "Acho que experiências mudam as pessoas."
+      },
+      {
+        "en": "Everyone has insecurities.",
+        "pt": "Todo mundo tem inseguranças."
+      },
+      {
+        "en": "It's important to respect other people's boundaries.",
+        "pt": "É importante respeitar os limites das outras pessoas."
+      },
+      {
+        "en": "Sometimes we misunderstand each other.",
+        "pt": "Às vezes nos entendemos mal."
+      },
+      {
+        "en": "Good communication can prevent many problems.",
+        "pt": "Boa comunicação pode evitar muitos problemas."
+      },
+      {
+        "en": "I don't want to judge people too quickly.",
+        "pt": "Não quero julgar as pessoas rápido demais."
+      },
+      {
+        "en": "I try to listen before I give advice.",
+        "pt": "Tento ouvir antes de dar conselhos."
+      },
+      {
+        "en": "I think loneliness and being alone are different things.",
+        "pt": "Acho que solidão e estar sozinho são coisas diferentes."
+      },
+      {
+        "en": "People need different kinds of support.",
+        "pt": "As pessoas precisam de diferentes tipos de apoio."
+      },
+      {
+        "en": "What do you value most in a friendship?",
+        "pt": "O que você mais valoriza em uma amizade?"
+      }
+    ],
+    "patterns": [
+      {
+        "title": "I think + clause",
+        "examples": [
+          "I think communication matters.",
+          "What do you think?"
         ],
-        variationBank: [
-          "I work with projects and deadlines.",
-          "I work with colleagues in São Paulo.",
-          "I work with Excel and Word.",
-          "I work with quality management."
+        "variationBank": [
+          "I think communication matters.",
+          "I don't think...",
+          "What do you think?"
         ]
       },
       {
-        title: "I studied + subject",
-        examples: [
-          "I studied Systems Analysis and Development.",
-          "I studied at a university in Bahia.",
-          "I studied quality management.",
-          "I studied English."
+        "title": "I feel like + clause",
+        "examples": [
+          "I feel like people overthink.",
+          "How do you feel?"
         ],
-        variationBank: [
-          "I studied computer science.",
-          "I studied at night.",
-          "I studied for five years.",
-          "I studied with great professors."
+        "variationBank": [
+          "I feel like people overthink.",
+          "I don't feel like...",
+          "How do you feel?"
         ]
       },
       {
-        title: "I want to + verb (career goals)",
-        examples: [
-          "I want to work with technology.",
-          "I want to improve my career.",
-          "I want to learn more about databases.",
-          "I want to get a better job."
+        "title": "It depends on + noun",
+        "examples": [
+          "It depends on the situation.",
+          "What does it depend on?"
         ],
-        variationBank: [
-          "I want to study more.",
-          "I want to work from home.",
-          "I want to be a manager.",
-          "I want to learn English for work."
+        "variationBank": [
+          "It depends on the situation.",
+          "It doesn't depend on...",
+          "What does it depend on?"
+        ]
+      },
+      {
+        "title": "I tend to + verb",
+        "examples": [
+          "I tend to overthink.",
+          "What do you tend to do?"
+        ],
+        "variationBank": [
+          "I tend to overthink.",
+          "I don't tend to...",
+          "What do you tend to do?"
+        ]
+      },
+      {
+        "title": "It's important to + verb",
+        "examples": [
+          "It's important to listen.",
+          "What's important?"
+        ],
+        "variationBank": [
+          "It's important to listen.",
+          "It's not important to...",
+          "What's important?"
+        ]
+      },
+      {
+        "title": "People often + verb",
+        "examples": [
+          "People often misunderstand each other.",
+          "Why do people...?"
+        ],
+        "variationBank": [
+          "People often misunderstand each other.",
+          "People don't always...",
+          "Why do people...?"
+        ]
+      },
+      {
+        "title": "I try to + verb",
+        "examples": [
+          "I try to listen.",
+          "What do you try to do?"
+        ],
+        "variationBank": [
+          "I try to listen.",
+          "I don't always try to...",
+          "What do you try to do?"
+        ]
+      },
+      {
+        "title": "What makes + person + adjective?",
+        "examples": [
+          "What makes someone trustworthy?",
+          "What makes...?"
+        ],
+        "variationBank": [
+          "What makes someone trustworthy?",
+          "—",
+          "What makes...?"
         ]
       }
     ],
-
-    variations: [
+    "variations": [
       {
-        base: "I work with quality and documentation.",
-        affirmative: "I work with quality and documentation.",
-        negative: "I don't work with sales.",
-        question: "What do you work with?",
-        past: "I worked with IT support before.",
-        future: "I'm going to work with technology soon."
+        "base": "I think communication matters.",
+        "affirmative": "I think communication matters.",
+        "negative": "I don't think...",
+        "question": "What do you think?",
+        "past": "",
+        "future": ""
       },
       {
-        base: "I studied Systems Analysis and Development.",
-        affirmative: "I studied Systems Analysis and Development.",
-        negative: "I didn't study business.",
-        question: "What did you study?",
-        past: "I studied at a university in Bahia.",
-        future: null
+        "base": "I feel like people overthink.",
+        "affirmative": "I feel like people overthink.",
+        "negative": "I don't feel like...",
+        "question": "How do you feel?",
+        "past": "",
+        "future": ""
       },
       {
-        base: "I am taking a course in data analysis.",
-        affirmative: "I am taking a course in data analysis.",
-        negative: "I am not taking any courses right now.",
-        question: "Are you taking any courses?",
-        past: "I took a course in quality last year.",
-        future: "I'm going to take a course in Python."
+        "base": "It depends on the situation.",
+        "affirmative": "It depends on the situation.",
+        "negative": "It doesn't depend on...",
+        "question": "What does it depend on?",
+        "past": "",
+        "future": ""
+      },
+      {
+        "base": "I tend to overthink.",
+        "affirmative": "I tend to overthink.",
+        "negative": "I don't tend to...",
+        "question": "What do you tend to do?",
+        "past": "",
+        "future": ""
+      },
+      {
+        "base": "It's important to listen.",
+        "affirmative": "It's important to listen.",
+        "negative": "It's not important to...",
+        "question": "What's important?",
+        "past": "",
+        "future": ""
       }
     ],
-
-    questions: [
-      { q: "What do you do for work?", sample: "I work with quality and documentation." },
-      { q: "What did you study?", sample: "I studied Systems Analysis and Development." },
-      { q: "Where did you study?", sample: "I studied at a university in Bahia." },
-      { q: "Do you like your job?", sample: "Yes, but I want more challenges." },
-      { q: "Who is your boss?", sample: "My boss is very demanding but fair." },
-      { q: "Do you have a lot of meetings?", sample: "Yes, I have meetings during the week." },
-      { q: "Do you work with technology?", sample: "Yes, I work with databases and systems." },
-      { q: "Are you taking any courses?", sample: "Yes, I am taking a course in data analysis." },
-      { q: "Do you have experience with documentation?", sample: "Yes, I have a lot of experience." },
-      { q: "What is your biggest project right now?", sample: "I have a quality management project." },
-      { q: "Do you want to change jobs?", sample: "I want to work with technology." },
-      { q: "What certificate do you have?", sample: "I have a certificate in quality management." },
-      { q: "Did you have an interview recently?", sample: "Yes, I had an interview last week." },
-      { q: "Do you work from home?", sample: "No, I usually work in the office." },
-      { q: "What time do you start work?", sample: "I usually start work at 9 AM." }
+    "questions": [
+      {
+        "q": "What makes someone a good friend?",
+        "sample": "I think people are complicated."
+      },
+      {
+        "q": "What makes someone trustworthy?",
+        "sample": "I tend to overthink things."
+      },
+      {
+        "q": "Do you think people can change?",
+        "sample": "Sometimes I need some time alone."
+      },
+      {
+        "q": "Why do people overthink?",
+        "sample": "I value honest communication."
+      },
+      {
+        "q": "How do you deal with stress?",
+        "sample": "Trust is important in a friendship."
+      },
+      {
+        "q": "What do you value in relationships?",
+        "sample": "I think boundaries are important."
+      },
+      {
+        "q": "How important is communication?",
+        "sample": "People express feelings in different ways."
+      },
+      {
+        "q": "Should people always say what they feel?",
+        "sample": "It's hard to know what someone is thinking."
+      },
+      {
+        "q": "What are healthy boundaries?",
+        "sample": "I don't always say what I'm feeling."
+      },
+      {
+        "q": "What makes people feel lonely?",
+        "sample": "I try to understand other people's perspectives."
+      },
+      {
+        "q": "Do social media affect relationships?",
+        "sample": "What makes someone trustworthy?"
+      },
+      {
+        "q": "Why do people become attached to others?",
+        "sample": "What makes a good friendship?"
+      },
+      {
+        "q": "How can people handle disagreements?",
+        "sample": "Do you think people can change?"
+      },
+      {
+        "q": "Can two people understand the same situation differently?",
+        "sample": "Why do people overthink?"
+      },
+      {
+        "q": "Explain your view about friendship and trust.",
+        "sample": "How do you deal with stress?"
+      }
     ],
-
-    exercises: {
-      translate: [
-        { pt: "Eu trabalho com qualidade e documentação.", en: "I work with quality and documentation." },
-        { pt: "Eu estudei Análise e Desenvolvimento de Sistemas.", en: "I studied Systems Analysis and Development." },
-        { pt: "Eu quero trabalhar com tecnologia.", en: "I want to work with technology." },
-        { pt: "Estou fazendo um curso de análise de dados.", en: "I am taking a course in data analysis." },
-        { pt: "Eu tive uma entrevista ontem.", en: "I had an interview yesterday." },
-        { pt: "Meus colegas são muito legais.", en: "My colleagues are very nice." }
+    "exercises": {
+      "translate": [
+        {
+          "pt": "Acho que as pessoas são complicadas.",
+          "answer": "I think people are complicated."
+        },
+        {
+          "pt": "Tendo a pensar demais nas coisas.",
+          "answer": "I tend to overthink things."
+        },
+        {
+          "pt": "Às vezes preciso de um tempo sozinha.",
+          "answer": "Sometimes I need some time alone."
+        },
+        {
+          "pt": "Valorizo a comunicação honesta.",
+          "answer": "I value honest communication."
+        },
+        {
+          "pt": "Confiança é importante em uma amizade.",
+          "answer": "Trust is important in a friendship."
+        },
+        {
+          "pt": "Acho que limites são importantes.",
+          "answer": "I think boundaries are important."
+        },
+        {
+          "pt": "As pessoas expressam sentimentos de maneiras diferentes.",
+          "answer": "People express feelings in different ways."
+        },
+        {
+          "pt": "É difícil saber o que alguém está pensando.",
+          "answer": "It's hard to know what someone is thinking."
+        }
       ],
-      fillBlank: [
-        { sentence: "I work ___ quality and documentation.", options: ["with", "in", "on", "at"], answer: "with" },
-        { sentence: "I studied ___ a university.", options: ["at", "in", "on", "to"], answer: "at" },
-        { sentence: "I want ___ work with technology.", options: ["to", "in", "on", "for"], answer: "to" },
-        { sentence: "I am ___ a course in data analysis.", options: ["taking", "making", "doing", "having"], answer: "taking" },
-        { sentence: "I ___ a certificate in quality.", options: ["have", "has", "having", "had"], answer: "have" }
+      "fillBlank": [
+        {
+          "sentence": "I don't ___ say what I'm feeling.",
+          "options": [
+            "always",
+            "work",
+            "like",
+            "know"
+          ],
+          "answer": "always"
+        },
+        {
+          "sentence": "I try ___ understand other people's perspectives.",
+          "options": [
+            "to",
+            "work",
+            "like",
+            "know"
+          ],
+          "answer": "to"
+        },
+        {
+          "sentence": "What makes ___ good friendship?",
+          "options": [
+            "a",
+            "work",
+            "like",
+            "know"
+          ],
+          "answer": "a"
+        },
+        {
+          "sentence": "Do you ___ people can change?",
+          "options": [
+            "think",
+            "work",
+            "like",
+            "know"
+          ],
+          "answer": "think"
+        },
+        {
+          "sentence": "How do ___ deal with stress?",
+          "options": [
+            "you",
+            "work",
+            "like",
+            "know"
+          ],
+          "answer": "you"
+        },
+        {
+          "sentence": "I think ___ changes people.",
+          "options": [
+            "experience",
+            "work",
+            "like",
+            "know"
+          ],
+          "answer": "experience"
+        }
       ],
-      multipleChoice: [
-        { q: 'What does "deadline" mean?', options: ["prazo", "projeto", "reunião", "tarefa"], answer: "prazo" },
-        { q: 'What does "colleague" mean?', options: ["colega", "chefe", "gerente", "cliente"], answer: "colega" },
-        { q: 'What does "documentation" mean?', options: ["documentação", "projeto", "reunião", "sistema"], answer: "documentação" }
+      "multipleChoice": [
+        {
+          "q": "What does \"Everyone has insecurities.\" mean?",
+          "options": [
+            "Todo mundo tem inseguranças.",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Todo mundo tem inseguranças."
+        },
+        {
+          "q": "What does \"It's important to respect other people's boundaries.\" mean?",
+          "options": [
+            "É importante respeitar os limites das outras pessoas.",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "É importante respeitar os limites das outras pessoas."
+        },
+        {
+          "q": "What does \"Sometimes we misunderstand each other.\" mean?",
+          "options": [
+            "Às vezes nos entendemos mal.",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Às vezes nos entendemos mal."
+        },
+        {
+          "q": "What does \"Good communication can prevent many problems.\" mean?",
+          "options": [
+            "Boa comunicação pode evitar muitos problemas.",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Boa comunicação pode evitar muitos problemas."
+        },
+        {
+          "q": "What does \"I don't want to judge people too quickly.\" mean?",
+          "options": [
+            "Não quero julgar as pessoas rápido demais.",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Não quero julgar as pessoas rápido demais."
+        },
+        {
+          "q": "What does \"I try to listen before I give advice.\" mean?",
+          "options": [
+            "Tento ouvir antes de dar conselhos.",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Tento ouvir antes de dar conselhos."
+        },
+        {
+          "q": "What does \"I think loneliness and being alone are different things.\" mean?",
+          "options": [
+            "Acho que solidão e estar sozinho são coisas diferentes.",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Acho que solidão e estar sozinho são coisas diferentes."
+        },
+        {
+          "q": "What does \"People need different kinds of support.\" mean?",
+          "options": [
+            "As pessoas precisam de diferentes tipos de apoio.",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "As pessoas precisam de diferentes tipos de apoio."
+        }
       ],
-      rearrange: [
-        { scrambled: ["with", "work", "quality", "I", "documentation", "and"], answer: "I work with quality and documentation" },
-        { scrambled: ["studied", "I", "Systems", "Analysis", "and", "Development"], answer: "I studied Systems Analysis and Development" },
-        { scrambled: ["want", "I", "to", "work", "technology", "with"], answer: "I want to work with technology" },
-        { scrambled: ["taking", "am", "I", "a", "course", "data", "in", "analysis"], answer: "I am taking a course in data analysis" }
+      "rearrange": [
+        {
+          "scrambled": [
+            "complicated",
+            "are",
+            "people",
+            "think",
+            "I"
+          ],
+          "answer": "I think people are complicated"
+        },
+        {
+          "scrambled": [
+            "things",
+            "overthink",
+            "to",
+            "tend",
+            "I"
+          ],
+          "answer": "I tend to overthink things"
+        },
+        {
+          "scrambled": [
+            "alone",
+            "time",
+            "some",
+            "need",
+            "I",
+            "Sometimes"
+          ],
+          "answer": "Sometimes I need some time alone"
+        },
+        {
+          "scrambled": [
+            "communication",
+            "honest",
+            "value",
+            "I"
+          ],
+          "answer": "I value honest communication"
+        },
+        {
+          "scrambled": [
+            "friendship",
+            "a",
+            "in",
+            "important",
+            "is",
+            "Trust"
+          ],
+          "answer": "Trust is important in a friendship"
+        },
+        {
+          "scrambled": [
+            "important",
+            "are",
+            "boundaries",
+            "think",
+            "I"
+          ],
+          "answer": "I think boundaries are important"
+        },
+        {
+          "scrambled": [
+            "ways",
+            "different",
+            "in",
+            "feelings",
+            "express",
+            "People"
+          ],
+          "answer": "People express feelings in different ways"
+        },
+        {
+          "scrambled": [
+            "thinking",
+            "is",
+            "someone",
+            "what",
+            "know",
+            "to",
+            "hard",
+            "It's"
+          ],
+          "answer": "It's hard to know what someone is thinking"
+        }
       ],
-      listening: [
-        { audio: "I work with quality and documentation.", options: ["I work with quality and documentation.", "I work with sales and marketing.", "I work with design and art."], answer: "I work with quality and documentation." },
-        { audio: "I studied Systems Analysis and Development.", options: ["I studied Systems Analysis and Development.", "I studied Business Administration.", "I studied Psychology."], answer: "I studied Systems Analysis and Development." },
-        { audio: "I want to work with technology.", options: ["I want to work with technology.", "I want to work with food.", "I want to work with animals."], answer: "I want to work with technology." }
+      "listening": [
+        {
+          "audio": "I think people are complicated.",
+          "options": [
+            "I think people are complicated.",
+            "I tend to overthink things.",
+            "Sometimes I need some time alone."
+          ],
+          "answer": "I think people are complicated."
+        },
+        {
+          "audio": "I tend to overthink things.",
+          "options": [
+            "I tend to overthink things.",
+            "Sometimes I need some time alone.",
+            "I value honest communication."
+          ],
+          "answer": "I tend to overthink things."
+        },
+        {
+          "audio": "Sometimes I need some time alone.",
+          "options": [
+            "Sometimes I need some time alone.",
+            "I value honest communication.",
+            "Trust is important in a friendship."
+          ],
+          "answer": "Sometimes I need some time alone."
+        },
+        {
+          "audio": "I value honest communication.",
+          "options": [
+            "I value honest communication.",
+            "Trust is important in a friendship.",
+            "I think boundaries are important."
+          ],
+          "answer": "I value honest communication."
+        },
+        {
+          "audio": "Trust is important in a friendship.",
+          "options": [
+            "Trust is important in a friendship.",
+            "I think boundaries are important.",
+            "People express feelings in different ways."
+          ],
+          "answer": "Trust is important in a friendship."
+        },
+        {
+          "audio": "I think boundaries are important.",
+          "options": [
+            "I think boundaries are important.",
+            "People express feelings in different ways.",
+            "It's hard to know what someone is thinking."
+          ],
+          "answer": "I think boundaries are important."
+        },
+        {
+          "audio": "People express feelings in different ways.",
+          "options": [
+            "People express feelings in different ways.",
+            "It's hard to know what someone is thinking.",
+            "I don't always say what I'm feeling."
+          ],
+          "answer": "People express feelings in different ways."
+        },
+        {
+          "audio": "It's hard to know what someone is thinking.",
+          "options": [
+            "It's hard to know what someone is thinking.",
+            "I don't always say what I'm feeling.",
+            "I try to understand other people's perspectives."
+          ],
+          "answer": "It's hard to know what someone is thinking."
+        }
       ]
     },
-
-    speakingSentences: [
-      "I work with quality and documentation.",
-      "I studied Systems Analysis and Development.",
-      "I want to work with technology.",
-      "I am taking a course in data analysis.",
-      "My colleagues are very nice."
+    "speakingSentences": [
+      "I think people are complicated.",
+      "I tend to overthink things.",
+      "Sometimes I need some time alone.",
+      "I value honest communication.",
+      "Trust is important in a friendship.",
+      "I think boundaries are important.",
+      "People express feelings in different ways.",
+      "It's hard to know what someone is thinking."
     ],
-
-    talkPrompts: [
-      "What do you do for work?",
-      "What did you study?",
-      "Do you like your job?",
-      "Are you taking any courses?",
-      "What is your biggest project right now?",
-      "Do you want to change jobs?"
-    ]
+    "talkPrompts": [
+      "What makes someone a good friend?",
+      "What makes someone trustworthy?",
+      "Do you think people can change?",
+      "Why do people overthink?",
+      "How do you deal with stress?",
+      "What do you value in relationships?",
+      "How important is communication?",
+      "Should people always say what they feel?"
+    ],
+    "reading": []
   },
-
-  // ── Island 08: My Past & Experiences ─────────────────
   {
-    id: "island08", number: 8, name: "My Past & Experiences", emoji: "🕰️",
-    description: "Talk about things that happened in your past.",
-    unlockedByDefault: false,
-
-    vocabulary: [
-      { en: "experience", pt: "experiência", approx: "eks-pí-ri-ens", ipa: "/ɪkˈspɪəriəns/" },
-      { en: "memory", pt: "memória", approx: "má-mó-ri", ipa: "/ˈmeməri/" },
-      { en: "childhood", pt: "infância", approx: "tcháild-hud", ipa: "/ˈtʃaɪldhʊd/" },
-      { en: "to remember", pt: "lembrar", approx: "ri-mém-ber", ipa: "/rɪˈmembər/" },
-      { en: "to forget", pt: "esquecer", approx: "for-guét", ipa: "/fərˈɡet/" },
-      { en: "before", pt: "antes", approx: "bi-fór", ipa: "/bɪˈfɔːr/" },
-      { en: "ago", pt: "atrás", approx: "u-gó", ipa: "/əˈɡəʊ/" },
-      { en: "already", pt: "já", approx: "ól-re-di", ipa: "/ɔːlˈredi/" },
-      { en: "yet", pt: "ainda", approx: "iét", ipa: "/jet/" },
-      { en: "moment", pt: "momento", approx: "mó-ment", ipa: "/ˈməʊmənt/" },
-      { en: "important", pt: "importante", approx: "im-por-tant", ipa: "/ɪmˈpɔːrtənt/" },
-      { en: "special", pt: "especial", approx: "spe-xo", ipa: "/speˈʃəl/" },
-      { en: "difficult", pt: "difícil", approx: "dí-fi-cil", ipa: "/ˈdɪfɪkl/" },
-      { en: "decision", pt: "decisão", approx: "di-sí-xon", ipa: "/dɪˈsɪʒn/" },
-      { en: "to change", pt: "mudar", approx: "tchéindj", ipa: "/tʃeɪndʒ/" },
-      { en: "to grow", pt: "crescer", approx: "gró", ipa: "/ɡrəʊ/" },
-      { en: "to discover", pt: "descobrir", approx: "dis-cu-vér", ipa: "/dɪsˈkʌvər/" },
-      { en: "journey", pt: "jornada", approx: "jór-ney", ipa: "/ˈdʒɜːrni/" },
-      { en: "challenge", pt: "desafio", approx: "chá-linj", ipa: "/ˈtʃælɪndʒ/" },
-      { en: "to overcome", pt: "superar", approx: "ó-ver-cam", ipa: "/ˌəʊvərˈkʌm/" },
-      { en: "milestone", pt: "marco", approx: "mái-l-stóun", ipa: "/ˈmaɪlstəʊn/" },
-      { en: "proud", pt: "orgulhoso", approx: "práud", ipa: "/praʊd/" },
-      { en: "regret", pt: "arrependimento", approx: "ri-guét", ipa: "/rɪˈɡret/" },
-      { en: "mistake", pt: "erro", approx: "mi-stéik", ipa: "/mɪˈsteɪk/" },
-      { en: "lesson", pt: "lição", approx: "lé-son", ipa: "/ˈlesn/" }
-    ],
-
-    coreSentences: [
-      { en: "I remember learning English as a child.", pt: "Eu lembro de ter aprendido inglês quando criança." },
-      { en: "I grew up in Bahia.", pt: "Eu cresci na Bahia." },
-      { en: "I studied at a university in Salvador.", pt: "Eu estudei em uma universidade em Salvador." },
-      { en: "I made an important decision last year.", pt: "Eu tomei uma decisão importante no ano passado." },
-      { en: "I changed jobs two years ago.", pt: "Eu mudei de emprego dois anos atrás." },
-      { en: "I already have experience with quality management.", pt: "Já tenho experiência com gestão da qualidade." },
-      { en: "I haven't finished my data analysis course yet.", pt: "Ainda não terminei meu curso de análise de dados." },
-      { en: "I overcame many challenges in my career.", pt: "Eu superei muitos desafios na minha carreira." },
-      { en: "I am proud of my journey.", pt: "Eu sou orgulhoso da minha jornada." },
-      { en: "I learned an important lesson from my mistakes.", pt: "Eu aprendi uma lição importante com meus erros." },
-      { en: "I discovered my passion for technology.", pt: "Eu descobri minha paixão por tecnologia." },
-      { en: "I had a special moment with my family.", pt: "Eu tive um momento especial com minha família." },
-      { en: "I forgot my keys at home yesterday.", pt: "Esqueci minhas chaves em casa ontem." },
-      { en: "I already finished that project.", pt: "Eu já terminei aquele projeto." },
-      { en: "I haven't traveled abroad yet.", pt: "Ainda não viajei para fora." },
-      { en: "I started studying English three months ago.", pt: "Comecei a estudar inglês três meses atrás." },
-      { en: "I worked with quality management for five years.", pt: "Trabalhei com gestão da qualidade por cinco anos." },
-      { en: "I made many friends at university.", pt: "Fiz muitos amigos na universidade." },
-      { en: "I decided to learn English for my career.", pt: "Decidi aprender inglês para minha carreira." },
-      { en: "That was a difficult but important experience.", pt: "Aquela foi uma experiência difícil, mas importante." }
-    ],
-
-    patterns: [
+    "id": "island07",
+    "number": 7,
+    "name": "Ideas & Philosophy",
+    "emoji": "💭",
+    "description": "Express opinions, explain ideas and discuss philosophical questions.",
+    "unlockedByDefault": false,
+    "goal": "Express and defend ideas respectfully.",
+    "vocabulary": [
       {
-        title: "I remember + verb-ing",
-        examples: [
-          "I remember learning English as a child.",
-          "I remember studying at night.",
-          "I remember making that decision.",
-          "I remember the first day at work."
+        "en": "opinion",
+        "pt": "opinião",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "idea",
+        "pt": "ideia",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "meaning",
+        "pt": "sentido/significado",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "purpose",
+        "pt": "propósito",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "freedom",
+        "pt": "liberdade",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "choice",
+        "pt": "escolha",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "responsibility",
+        "pt": "responsabilidade",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "morality",
+        "pt": "moralidade",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "consciousness",
+        "pt": "consciência",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "identity",
+        "pt": "identidade",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "human nature",
+        "pt": "natureza humana",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "society",
+        "pt": "sociedade",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "desire",
+        "pt": "desejo",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "reason",
+        "pt": "razão",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "evidence",
+        "pt": "evidência",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "argument",
+        "pt": "argumento",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "agree",
+        "pt": "concordar",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "disagree",
+        "pt": "discordar",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "believe",
+        "pt": "acreditar",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "consider",
+        "pt": "considerar",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "perhaps",
+        "pt": "talvez",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "however",
+        "pt": "porém",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "although",
+        "pt": "embora",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "therefore",
+        "pt": "portanto",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "according to",
+        "pt": "de acordo com",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "in my view",
+        "pt": "na minha visão",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "it depends",
+        "pt": "depende",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "make sense",
+        "pt": "fazer sentido",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "question",
+        "pt": "questão",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "perspective",
+        "pt": "perspectiva",
+        "approx": "",
+        "ipa": ""
+      }
+    ],
+    "coreSentences": [
+      {
+        "en": "In my opinion, freedom is complicated.",
+        "pt": "Na minha opinião, liberdade é complicada."
+      },
+      {
+        "en": "I think our choices are influenced by many things.",
+        "pt": "Acho que nossas escolhas são influenciadas por muitas coisas."
+      },
+      {
+        "en": "I believe people have some control over their lives.",
+        "pt": "Acredito que as pessoas têm algum controle sobre suas vidas."
+      },
+      {
+        "en": "It depends on how you define freedom.",
+        "pt": "Depende de como você define liberdade."
+      },
+      {
+        "en": "What gives life meaning?",
+        "pt": "O que dá sentido à vida?"
+      },
+      {
+        "en": "Do you think people are truly free?",
+        "pt": "Você acha que as pessoas são realmente livres?"
+      },
+      {
+        "en": "Can desire control our decisions?",
+        "pt": "O desejo pode controlar nossas decisões?"
+      },
+      {
+        "en": "I don't have a simple answer.",
+        "pt": "Não tenho uma resposta simples."
+      },
+      {
+        "en": "There are different ways to look at this.",
+        "pt": "Há diferentes maneiras de olhar para isso."
+      },
+      {
+        "en": "I see your point.",
+        "pt": "Entendo seu ponto."
+      },
+      {
+        "en": "I agree with part of what you said.",
+        "pt": "Concordo com parte do que você disse."
+      },
+      {
+        "en": "I don't completely agree.",
+        "pt": "Não concordo completamente."
+      },
+      {
+        "en": "That argument makes sense.",
+        "pt": "Esse argumento faz sentido."
+      },
+      {
+        "en": "I need to think about that.",
+        "pt": "Preciso pensar sobre isso."
+      },
+      {
+        "en": "That's an interesting perspective.",
+        "pt": "Essa é uma perspectiva interessante."
+      },
+      {
+        "en": "I might be wrong, but I think...",
+        "pt": "Posso estar errada, mas acho que..."
+      },
+      {
+        "en": "From my experience, people often...",
+        "pt": "Pela minha experiência, as pessoas frequentemente..."
+      },
+      {
+        "en": "However, there's another side to this.",
+        "pt": "Porém, existe outro lado disso."
+      },
+      {
+        "en": "Although it sounds simple, it's actually complicated.",
+        "pt": "Embora pareça simples, na verdade é complicado."
+      },
+      {
+        "en": "I think context matters.",
+        "pt": "Acho que o contexto importa."
+      },
+      {
+        "en": "What do you mean by freedom?",
+        "pt": "O que você quer dizer com liberdade?"
+      },
+      {
+        "en": "How would you define happiness?",
+        "pt": "Como você definiria felicidade?"
+      },
+      {
+        "en": "Do you think morality is universal?",
+        "pt": "Você acha que a moralidade é universal?"
+      },
+      {
+        "en": "Can we know what is objectively right?",
+        "pt": "Podemos saber o que é objetivamente certo?"
+      },
+      {
+        "en": "Let's look at it from another perspective.",
+        "pt": "Vamos olhar por outra perspectiva."
+      }
+    ],
+    "patterns": [
+      {
+        "title": "In my opinion, + clause",
+        "examples": [
+          "In my opinion, freedom is complicated.",
+          "What's your opinion?"
         ],
-        variationBank: [
-          "I remember going to university.",
-          "I remember meeting my boss.",
-          "I remember the important lesson.",
-          "I remember growing up in Bahia."
+        "variationBank": [
+          "In my opinion, freedom is complicated.",
+          "In my opinion, it isn't...",
+          "What's your opinion?"
         ]
       },
       {
-        title: "I already / yet / still",
-        examples: [
-          "I already have experience with quality management.",
-          "I haven't finished my course yet.",
-          "I still study English at night.",
-          "I haven't traveled abroad yet."
+        "title": "I believe + clause",
+        "examples": [
+          "I believe people can change.",
+          "What do you believe?"
         ],
-        variationBank: [
-          "I already finished that project.",
-          "I haven't learned Python yet.",
-          "I still work with documentation.",
-          "I haven't visited São Paulo yet."
+        "variationBank": [
+          "I believe people can change.",
+          "I don't believe...",
+          "What do you believe?"
         ]
       },
       {
-        title: "I + past simple + time expression",
-        examples: [
-          "I changed jobs two years ago.",
-          "I started studying English three months ago.",
-          "I made an important decision last year.",
-          "I grew up in Bahia."
+        "title": "It depends on + definition/context",
+        "examples": [
+          "It depends on how you define freedom.",
+          "What does it depend on?"
         ],
-        variationBank: [
-          "I graduated five years ago.",
-          "I moved to this apartment last year.",
-          "I learned a lot last semester.",
-          "I met my colleagues at work."
+        "variationBank": [
+          "It depends on how you define freedom.",
+          "It doesn't simply depend on...",
+          "What does it depend on?"
+        ]
+      },
+      {
+        "title": "I see your point, but + clause",
+        "examples": [
+          "I see your point, but I disagree.",
+          "Do you see my point?"
+        ],
+        "variationBank": [
+          "I see your point, but I disagree.",
+          "I don't see your point.",
+          "Do you see my point?"
+        ]
+      },
+      {
+        "title": "I agree with + person/idea",
+        "examples": [
+          "I agree with you.",
+          "Do you agree?"
+        ],
+        "variationBank": [
+          "I agree with you.",
+          "I don't agree with...",
+          "Do you agree?"
+        ]
+      },
+      {
+        "title": "I don't completely agree.",
+        "examples": [
+          "I don't completely agree with that.",
+          "Do you agree?"
+        ],
+        "variationBank": [
+          "I don't completely agree with that.",
+          "I completely agree.",
+          "Do you agree?"
+        ]
+      },
+      {
+        "title": "That makes sense because + reason",
+        "examples": [
+          "That makes sense because context matters.",
+          "Why does it make sense?"
+        ],
+        "variationBank": [
+          "That makes sense because context matters.",
+          "That doesn't make sense...",
+          "Why does it make sense?"
+        ]
+      },
+      {
+        "title": "What do you mean by + concept?",
+        "examples": [
+          "What do you mean by freedom?",
+          "What do you mean by...?"
+        ],
+        "variationBank": [
+          "What do you mean by freedom?",
+          "—",
+          "What do you mean by...?"
         ]
       }
     ],
-
-    variations: [
+    "variations": [
       {
-        base: "I changed jobs two years ago.",
-        affirmative: "I changed jobs two years ago.",
-        negative: "I didn't change jobs.",
-        question: "Did you change jobs?",
-        past: "I changed jobs two years ago.",
-        future: "I'm going to change jobs next year."
+        "base": "In my opinion, freedom is complicated.",
+        "affirmative": "In my opinion, freedom is complicated.",
+        "negative": "In my opinion, it isn't...",
+        "question": "What's your opinion?",
+        "past": "",
+        "future": ""
       },
       {
-        base: "I remember learning English.",
-        affirmative: "I remember learning English.",
-        negative: "I don't remember learning that.",
-        question: "Do you remember learning English?",
-        past: "I remembered the lesson later.",
-        future: null
+        "base": "I believe people can change.",
+        "affirmative": "I believe people can change.",
+        "negative": "I don't believe...",
+        "question": "What do you believe?",
+        "past": "",
+        "future": ""
       },
       {
-        base: "I haven't finished my course yet.",
-        affirmative: "I haven't finished my course yet.",
-        negative: null,
-        question: "Have you finished your course yet?",
-        past: "I hadn't finished by December.",
-        future: "I will have finished by next month."
+        "base": "It depends on how you define freedom.",
+        "affirmative": "It depends on how you define freedom.",
+        "negative": "It doesn't simply depend on...",
+        "question": "What does it depend on?",
+        "past": "",
+        "future": ""
+      },
+      {
+        "base": "I see your point, but I disagree.",
+        "affirmative": "I see your point, but I disagree.",
+        "negative": "I don't see your point.",
+        "question": "Do you see my point?",
+        "past": "",
+        "future": ""
+      },
+      {
+        "base": "I agree with you.",
+        "affirmative": "I agree with you.",
+        "negative": "I don't agree with...",
+        "question": "Do you agree?",
+        "past": "",
+        "future": ""
       }
     ],
-
-    questions: [
-      { q: "What do you remember about your childhood?", sample: "I remember playing outside with friends." },
-      { q: "Where did you grow up?", sample: "I grew up in Bahia." },
-      { q: "What did you study at university?", sample: "I studied Systems Analysis and Development." },
-      { q: "What important decision did you make?", sample: "I decided to learn English for my career." },
-      { q: "Did you change jobs recently?", sample: "Yes, I changed jobs two years ago." },
-      { q: "What experience do you already have?", sample: "I already have experience with quality management." },
-      { q: "Is there anything you haven't done yet?", sample: "I haven't traveled abroad yet." },
-      { q: "What challenges have you overcome?", sample: "I overcame many challenges in my career." },
-      { q: "Are you proud of your journey?", sample: "Yes, I am proud of my journey." },
-      { q: "What lesson have you learned?", sample: "I learned that mistakes help us grow." },
-      { q: "What have you discovered about yourself?", sample: "I discovered my passion for technology." },
-      { q: "Do you have any regrets?", sample: "I don't have many regrets." },
-      { q: "When did you start studying English?", sample: "I started three months ago." },
-      { q: "What was your first job?", sample: "My first job was in quality documentation." },
-      { q: "What was a special moment in your life?", sample: "Graduating from university was very special." }
+    "questions": [
+      {
+        "q": "What is freedom?",
+        "sample": "In my opinion, freedom is complicated."
+      },
+      {
+        "q": "Do you think people are truly free?",
+        "sample": "I think our choices are influenced by many things."
+      },
+      {
+        "q": "What gives life meaning?",
+        "sample": "I believe people have some control over their lives."
+      },
+      {
+        "q": "What makes people happy?",
+        "sample": "It depends on how you define freedom."
+      },
+      {
+        "q": "Can money buy happiness?",
+        "sample": "What gives life meaning?"
+      },
+      {
+        "q": "Is morality universal?",
+        "sample": "Do you think people are truly free?"
+      },
+      {
+        "q": "Do people have control over their choices?",
+        "sample": "Can desire control our decisions?"
+      },
+      {
+        "q": "How much do our environment and experiences influence us?",
+        "sample": "I don't have a simple answer."
+      },
+      {
+        "q": "What is a meaningful life?",
+        "sample": "There are different ways to look at this."
+      },
+      {
+        "q": "Is it possible to know what is objectively right?",
+        "sample": "I see your point."
+      },
+      {
+        "q": "Do you agree that desire can control people?",
+        "sample": "I agree with part of what you said."
+      },
+      {
+        "q": "What is more important: freedom or security?",
+        "sample": "I don't completely agree."
+      },
+      {
+        "q": "Can suffering have meaning?",
+        "sample": "That argument makes sense."
+      },
+      {
+        "q": "What does identity mean to you?",
+        "sample": "I need to think about that."
+      },
+      {
+        "q": "Defend an opinion and respond to a different perspective.",
+        "sample": "That's an interesting perspective."
+      }
     ],
-
-    exercises: {
-      translate: [
-        { pt: "Eu cresci na Bahia.", en: "I grew up in Bahia." },
-        { pt: "Eu mudei de emprego dois anos atrás.", en: "I changed jobs two years ago." },
-        { pt: "Ainda não viajei para fora.", en: "I haven't traveled abroad yet." },
-        { pt: "Eu decidi aprender inglês para minha carreira.", en: "I decided to learn English for my career." },
-        { pt: "Eu já tenho experiência com gestão da qualidade.", en: "I already have experience with quality management." },
-        { pt: "Eu lembro de ter aprendido inglês quando criança.", en: "I remember learning English as a child." }
+    "exercises": {
+      "translate": [
+        {
+          "pt": "Na minha opinião, liberdade é complicada.",
+          "answer": "In my opinion, freedom is complicated."
+        },
+        {
+          "pt": "Acho que nossas escolhas são influenciadas por muitas coisas.",
+          "answer": "I think our choices are influenced by many things."
+        },
+        {
+          "pt": "Acredito que as pessoas têm algum controle sobre suas vidas.",
+          "answer": "I believe people have some control over their lives."
+        },
+        {
+          "pt": "Depende de como você define liberdade.",
+          "answer": "It depends on how you define freedom."
+        },
+        {
+          "pt": "O que dá sentido à vida?",
+          "answer": "What gives life meaning?"
+        },
+        {
+          "pt": "Você acha que as pessoas são realmente livres?",
+          "answer": "Do you think people are truly free?"
+        },
+        {
+          "pt": "O desejo pode controlar nossas decisões?",
+          "answer": "Can desire control our decisions?"
+        },
+        {
+          "pt": "Não tenho uma resposta simples.",
+          "answer": "I don't have a simple answer."
+        }
       ],
-      fillBlank: [
-        { sentence: "I remember ___ English as a child.", options: ["learning", "learn", "learned", "to learn"], answer: "learning" },
-        { sentence: "I changed jobs two years ___.", options: ["ago", "before", "after", "last"], answer: "ago" },
-        { sentence: "I haven't finished ___ yet.", options: ["my course", "my course", "I course", "a course"], answer: "my course" },
-        { sentence: "I am proud ___ my journey.", options: ["of", "in", "on", "at"], answer: "of" },
-        { sentence: "I ___ an important decision.", options: ["made", "make", "did", "took"], answer: "made" }
+      "fillBlank": [
+        {
+          "sentence": "There are ___ ways to look at this.",
+          "options": [
+            "different",
+            "work",
+            "like",
+            "know"
+          ],
+          "answer": "different"
+        },
+        {
+          "sentence": "I agree ___ part of what you said.",
+          "options": [
+            "with",
+            "work",
+            "like",
+            "know"
+          ],
+          "answer": "with"
+        },
+        {
+          "sentence": "I need ___ think about that.",
+          "options": [
+            "to",
+            "work",
+            "like",
+            "know"
+          ],
+          "answer": "to"
+        },
+        {
+          "sentence": "I might ___ wrong, but I think...",
+          "options": [
+            "be",
+            "work",
+            "like",
+            "know"
+          ],
+          "answer": "be"
+        }
       ],
-      multipleChoice: [
-        { q: 'What does "milestone" mean?', options: ["marco / conquesta", "erro", "problema", "lição"], answer: "marco / conquesta" },
-        { q: 'What does "overcome" mean?', options: ["superar", "esquecer", "mudar", "aprender"], answer: "superar" },
-        { q: 'What does "regret" mean?', options: ["arrependimento", "orgulho", "lembrança", "decisão"], answer: "arrependimento" }
+      "multipleChoice": [
+        {
+          "q": "What does \"From my experience, people often...\" mean?",
+          "options": [
+            "Pela minha experiência, as pessoas frequentemente...",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Pela minha experiência, as pessoas frequentemente..."
+        },
+        {
+          "q": "What does \"However, there's another side to this.\" mean?",
+          "options": [
+            "Porém, existe outro lado disso.",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Porém, existe outro lado disso."
+        },
+        {
+          "q": "What does \"Although it sounds simple, it's actually complicated.\" mean?",
+          "options": [
+            "Embora pareça simples, na verdade é complicado.",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Embora pareça simples, na verdade é complicado."
+        },
+        {
+          "q": "What does \"I think context matters.\" mean?",
+          "options": [
+            "Acho que o contexto importa.",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Acho que o contexto importa."
+        },
+        {
+          "q": "What does \"What do you mean by freedom?\" mean?",
+          "options": [
+            "O que você quer dizer com liberdade?",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "O que você quer dizer com liberdade?"
+        },
+        {
+          "q": "What does \"How would you define happiness?\" mean?",
+          "options": [
+            "Como você definiria felicidade?",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Como você definiria felicidade?"
+        },
+        {
+          "q": "What does \"Do you think morality is universal?\" mean?",
+          "options": [
+            "Você acha que a moralidade é universal?",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Você acha que a moralidade é universal?"
+        },
+        {
+          "q": "What does \"Can we know what is objectively right?\" mean?",
+          "options": [
+            "Podemos saber o que é objetivamente certo?",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Podemos saber o que é objetivamente certo?"
+        }
       ],
-      rearrange: [
-        { scrambled: ["grew", "I", "Bahia", "in", "up"], answer: "I grew up in Bahia" },
-        { scrambled: ["changed", "I", "two", "jobs", "years", "ago"], answer: "I changed jobs two years ago" },
-        { scrambled: ["remember", "I", "learning", "English"], answer: "I remember learning English" },
-        { scrambled: ["haven't", "I", "traveled", "abroad", "yet"], answer: "I haven't traveled abroad yet" }
+      "rearrange": [
+        {
+          "scrambled": [
+            "complicated",
+            "is",
+            "freedom",
+            "opinion",
+            "my",
+            "In"
+          ],
+          "answer": "In my opinion, freedom is complicated"
+        },
+        {
+          "scrambled": [
+            "things",
+            "many",
+            "by",
+            "influenced",
+            "are",
+            "choices",
+            "our",
+            "think",
+            "I"
+          ],
+          "answer": "I think our choices are influenced by many things"
+        },
+        {
+          "scrambled": [
+            "lives",
+            "their",
+            "over",
+            "control",
+            "some",
+            "have",
+            "people",
+            "believe",
+            "I"
+          ],
+          "answer": "I believe people have some control over their lives"
+        },
+        {
+          "scrambled": [
+            "freedom",
+            "define",
+            "you",
+            "how",
+            "on",
+            "depends",
+            "It"
+          ],
+          "answer": "It depends on how you define freedom"
+        },
+        {
+          "scrambled": [
+            "meaning",
+            "life",
+            "gives",
+            "What"
+          ],
+          "answer": "What gives life meaning"
+        },
+        {
+          "scrambled": [
+            "free",
+            "truly",
+            "are",
+            "people",
+            "think",
+            "you",
+            "Do"
+          ],
+          "answer": "Do you think people are truly free"
+        },
+        {
+          "scrambled": [
+            "decisions",
+            "our",
+            "control",
+            "desire",
+            "Can"
+          ],
+          "answer": "Can desire control our decisions"
+        },
+        {
+          "scrambled": [
+            "answer",
+            "simple",
+            "a",
+            "have",
+            "don't",
+            "I"
+          ],
+          "answer": "I don't have a simple answer"
+        }
       ],
-      listening: [
-        { audio: "I grew up in Bahia.", options: ["I grew up in Bahia.", "I grew up in São Paulo.", "I grew up in Rio."], answer: "I grew up in Bahia." },
-        { audio: "I changed jobs two years ago.", options: ["I changed jobs two years ago.", "I changed jobs last year.", "I changed jobs five years ago."], answer: "I changed jobs two years ago." },
-        { audio: "I remember learning English.", options: ["I remember learning English.", "I remember studying math.", "I remember working there."], answer: "I remember learning English." }
+      "listening": [
+        {
+          "audio": "In my opinion, freedom is complicated.",
+          "options": [
+            "In my opinion, freedom is complicated.",
+            "I think our choices are influenced by many things.",
+            "I believe people have some control over their lives."
+          ],
+          "answer": "In my opinion, freedom is complicated."
+        },
+        {
+          "audio": "I think our choices are influenced by many things.",
+          "options": [
+            "I think our choices are influenced by many things.",
+            "I believe people have some control over their lives.",
+            "It depends on how you define freedom."
+          ],
+          "answer": "I think our choices are influenced by many things."
+        },
+        {
+          "audio": "I believe people have some control over their lives.",
+          "options": [
+            "I believe people have some control over their lives.",
+            "It depends on how you define freedom.",
+            "What gives life meaning?"
+          ],
+          "answer": "I believe people have some control over their lives."
+        },
+        {
+          "audio": "It depends on how you define freedom.",
+          "options": [
+            "It depends on how you define freedom.",
+            "What gives life meaning?",
+            "Do you think people are truly free?"
+          ],
+          "answer": "It depends on how you define freedom."
+        },
+        {
+          "audio": "What gives life meaning?",
+          "options": [
+            "What gives life meaning?",
+            "Do you think people are truly free?",
+            "Can desire control our decisions?"
+          ],
+          "answer": "What gives life meaning?"
+        },
+        {
+          "audio": "Do you think people are truly free?",
+          "options": [
+            "Do you think people are truly free?",
+            "Can desire control our decisions?",
+            "I don't have a simple answer."
+          ],
+          "answer": "Do you think people are truly free?"
+        },
+        {
+          "audio": "Can desire control our decisions?",
+          "options": [
+            "Can desire control our decisions?",
+            "I don't have a simple answer.",
+            "There are different ways to look at this."
+          ],
+          "answer": "Can desire control our decisions?"
+        },
+        {
+          "audio": "I don't have a simple answer.",
+          "options": [
+            "I don't have a simple answer.",
+            "There are different ways to look at this.",
+            "I see your point."
+          ],
+          "answer": "I don't have a simple answer."
+        }
       ]
     },
-
-    speakingSentences: [
-      "I grew up in Bahia.",
-      "I remember learning English as a child.",
-      "I changed jobs two years ago.",
-      "I haven't traveled abroad yet.",
-      "I am proud of my journey."
+    "speakingSentences": [
+      "In my opinion, freedom is complicated.",
+      "I think our choices are influenced by many things.",
+      "I believe people have some control over their lives.",
+      "It depends on how you define freedom.",
+      "What gives life meaning?",
+      "Do you think people are truly free?",
+      "Can desire control our decisions?",
+      "I don't have a simple answer."
     ],
-
-    talkPrompts: [
-      "Where did you grow up?",
-      "What do you remember about your childhood?",
-      "What important decision did you make?",
-      "What challenges have you overcome?",
-      "Are you proud of your journey?",
-      "What lesson have you learned from your mistakes?"
-    ]
+    "talkPrompts": [
+      "What is freedom?",
+      "Do you think people are truly free?",
+      "What gives life meaning?",
+      "What makes people happy?",
+      "Can money buy happiness?",
+      "Is morality universal?",
+      "Do people have control over their choices?",
+      "How much do our environment and experiences influence us?"
+    ],
+    "reading": []
   },
-
-  // ── Island 09: Travel & Future Plans ─────────────────
   {
-    id: "island09", number: 9, name: "Travel & Future Plans", emoji: "✈️",
-    description: "Talk about travel, dreams, and your plans for the future.",
-    unlockedByDefault: false,
-
-    vocabulary: [
-      { en: "to travel", pt: "viajar", approx: "tri-vel", ipa: "/ˈtrævl/" },
-      { en: "trip", pt: "viagem", approx: "tríp", ipa: "/trɪp/" },
-      { en: "vacation", pt: "férias", approx: "vei-xon", ipa: "/veɪˈkeɪʃn/" },
-      { en: "airport", pt: "aeroporto", approx: "éi-ru-pór", ipa: "/ˈeərpɔːrt/" },
-      { en: "plane", pt: "avião", approx: "pléin", ipa: "/pleɪn/" },
-      { en: "hotel", pt: "hotel", approx: "hoú-tel", ipa: "/həʊˈtel/" },
-      { en: "reservation", pt: "reserva", approx: "ré-zer-vei-xon", ipa: "/ˌrezərˈveɪʃn/" },
-      { en: "passport", pt: "passaporte", approx: "pá-sa-pórt", ipa: "/ˈpɑːspɔːrt/" },
-      { en: "luggage", pt: "bagagem", approx: "lá-gu-idj", ipa: "/ˈlʌɡɪdʒ/" },
-      { en: "destination", pt: "destino", approx: "des-tí-nou", ipa: "/desˈtɪnəʃn/" },
-      { en: "country", pt: "país", approx: "cán-tri", ipa: "/ˈkʌntri/" },
-      { en: "city", pt: "cidade", approx: "sí-ti", ipa: "/ˈsɪti/" },
-      { en: "tourist", pt: "turista", approx: "tú-rist", ipa: "/ˈtʊərɪst/" },
-      { en: "culture", pt: "cultura", approx: "cól-ter", ipa: "/ˈkʌltʃər/" },
-      { en: "to book", pt: "reservar", approx: "búk", ipa: "/bʊk/" },
-      { en: "to visit", pt: "visitar", approx: "ví-zit", ipa: "/ˈvɪzɪt/" },
-      { en: "to explore", pt: "explorar", ex: "iks-plór", ipa: "/ɪkˈsplɔːr/" },
-      { en: "dream", pt: "sonho", approx: "drím", ipa: "/driːm/" },
-      { en: "plan", pt: "plano", approx: "plán", ipa: "/plæn/" },
-      { en: "to save", pt: "economizar", approx: "séiv", ipa: "/seɪv/" },
-      { en: "budget", pt: "orçamento", approx: "bá-djet", ipa: "/ˈbʌdʒɪt/" },
-      { en: "abroad", pt: "no exterior", approx: "a-bród", ipa: "/əˈbrɔːd/" },
-      { en: "international", pt: "internacional", approx: "in-ter-na-xo-nal", ipa: "/ˌɪntərˈnæʃnəl/" },
-      { en: "tourism", pt: "turismo", approx: "tú-rism", ipa: "/ˈtʊərɪzəm/" },
-      { en: "experience", pt: "experiência", approx: "eks-pí-ri-ens", ipa: "/ɪkˈspɪəriəns/" }
-    ],
-
-    coreSentences: [
-      { en: "I want to travel abroad.", pt: "Eu quero viajar para fora." },
-      { en: "My dream is to visit Florianópolis.", pt: "Meu sonho é visitar Florianópolis." },
-      { en: "I am planning a trip next year.", pt: "Estou planejando uma viagem para o ano que vem." },
-      { en: "I need to save money for the trip.", pt: "Preciso economizar dinheiro para a viagem." },
-      { en: "I want to experience different cultures.", pt: "Eu quero experimentar culturas diferentes." },
-      { en: "I am going to book a hotel soon.", pt: "Vou reservar um hotel em breve." },
-      { en: "I need to renew my passport.", pt: "Preciso renovar meu passaporte." },
-      { en: "I want to visit at least five countries.", pt: "Eu quero visitar pelo menos cinco países." },
-      { en: "I am planning my budget for the trip.", pt: "Estou planejando meu orçamento para a viagem." },
-      { en: "I want to travel with my family.", pt: "Eu quero viajar com minha família." },
-      { en: "I am going to learn English before I travel.", pt: "Vou aprender inglês antes de viajar." },
-      { en: "I want to explore new cities.", pt: "Eu quero explorar novas cidades." },
-      { en: "I am saving money every month.", pt: "Estou economizando dinheiro todo mês." },
-      { en: "I want to be an international tourist.", pt: "Eu quero ser um turista internacional." },
-      { en: "I plan to visit Natal one day.", pt: "Planejo visitar Natal um dia." },
-      { en: "I am going to take a plane for the first time.", pt: "Vou pegar um avião pela primeira vez." },
-      { en: "My biggest dream is to travel the world.", pt: "Meu maior sonho é viajar pelo mundo." },
-      { en: "I want to have many travel experiences.", pt: "Eu quero ter muitas experiências de viagem." },
-      { en: "I am going to start saving next month.", pt: "Vou começar a economizar no mês que vem." },
-      { en: "I want to visit countries where people speak English.", pt: "Eu quero visitar países onde as pessoas falam inglês." }
-    ],
-
-    patterns: [
+    "id": "island08",
+    "number": 8,
+    "name": "Technology & AI",
+    "emoji": "🤖",
+    "description": "Explain technology, AI, programming and your own projects.",
+    "unlockedByDefault": false,
+    "goal": "Explain AI, technology and your own projects.",
+    "vocabulary": [
       {
-        title: "I want to + verb (future desires)",
-        examples: [
-          "I want to travel abroad.",
-          "I want to experience different cultures.",
-          "I want to visit Florianópolis.",
-          "I want to explore new cities."
+        "en": "technology",
+        "pt": "tecnologia",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "artificial intelligence",
+        "pt": "inteligência artificial",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "AI agent",
+        "pt": "agente de IA",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "software",
+        "pt": "software",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "programming",
+        "pt": "programação",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "developer",
+        "pt": "desenvolvedor",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "website",
+        "pt": "site",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "application",
+        "pt": "aplicativo",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "database",
+        "pt": "banco de dados",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "API",
+        "pt": "API",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "automation",
+        "pt": "automação",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "workflow",
+        "pt": "fluxo de trabalho",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "model",
+        "pt": "modelo",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "prompt",
+        "pt": "prompt",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "chatbot",
+        "pt": "chatbot",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "data",
+        "pt": "dados",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "code",
+        "pt": "código",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "bug",
+        "pt": "erro de software",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "feature",
+        "pt": "recurso",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "user",
+        "pt": "usuário",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "interface",
+        "pt": "interface",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "prototype",
+        "pt": "protótipo",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "deploy",
+        "pt": "publicar/deployar",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "build",
+        "pt": "construir/desenvolver",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "test",
+        "pt": "testar",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "improve",
+        "pt": "melhorar",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "solve",
+        "pt": "resolver",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "create",
+        "pt": "criar",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "tool",
+        "pt": "ferramenta",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "project",
+        "pt": "projeto",
+        "approx": "",
+        "ipa": ""
+      }
+    ],
+    "coreSentences": [
+      {
+        "en": "I'm interested in artificial intelligence.",
+        "pt": "Eu me interesso por inteligência artificial."
+      },
+      {
+        "en": "I've been learning about AI tools.",
+        "pt": "Tenho aprendido sobre ferramentas de IA."
+      },
+      {
+        "en": "I like building small projects.",
+        "pt": "Gosto de construir pequenos projetos."
+      },
+      {
+        "en": "I'm working on a website.",
+        "pt": "Estou trabalhando em um site."
+      },
+      {
+        "en": "The project uses a database.",
+        "pt": "O projeto usa um banco de dados."
+      },
+      {
+        "en": "I'm testing a new tool.",
+        "pt": "Estou testando uma ferramenta nova."
+      },
+      {
+        "en": "I found a bug in the application.",
+        "pt": "Encontrei um bug no aplicativo."
+      },
+      {
+        "en": "I need to fix this problem.",
+        "pt": "Preciso corrigir esse problema."
+      },
+      {
+        "en": "The user can create a personalized page.",
+        "pt": "O usuário pode criar uma página personalizada."
+      },
+      {
+        "en": "The idea is to automate part of the process.",
+        "pt": "A ideia é automatizar parte do processo."
+      },
+      {
+        "en": "I'm still improving the prototype.",
+        "pt": "Ainda estou melhorando o protótipo."
+      },
+      {
+        "en": "I use AI to brainstorm ideas.",
+        "pt": "Uso IA para gerar ideias."
+      },
+      {
+        "en": "I also use AI to write and analyze code.",
+        "pt": "Também uso IA para escrever e analisar código."
+      },
+      {
+        "en": "What do you think about AI?",
+        "pt": "O que você acha de IA?"
+      },
+      {
+        "en": "Do you use AI in your daily life?",
+        "pt": "Você usa IA no dia a dia?"
+      },
+      {
+        "en": "What kind of AI projects would you build?",
+        "pt": "Que tipo de projeto de IA você construiria?"
+      },
+      {
+        "en": "AI can save time, but it also creates new challenges.",
+        "pt": "A IA pode economizar tempo, mas também cria novos desafios."
+      },
+      {
+        "en": "I want to understand how these tools work.",
+        "pt": "Quero entender como essas ferramentas funcionam."
+      },
+      {
+        "en": "I'm not an expert yet.",
+        "pt": "Ainda não sou especialista."
+      },
+      {
+        "en": "I'm learning by building things.",
+        "pt": "Estou aprendendo construindo coisas."
+      },
+      {
+        "en": "What problem does your project solve?",
+        "pt": "Que problema seu projeto resolve?"
+      },
+      {
+        "en": "How does the application work?",
+        "pt": "Como o aplicativo funciona?"
+      },
+      {
+        "en": "What technology are you using?",
+        "pt": "Que tecnologia você está usando?"
+      },
+      {
+        "en": "What would you improve?",
+        "pt": "O que você melhoraria?"
+      },
+      {
+        "en": "I like experimenting with new tools.",
+        "pt": "Gosto de experimentar ferramentas novas."
+      }
+    ],
+    "patterns": [
+      {
+        "title": "I'm working on + project",
+        "examples": [
+          "I'm working on a website.",
+          "What are you working on?"
         ],
-        variationBank: [
-          "I want to learn English abroad.",
-          "I want to stay in a good hotel.",
-          "I want to take many photos.",
-          "I want to try new food abroad."
+        "variationBank": [
+          "I'm working on a website.",
+          "I'm not working on...",
+          "What are you working on?"
         ]
       },
       {
-        title: "I am going to + verb (planned future)",
-        examples: [
-          "I am going to book a hotel soon.",
-          "I am going to learn English before I travel.",
-          "I am going to take a plane for the first time.",
-          "I am going to start saving next month."
+        "title": "The idea is to + verb",
+        "examples": [
+          "The idea is to automate the process.",
+          "What's the idea?"
         ],
-        variationBank: [
-          "I am going to visit Natal next year.",
-          "I am going to renew my passport.",
-          "I am going to plan my budget.",
-          "I am going to travel with my family."
+        "variationBank": [
+          "The idea is to automate the process.",
+          "The idea isn't to...",
+          "What's the idea?"
         ]
       },
       {
-        title: "I plan to + verb / My dream is to + verb",
-        examples: [
-          "I plan to visit Natal one day.",
-          "My dream is to visit Florianópolis.",
-          "My biggest dream is to travel the world.",
-          "I plan to save money for the trip."
+        "title": "It allows users to + verb",
+        "examples": [
+          "It allows users to create pages.",
+          "What does it allow?"
         ],
-        variationBank: [
-          "I plan to learn English abroad.",
-          "My dream is to live in another country.",
-          "My dream is to meet people from other cultures.",
-          "I plan to travel next year."
+        "variationBank": [
+          "It allows users to create pages.",
+          "It doesn't allow...",
+          "What does it allow?"
+        ]
+      },
+      {
+        "title": "I'm using + technology",
+        "examples": [
+          "I'm using a database.",
+          "What are you using?"
+        ],
+        "variationBank": [
+          "I'm using a database.",
+          "I'm not using...",
+          "What are you using?"
+        ]
+      },
+      {
+        "title": "I built + object",
+        "examples": [
+          "I built a prototype.",
+          "What did you build?"
+        ],
+        "variationBank": [
+          "I built a prototype.",
+          "I didn't build...",
+          "What did you build?"
+        ]
+      },
+      {
+        "title": "I found a bug in + object",
+        "examples": [
+          "I found a bug in the app.",
+          "Did you find a bug?"
+        ],
+        "variationBank": [
+          "I found a bug in the app.",
+          "I didn't find...",
+          "Did you find a bug?"
+        ]
+      },
+      {
+        "title": "I'm trying to + verb",
+        "examples": [
+          "I'm trying to solve it.",
+          "What are you trying to do?"
+        ],
+        "variationBank": [
+          "I'm trying to solve it.",
+          "I'm not trying to...",
+          "What are you trying to do?"
+        ]
+      },
+      {
+        "title": "If I had + resource, I would + verb",
+        "examples": [
+          "If I had more time, I would improve it.",
+          "What would you build?"
+        ],
+        "variationBank": [
+          "If I had more time, I would improve it.",
+          "If I didn't have...",
+          "What would you build?"
         ]
       }
     ],
-
-    variations: [
+    "variations": [
       {
-        base: "I want to travel abroad.",
-        affirmative: "I want to travel abroad.",
-        negative: "I don't want to travel alone.",
-        question: "Do you want to travel abroad?",
-        past: "I wanted to travel last year.",
-        future: "I'm going to travel abroad soon."
+        "base": "I'm working on a website.",
+        "affirmative": "I'm working on a website.",
+        "negative": "I'm not working on...",
+        "question": "What are you working on?",
+        "past": "",
+        "future": ""
       },
       {
-        base: "I am going to book a hotel.",
-        affirmative: "I am going to book a hotel.",
-        negative: "I am not going to book a hotel.",
-        question: "Are you going to book a hotel?",
-        past: "I was going to book a hotel but I didn't.",
-        future: null
+        "base": "The idea is to automate the process.",
+        "affirmative": "The idea is to automate the process.",
+        "negative": "The idea isn't to...",
+        "question": "What's the idea?",
+        "past": "",
+        "future": ""
       },
       {
-        base: "I plan to visit Natal one day.",
-        affirmative: "I plan to visit Natal one day.",
-        negative: "I don't plan to travel alone.",
-        question: "Do you plan to visit Natal?",
-        past: "I planned to visit last year.",
-        future: "I will plan the trip next month."
+        "base": "It allows users to create pages.",
+        "affirmative": "It allows users to create pages.",
+        "negative": "It doesn't allow...",
+        "question": "What does it allow?",
+        "past": "",
+        "future": ""
+      },
+      {
+        "base": "I'm using a database.",
+        "affirmative": "I'm using a database.",
+        "negative": "I'm not using...",
+        "question": "What are you using?",
+        "past": "",
+        "future": ""
+      },
+      {
+        "base": "I built a prototype.",
+        "affirmative": "I built a prototype.",
+        "negative": "I didn't build...",
+        "question": "What did you build?",
+        "past": "",
+        "future": ""
       }
     ],
-
-    questions: [
-      { q: "Do you want to travel abroad?", sample: "Yes, I want to travel abroad." },
-      { q: "What is your dream destination?", sample: "My dream is to visit Florianópolis." },
-      { q: "Are you planning any trips?", sample: "Yes, I am planning a trip next year." },
-      { q: "Do you need to save money for travel?", sample: "Yes, I need to save money for the trip." },
-      { q: "How many countries do you want to visit?", sample: "I want to visit at least five countries." },
-      { q: "Have you ever been on a plane?", sample: "No, I am going to take a plane for the first time." },
-      { q: "What do you want to experience abroad?", sample: "I want to experience different cultures." },
-      { q: "Do you want to travel with your family?", sample: "Yes, I want to travel with my family." },
-      { q: "What is your biggest dream?", sample: "My biggest dream is to travel the world." },
-      { q: "Are you saving money for a trip?", sample: "Yes, I am saving money every month." },
-      { q: "Do you want to visit countries where people speak English?", sample: "Yes, I want to practice my English." },
-      { q: "What city do you want to visit?", sample: "I want to visit Aracaju." },
-      { q: "Do you like planning trips?", sample: "Yes, I enjoy planning my trips." },
-      { q: "What do you need before traveling?", sample: "I need a passport and to save money." },
-      { q: "When do you plan to travel?", sample: "I plan to travel next year." }
+    "questions": [
+      {
+        "q": "What do you think about AI?",
+        "sample": "I'm interested in artificial intelligence."
+      },
+      {
+        "q": "How do you use AI?",
+        "sample": "I've been learning about AI tools."
+      },
+      {
+        "q": "What AI tools have you tried?",
+        "sample": "I like building small projects."
+      },
+      {
+        "q": "What are you building right now?",
+        "sample": "I'm working on a website."
+      },
+      {
+        "q": "How does your project work?",
+        "sample": "The project uses a database."
+      },
+      {
+        "q": "What problem does it solve?",
+        "sample": "I'm testing a new tool."
+      },
+      {
+        "q": "What technology are you using?",
+        "sample": "I found a bug in the application."
+      },
+      {
+        "q": "What is an API?",
+        "sample": "I need to fix this problem."
+      },
+      {
+        "q": "What is automation?",
+        "sample": "The user can create a personalized page."
+      },
+      {
+        "q": "Do you think AI will change jobs?",
+        "sample": "The idea is to automate part of the process."
+      },
+      {
+        "q": "What are the risks of AI?",
+        "sample": "I'm still improving the prototype."
+      },
+      {
+        "q": "What are the benefits of AI?",
+        "sample": "I use AI to brainstorm ideas."
+      },
+      {
+        "q": "What would you build if you had unlimited resources?",
+        "sample": "I also use AI to write and analyze code."
+      },
+      {
+        "q": "How do you learn programming?",
+        "sample": "What do you think about AI?"
+      },
+      {
+        "q": "Explain one of your projects to a non-technical person.",
+        "sample": "Do you use AI in your daily life?"
+      }
     ],
-
-    exercises: {
-      translate: [
-        { pt: "Eu quero viajar para fora.", en: "I want to travel abroad." },
-        { pt: "Meu sonho é visitar Florianópolis.", en: "My dream is to visit Florianópolis." },
-        { pt: "Estou economizando dinheiro todo mês.", en: "I am saving money every month." },
-        { pt: "Vou reservar um hotel em breve.", en: "I am going to book a hotel soon." },
-        { pt: "Preciso renovar meu passaporte.", en: "I need to renew my passport." },
-        { pt: "Planejo visitar Natal um dia.", en: "I plan to visit Natal one day." }
+    "exercises": {
+      "translate": [
+        {
+          "pt": "Eu me interesso por inteligência artificial.",
+          "answer": "I'm interested in artificial intelligence."
+        },
+        {
+          "pt": "Tenho aprendido sobre ferramentas de IA.",
+          "answer": "I've been learning about AI tools."
+        },
+        {
+          "pt": "Gosto de construir pequenos projetos.",
+          "answer": "I like building small projects."
+        },
+        {
+          "pt": "Estou trabalhando em um site.",
+          "answer": "I'm working on a website."
+        },
+        {
+          "pt": "O projeto usa um banco de dados.",
+          "answer": "The project uses a database."
+        },
+        {
+          "pt": "Estou testando uma ferramenta nova.",
+          "answer": "I'm testing a new tool."
+        },
+        {
+          "pt": "Encontrei um bug no aplicativo.",
+          "answer": "I found a bug in the application."
+        },
+        {
+          "pt": "Preciso corrigir esse problema.",
+          "answer": "I need to fix this problem."
+        }
       ],
-      fillBlank: [
-        { sentence: "I want ___ travel abroad.", options: ["to", "in", "on", "at"], answer: "to" },
-        { sentence: "I am ___ to book a hotel.", options: ["going", "go", "goes", "went"], answer: "going" },
-        { sentence: "I need to ___ my passport.", options: ["renew", "return", "remove", "repeat"], answer: "renew" },
-        { sentence: "I plan ___ visit Natal.", options: ["to", "in", "on", "for"], answer: "to" },
-        { sentence: "I am ___ money every month.", options: ["saving", "save", "saved", "saves"], answer: "saving" }
+      "fillBlank": [
+        {
+          "sentence": "The user ___ create a personalized page.",
+          "options": [
+            "can",
+            "work",
+            "like",
+            "know"
+          ],
+          "answer": "can"
+        },
+        {
+          "sentence": "The idea ___ to automate part of the process.",
+          "options": [
+            "is",
+            "work",
+            "like",
+            "know"
+          ],
+          "answer": "is"
+        },
+        {
+          "sentence": "I'm still ___ the prototype.",
+          "options": [
+            "improving",
+            "work",
+            "like",
+            "know"
+          ],
+          "answer": "improving"
+        },
+        {
+          "sentence": "I use ___ to brainstorm ideas.",
+          "options": [
+            "AI",
+            "work",
+            "like",
+            "know"
+          ],
+          "answer": "AI"
+        },
+        {
+          "sentence": "I also ___ AI to write and analyze code.",
+          "options": [
+            "use",
+            "work",
+            "like",
+            "know"
+          ],
+          "answer": "use"
+        },
+        {
+          "sentence": "What do ___ think about AI?",
+          "options": [
+            "you",
+            "work",
+            "like",
+            "know"
+          ],
+          "answer": "you"
+        },
+        {
+          "sentence": "Do you ___ AI in your daily life?",
+          "options": [
+            "use",
+            "work",
+            "like",
+            "know"
+          ],
+          "answer": "use"
+        },
+        {
+          "sentence": "What kind ___ AI projects would you build?",
+          "options": [
+            "of",
+            "work",
+            "like",
+            "know"
+          ],
+          "answer": "of"
+        }
       ],
-      multipleChoice: [
-        { q: 'What does "abroad" mean?', options: ["no exterior", "em casa", "na escola", "no trabalho"], answer: "no exterior" },
-        { q: 'What does "destination" mean?', options: ["destino", "partida", "viagem", "hotel"], answer: "destino" },
-        { q: 'What does "budget" mean?', options: ["orçamento", "passaporte", "bagagem", "reserva"], answer: "orçamento" }
+      "multipleChoice": [
+        {
+          "q": "What does \"AI can save time, but it also creates new challenges.\" mean?",
+          "options": [
+            "A IA pode economizar tempo, mas também cria novos desafios.",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "A IA pode economizar tempo, mas também cria novos desafios."
+        },
+        {
+          "q": "What does \"I want to understand how these tools work.\" mean?",
+          "options": [
+            "Quero entender como essas ferramentas funcionam.",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Quero entender como essas ferramentas funcionam."
+        },
+        {
+          "q": "What does \"I'm not an expert yet.\" mean?",
+          "options": [
+            "Ainda não sou especialista.",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Ainda não sou especialista."
+        },
+        {
+          "q": "What does \"I'm learning by building things.\" mean?",
+          "options": [
+            "Estou aprendendo construindo coisas.",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Estou aprendendo construindo coisas."
+        },
+        {
+          "q": "What does \"What problem does your project solve?\" mean?",
+          "options": [
+            "Que problema seu projeto resolve?",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Que problema seu projeto resolve?"
+        },
+        {
+          "q": "What does \"How does the application work?\" mean?",
+          "options": [
+            "Como o aplicativo funciona?",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Como o aplicativo funciona?"
+        },
+        {
+          "q": "What does \"What technology are you using?\" mean?",
+          "options": [
+            "Que tecnologia você está usando?",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Que tecnologia você está usando?"
+        },
+        {
+          "q": "What does \"What would you improve?\" mean?",
+          "options": [
+            "O que você melhoraria?",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "O que você melhoraria?"
+        }
       ],
-      rearrange: [
-        { scrambled: ["to", "want", "I", "abroad", "travel"], answer: "I want to travel abroad" },
-        { scrambled: ["is", "My", "dream", "to", "visit", "Florianópolis"], answer: "My dream is to visit Florianópolis" },
-        { scrambled: ["am", "I", "saving", "money", "every", "month"], answer: "I am saving money every month" },
-        { scrambled: ["going", "am", "I", "to", "book", "hotel", "a"], answer: "I am going to book a hotel" }
+      "rearrange": [
+        {
+          "scrambled": [
+            "intelligence",
+            "artificial",
+            "in",
+            "interested",
+            "I'm"
+          ],
+          "answer": "I'm interested in artificial intelligence"
+        },
+        {
+          "scrambled": [
+            "tools",
+            "AI",
+            "about",
+            "learning",
+            "been",
+            "I've"
+          ],
+          "answer": "I've been learning about AI tools"
+        },
+        {
+          "scrambled": [
+            "projects",
+            "small",
+            "building",
+            "like",
+            "I"
+          ],
+          "answer": "I like building small projects"
+        },
+        {
+          "scrambled": [
+            "website",
+            "a",
+            "on",
+            "working",
+            "I'm"
+          ],
+          "answer": "I'm working on a website"
+        },
+        {
+          "scrambled": [
+            "database",
+            "a",
+            "uses",
+            "project",
+            "The"
+          ],
+          "answer": "The project uses a database"
+        },
+        {
+          "scrambled": [
+            "tool",
+            "new",
+            "a",
+            "testing",
+            "I'm"
+          ],
+          "answer": "I'm testing a new tool"
+        },
+        {
+          "scrambled": [
+            "application",
+            "the",
+            "in",
+            "bug",
+            "a",
+            "found",
+            "I"
+          ],
+          "answer": "I found a bug in the application"
+        },
+        {
+          "scrambled": [
+            "problem",
+            "this",
+            "fix",
+            "to",
+            "need",
+            "I"
+          ],
+          "answer": "I need to fix this problem"
+        }
       ],
-      listening: [
-        { audio: "I want to travel abroad.", options: ["I want to travel abroad.", "I want to travel domestically.", "I don't want to travel."], answer: "I want to travel abroad." },
-        { audio: "My dream is to visit Florianópolis.", options: ["My dream is to visit Florianópolis.", "My dream is to visit Natal.", "My dream is to visit Asia."], answer: "My dream is to visit Florianópolis." },
-        { audio: "I am saving money every month.", options: ["I am saving money every month.", "I am spending money every month.", "I am earning money every month."], answer: "I am saving money every month." }
+      "listening": [
+        {
+          "audio": "I'm interested in artificial intelligence.",
+          "options": [
+            "I'm interested in artificial intelligence.",
+            "I've been learning about AI tools.",
+            "I like building small projects."
+          ],
+          "answer": "I'm interested in artificial intelligence."
+        },
+        {
+          "audio": "I've been learning about AI tools.",
+          "options": [
+            "I've been learning about AI tools.",
+            "I like building small projects.",
+            "I'm working on a website."
+          ],
+          "answer": "I've been learning about AI tools."
+        },
+        {
+          "audio": "I like building small projects.",
+          "options": [
+            "I like building small projects.",
+            "I'm working on a website.",
+            "The project uses a database."
+          ],
+          "answer": "I like building small projects."
+        },
+        {
+          "audio": "I'm working on a website.",
+          "options": [
+            "I'm working on a website.",
+            "The project uses a database.",
+            "I'm testing a new tool."
+          ],
+          "answer": "I'm working on a website."
+        },
+        {
+          "audio": "The project uses a database.",
+          "options": [
+            "The project uses a database.",
+            "I'm testing a new tool.",
+            "I found a bug in the application."
+          ],
+          "answer": "The project uses a database."
+        },
+        {
+          "audio": "I'm testing a new tool.",
+          "options": [
+            "I'm testing a new tool.",
+            "I found a bug in the application.",
+            "I need to fix this problem."
+          ],
+          "answer": "I'm testing a new tool."
+        },
+        {
+          "audio": "I found a bug in the application.",
+          "options": [
+            "I found a bug in the application.",
+            "I need to fix this problem.",
+            "The user can create a personalized page."
+          ],
+          "answer": "I found a bug in the application."
+        },
+        {
+          "audio": "I need to fix this problem.",
+          "options": [
+            "I need to fix this problem.",
+            "The user can create a personalized page.",
+            "The idea is to automate part of the process."
+          ],
+          "answer": "I need to fix this problem."
+        }
       ]
     },
-
-    speakingSentences: [
-      "I want to travel abroad.",
-      "My dream is to visit Florianópolis.",
-      "I am saving money every month.",
-      "I am going to book a hotel soon.",
-      "My biggest dream is to travel the world."
+    "speakingSentences": [
+      "I'm interested in artificial intelligence.",
+      "I've been learning about AI tools.",
+      "I like building small projects.",
+      "I'm working on a website.",
+      "The project uses a database.",
+      "I'm testing a new tool.",
+      "I found a bug in the application.",
+      "I need to fix this problem."
     ],
-
-    talkPrompts: [
-      "Do you want to travel abroad?",
-      "What is your dream destination?",
-      "Are you planning any trips?",
-      "How many countries do you want to visit?",
-      "What is your biggest dream?",
-      "When do you plan to travel?"
-    ]
+    "talkPrompts": [
+      "What do you think about AI?",
+      "How do you use AI?",
+      "What AI tools have you tried?",
+      "What are you building right now?",
+      "How does your project work?",
+      "What problem does it solve?",
+      "What technology are you using?",
+      "What is an API?"
+    ],
+    "reading": []
   },
-
-  // ── Island 10: Opinions & Small Talk ─────────────────
   {
-    id: "island10", number: 10, name: "Opinions & Small Talk", emoji: "💬",
-    description: "Share your opinions and make everyday conversation.",
-    unlockedByDefault: false,
-
-    vocabulary: [
-      { en: "opinion", pt: "opinião", approx: "o-pi-nion", ipa: "/əˈpɪnjən/" },
-      { en: "to agree", pt: "concordar", approx: "u-grí", ipa: "/əˈɡriː/" },
-      { en: "to disagree", pt: "discordar", approx: "dis-u-grí", ipa: "/ˌdɪsəˈɡriː/" },
-      { en: "to think", pt: "achar / pensar", approx: "singk", ipa: "/θɪŋk/" },
-      { en: "to believe", pt: "acreditar", approx: "bi-lív", ipa: "/bɪˈliːv/" },
-      { en: "probably", pt: "provavelmente", approx: "pró-ba-bli", ipa: "/ˈprɒbəbli/" },
-      { en: "definitely", pt: "definitivamente", approx: "dé-fi-nit-li", ipa: "/ˈdefɪnətli/" },
-      { en: "maybe", pt: "talvez", approx: "méi-bi", ipa: "/ˈmeɪbi/" },
-      { en: "actually", pt: "na verdade", approx: "ác-tchu-a-li", ipa: "/ˈæktʃuəli/" },
-      { en: "honestly", pt: "honestamente", approx: "ó-nest-li", ipa: "/ˈɒnɪstli/" },
-      { en: "in my view", pt: "na minha visão", approx: "in mai viu", ipa: "/ɪn maɪ vjuː/" },
-      { en: "as far as I know", pt: "que eu saiba", approx: "ez fár ez ai nóu", ipa: "/æz fɑːr æz aɪ nəʊ/" },
-      { en: "by the way", pt: "a propósito", approx: "bai dei uéi", ipa: "/baɪ ðə weɪ/" },
-      { en: "weather", pt: "tempo / clima", approx: "ué-der", ipa: "/ˈweðər/" },
-      { en: "traffic", pt: "trânsito", approx: "tré-fic", ipa: "/ˈtræfɪk/" },
-      { en: "news", pt: "notícias", approx: "niúz", ipa: "/njuːz/" },
-      { en: "social media", pt: "redes sociais", approx: "só-xo mí-di-a", ipa: "/ˌsəʊʃəlˈmiːdiə/" },
-      { en: "technology", pt: "tecnologia", approx: "tek-nó-lo-dji", ipa: "/tekˈnɒlədʒi/" },
-      { en: "environment", pt: "meio ambiente", approx: "en-vái-ron-ment", ipa: "/ɪnˈvaɪrənmənt/" },
-      { en: "society", pt: "sociedade", approx: "só-sai-e-ti", ipa: "/səˈsaɪəti/" },
-      { en: "generation", pt: "geração", approx: "dje-ne-réi-xon", ipa: "/ˌdʒenəˈreɪʃn/" },
-      { en: "lifestyle", pt: "estilo de vida", approx: "lái-f-stáil", ipa: "/ˈlaɪfstaɪl/" },
-      { en: "trend", pt: "tendência", approx: "trénd", ipa: "/trend/" },
-      { en: "interesting", pt: "interessante", approx: "ín-te-res-ting", ipa: "/ˈɪntrəstɪŋ/" },
-      { en: "important", pt: "importante", approx: "im-por-tant", ipa: "/ɪmˈpɔːrtənt/" }
-    ],
-
-    coreSentences: [
-      { en: "I think technology is very important.", pt: "Eu acho que tecnologia é muito importante." },
-      { en: "In my view, learning English is essential.", pt: "Na minha visão, aprender inglês é essencial." },
-      { en: "I agree with you about that.", pt: "Eu concordo com você sobre isso." },
-      { en: "I don't agree with that opinion.", pt: "Eu não concordo com essa opinião." },
-      { en: "Honestly, I think the weather is great today.", pt: "Honestamente, eu acho que o tempo está ótimo hoje." },
-      { en: "Actually, I prefer working from home.", pt: "Na verdade, eu prefiro trabalhar em casa." },
-      { en: "Maybe you are right about that.", pt: "Talvez você esteja certo sobre isso." },
-      { en: "I definitely think we should learn English.", pt: "Definitivamente, eu acho que devemos aprender inglês." },
-      { en: "Probably the traffic is bad right now.", pt: "Provavelmente o trânsito está ruim agora." },
-      { en: "As far as I know, the class is at 7 PM.", pt: "Que eu saiba, a aula é às 7 da noite." },
-      { en: "By the way, how is your English class?", pt: "A propósito, como está sua aula de inglês?" },
-      { en: "I think social media is both good and bad.", pt: "Eu acho que redes sociais são boas e ruins." },
-      { en: "I believe the environment is very important.", pt: "Eu acredito que o meio ambiente é muito importante." },
-      { en: "In my opinion, our generation has many challenges.", pt: "Na minha opinião, nossa geração tem muitos desafios." },
-      { en: "I think technology has changed our lifestyle.", pt: "Eu acho que tecnologia mudou nosso estilo de vida." },
-      { en: "That's an interesting point.", pt: "Esse é um ponto interessante." },
-      { en: "I don't think that's necessarily true.", pt: "Eu não acho que isso seja necessariamente verdade." },
-      { en: "What do you think about that?", sample: "O que você acha sobre isso?" },
-      { en: "I think so too.", pt: "Eu acho que sim também." },
-      { en: "That makes sense to me.", pt: "Isso faz sentido para mim." }
-    ],
-
-    patterns: [
+    "id": "island09",
+    "number": 9,
+    "name": "Work & Career",
+    "emoji": "💼",
+    "description": "Talk about your professional experience, quality work and career goals.",
+    "unlockedByDefault": false,
+    "goal": "Talk about quality work, experience and career goals.",
+    "vocabulary": [
       {
-        title: "I think / believe + clause",
-        examples: [
-          "I think technology is very important.",
-          "I believe the environment is very important.",
-          "I think social media is both good and bad.",
-          "I think so too."
+        "en": "quality",
+        "pt": "qualidade",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "quality control",
+        "pt": "controle de qualidade",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "quality management",
+        "pt": "gestão da qualidade",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "inspection",
+        "pt": "inspeção",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "document",
+        "pt": "documento",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "documentation",
+        "pt": "documentação",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "procedure",
+        "pt": "procedimento",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "nonconformity",
+        "pt": "não conformidade",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "corrective action",
+        "pt": "ação corretiva",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "audit",
+        "pt": "auditoria",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "report",
+        "pt": "relatório",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "checklist",
+        "pt": "lista de verificação",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "requirement",
+        "pt": "requisito",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "standard",
+        "pt": "norma/padrão",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "evidence",
+        "pt": "evidência",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "deadline",
+        "pt": "prazo",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "supplier",
+        "pt": "fornecedor",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "construction site",
+        "pt": "canteiro de obras",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "engineering",
+        "pt": "engenharia",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "project",
+        "pt": "projeto",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "renewable energy",
+        "pt": "energia renovável",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "solar plant",
+        "pt": "usina solar",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "meeting",
+        "pt": "reunião",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "responsibility",
+        "pt": "responsabilidade",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "experience",
+        "pt": "experiência",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "position",
+        "pt": "cargo/vaga",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "salary",
+        "pt": "salário",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "interview",
+        "pt": "entrevista",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "career goal",
+        "pt": "objetivo de carreira",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "international",
+        "pt": "internacional",
+        "approx": "",
+        "ipa": ""
+      }
+    ],
+    "coreSentences": [
+      {
+        "en": "I work in quality management.",
+        "pt": "Eu trabalho com gestão da qualidade."
+      },
+      {
+        "en": "I have experience in construction projects.",
+        "pt": "Tenho experiência em projetos de construção."
+      },
+      {
+        "en": "I worked on a solar energy project.",
+        "pt": "Trabalhei em um projeto de energia solar."
+      },
+      {
+        "en": "I work with quality documentation.",
+        "pt": "Trabalho com documentação da qualidade."
+      },
+      {
+        "en": "I check documents and requirements.",
+        "pt": "Verifico documentos e requisitos."
+      },
+      {
+        "en": "I participate in inspections.",
+        "pt": "Participo de inspeções."
+      },
+      {
+        "en": "We need evidence for the audit.",
+        "pt": "Precisamos de evidências para a auditoria."
+      },
+      {
+        "en": "We found a nonconformity.",
+        "pt": "Encontramos uma não conformidade."
+      },
+      {
+        "en": "We need to investigate the cause.",
+        "pt": "Precisamos investigar a causa."
+      },
+      {
+        "en": "We need to take corrective action.",
+        "pt": "Precisamos tomar uma ação corretiva."
+      },
+      {
+        "en": "The document needs to be updated.",
+        "pt": "O documento precisa ser atualizado."
+      },
+      {
+        "en": "We have a deadline tomorrow.",
+        "pt": "Temos um prazo amanhã."
+      },
+      {
+        "en": "I'm comfortable working with documentation.",
+        "pt": "Tenho facilidade em trabalhar com documentação."
+      },
+      {
+        "en": "I like organized processes.",
+        "pt": "Gosto de processos organizados."
+      },
+      {
+        "en": "I enjoy solving problems.",
+        "pt": "Gosto de resolver problemas."
+      },
+      {
+        "en": "Tell me about your experience.",
+        "pt": "Fale sobre sua experiência."
+      },
+      {
+        "en": "What are your main responsibilities?",
+        "pt": "Quais são suas principais responsabilidades?"
+      },
+      {
+        "en": "Why are you interested in this position?",
+        "pt": "Por que você se interessa por esta vaga?"
+      },
+      {
+        "en": "What are your career goals?",
+        "pt": "Quais são seus objetivos de carreira?"
+      },
+      {
+        "en": "I want to work internationally.",
+        "pt": "Quero trabalhar internacionalmente."
+      },
+      {
+        "en": "I'm looking for an opportunity to grow.",
+        "pt": "Estou procurando uma oportunidade para crescer."
+      },
+      {
+        "en": "I'm learning English for my career.",
+        "pt": "Estou aprendendo inglês para minha carreira."
+      },
+      {
+        "en": "I can learn new processes quickly.",
+        "pt": "Consigo aprender novos processos rapidamente."
+      },
+      {
+        "en": "I try to communicate problems clearly.",
+        "pt": "Tento comunicar problemas com clareza."
+      },
+      {
+        "en": "I want to keep developing my technical skills.",
+        "pt": "Quero continuar desenvolvendo minhas habilidades técnicas."
+      }
+    ],
+    "patterns": [
+      {
+        "title": "I work in + field",
+        "examples": [
+          "I work in quality management.",
+          "What do you do?"
         ],
-        variationBank: [
-          "I think learning English is important.",
-          "I believe our generation has many challenges.",
-          "I think the weather is great today.",
-          "I believe technology has changed our lives."
+        "variationBank": [
+          "I work in quality management.",
+          "I don't work in...",
+          "What do you do?"
         ]
       },
       {
-        title: "In my view / In my opinion + clause",
-        examples: [
-          "In my view, learning English is essential.",
-          "In my opinion, our generation has many challenges.",
-          "In my view, technology is helpful.",
-          "In my opinion, the traffic is a problem."
+        "title": "I have experience in + area",
+        "examples": [
+          "I have experience in construction.",
+          "What experience do you have?"
         ],
-        variationBank: [
-          "In my view, we should study more.",
-          "In my opinion, social media is useful.",
-          "In my view, the environment needs attention.",
-          "In my opinion, working from home is great."
+        "variationBank": [
+          "I have experience in construction.",
+          "I don't have experience in...",
+          "What experience do you have?"
         ]
       },
       {
-        title: "I agree / I disagree with + noun",
-        examples: [
-          "I agree with you about that.",
-          "I don't agree with that opinion.",
-          "I completely agree with you.",
-          "I disagree about that topic."
+        "title": "My responsibilities include + nouns/verbs",
+        "examples": [
+          "My responsibilities include document control.",
+          "What are your responsibilities?"
         ],
-        variationBank: [
-          "I agree with your idea.",
-          "I don't agree with the teacher.",
-          "I partly agree with you.",
-          "I disagree about technology."
+        "variationBank": [
+          "My responsibilities include document control.",
+          "My responsibilities don't include...",
+          "What are your responsibilities?"
+        ]
+      },
+      {
+        "title": "We need to + verb",
+        "examples": [
+          "We need to investigate the cause.",
+          "What do you need to do?"
+        ],
+        "variationBank": [
+          "We need to investigate the cause.",
+          "We don't need to...",
+          "What do you need to do?"
+        ]
+      },
+      {
+        "title": "The document needs to be + past participle",
+        "examples": [
+          "The document needs to be updated.",
+          "What needs to be done?"
+        ],
+        "variationBank": [
+          "The document needs to be updated.",
+          "The document doesn't need to...",
+          "What needs to be done?"
+        ]
+      },
+      {
+        "title": "I handled + situation",
+        "examples": [
+          "I handled a nonconformity.",
+          "How did you handle it?"
+        ],
+        "variationBank": [
+          "I handled a nonconformity.",
+          "I didn't handle...",
+          "How did you handle it?"
+        ]
+      },
+      {
+        "title": "I'm looking for + opportunity",
+        "examples": [
+          "I'm looking for an international opportunity.",
+          "What are you looking for?"
+        ],
+        "variationBank": [
+          "I'm looking for an international opportunity.",
+          "I'm not looking for...",
+          "What are you looking for?"
+        ]
+      },
+      {
+        "title": "My goal is to + verb",
+        "examples": [
+          "My goal is to work internationally.",
+          "What is your career goal?"
+        ],
+        "variationBank": [
+          "My goal is to work internationally.",
+          "My goal isn't to...",
+          "What is your career goal?"
         ]
       }
     ],
-
-    variations: [
+    "variations": [
       {
-        base: "I think technology is very important.",
-        affirmative: "I think technology is very important.",
-        negative: "I don't think technology is always good.",
-        question: "Do you think technology is important?",
-        past: "I thought that was important before.",
-        future: "I will think about that later."
+        "base": "I work in quality management.",
+        "affirmative": "I work in quality management.",
+        "negative": "I don't work in...",
+        "question": "What do you do?",
+        "past": "",
+        "future": ""
       },
       {
-        base: "I agree with you about that.",
-        affirmative: "I agree with you about that.",
-        negative: "I don't agree with you about that.",
-        question: "Do you agree with me?",
-        past: "I agreed with you before.",
-        future: null
+        "base": "I have experience in construction.",
+        "affirmative": "I have experience in construction.",
+        "negative": "I don't have experience in...",
+        "question": "What experience do you have?",
+        "past": "",
+        "future": ""
       },
       {
-        base: "By the way, how is your English class?",
-        affirmative: "By the way, how is your English class?",
-        negative: null,
-        question: "By the way, how is your English class?",
-        past: null,
-        future: null
+        "base": "My responsibilities include document control.",
+        "affirmative": "My responsibilities include document control.",
+        "negative": "My responsibilities don't include...",
+        "question": "What are your responsibilities?",
+        "past": "",
+        "future": ""
+      },
+      {
+        "base": "We need to investigate the cause.",
+        "affirmative": "We need to investigate the cause.",
+        "negative": "We don't need to...",
+        "question": "What do you need to do?",
+        "past": "",
+        "future": ""
+      },
+      {
+        "base": "The document needs to be updated.",
+        "affirmative": "The document needs to be updated.",
+        "negative": "The document doesn't need to...",
+        "question": "What needs to be done?",
+        "past": "",
+        "future": ""
       }
     ],
-
-    questions: [
-      { q: "What do you think about technology?", sample: "I think technology is very important." },
-      { q: "Do you agree that learning English is essential?", sample: "Yes, I definitely agree with that." },
-      { q: "What is your opinion about social media?", sample: "I think social media is both good and bad." },
-      { q: "Do you prefer working from home or in an office?", sample: "Actually, I prefer working from home." },
-      { q: "What do you think about the weather today?", sample: "Honestly, I think the weather is great." },
-      { q: "Do you think our generation has many challenges?", sample: "Yes, I believe our generation has many challenges." },
-      { q: "What do you think about the environment?", sample: "I believe the environment is very important." },
-      { q: "Do you think technology has changed our lifestyle?", sample: "Yes, I think technology has changed our lifestyle." },
-      { q: "What do you think about learning English?", sample: "I definitely think we should learn English." },
-      { q: "What is your opinion about traffic?", sample: "I think traffic is a big problem in Brazil." },
-      { q: "Do you think online learning is effective?", sample: "Yes, I think online learning can be very effective." },
-      { q: "What do you think about the news?", sample: "I try to watch the news every day." },
-      { q: "Do you think our lifestyle is healthy?", sample: "I think we need to take better care of ourselves." },
-      { q: "What is an interesting trend you've noticed?", sample: "I think remote work is a big trend." },
-      { q: "By the way, what do you do in your free time?", sample: "I usually watch movies and study English." }
+    "questions": [
+      {
+        "q": "What do you do?",
+        "sample": "I work in quality management."
+      },
+      {
+        "q": "Tell me about your professional experience.",
+        "sample": "I have experience in construction projects."
+      },
+      {
+        "q": "What were your main responsibilities?",
+        "sample": "I worked on a solar energy project."
+      },
+      {
+        "q": "What is quality management?",
+        "sample": "I work with quality documentation."
+      },
+      {
+        "q": "What is a nonconformity?",
+        "sample": "I check documents and requirements."
+      },
+      {
+        "q": "How do you handle a problem at work?",
+        "sample": "I participate in inspections."
+      },
+      {
+        "q": "How do you organize documents?",
+        "sample": "We need evidence for the audit."
+      },
+      {
+        "q": "Have you participated in audits?",
+        "sample": "We found a nonconformity."
+      },
+      {
+        "q": "Tell me about a difficult project.",
+        "sample": "We need to investigate the cause."
+      },
+      {
+        "q": "How do you communicate a problem?",
+        "sample": "We need to take corrective action."
+      },
+      {
+        "q": "What are your strengths at work?",
+        "sample": "The document needs to be updated."
+      },
+      {
+        "q": "What are you currently learning?",
+        "sample": "We have a deadline tomorrow."
+      },
+      {
+        "q": "Why are you looking for an international opportunity?",
+        "sample": "I'm comfortable working with documentation."
+      },
+      {
+        "q": "What are your career goals?",
+        "sample": "I like organized processes."
+      },
+      {
+        "q": "Tell me about yourself as a professional.",
+        "sample": "I enjoy solving problems."
+      }
     ],
-
-    exercises: {
-      translate: [
-        { pt: "Eu acho que tecnologia é muito importante.", en: "I think technology is very important." },
-        { pt: "Na minha visão, aprender inglês é essencial.", en: "In my view, learning English is essential." },
-        { pt: "Eu concordo com você sobre isso.", en: "I agree with you about that." },
-        { pt: "Honestamente, eu acho que o tempo está ótimo hoje.", en: "Honestly, I think the weather is great today." },
-        { pt: "A propósito, como está sua aula de inglês?", en: "By the way, how is your English class?" },
-        { pt: "Definitivamente, eu acho que devemos aprender inglês.", en: "I definitely think we should learn English." }
+    "exercises": {
+      "translate": [
+        {
+          "pt": "Eu trabalho com gestão da qualidade.",
+          "answer": "I work in quality management."
+        },
+        {
+          "pt": "Tenho experiência em projetos de construção.",
+          "answer": "I have experience in construction projects."
+        },
+        {
+          "pt": "Trabalhei em um projeto de energia solar.",
+          "answer": "I worked on a solar energy project."
+        },
+        {
+          "pt": "Trabalho com documentação da qualidade.",
+          "answer": "I work with quality documentation."
+        },
+        {
+          "pt": "Verifico documentos e requisitos.",
+          "answer": "I check documents and requirements."
+        },
+        {
+          "pt": "Participo de inspeções.",
+          "answer": "I participate in inspections."
+        },
+        {
+          "pt": "Precisamos de evidências para a auditoria.",
+          "answer": "We need evidence for the audit."
+        },
+        {
+          "pt": "Encontramos uma não conformidade.",
+          "answer": "We found a nonconformity."
+        }
       ],
-      fillBlank: [
-        { sentence: "I ___ technology is very important.", options: ["think", "think", "thinks", "thinking"], answer: "think" },
-        { sentence: "I agree ___ you about that.", options: ["with", "in", "on", "at"], answer: "with" },
-        { sentence: "___ my view, learning English is essential.", options: ["In", "On", "At", "By"], answer: "In" },
-        { sentence: "___ the way, how is your class?", options: ["By", "In", "On", "At"], answer: "By" },
-        { sentence: "I ___ think we should learn English.", options: ["definitely", "maybe", "probably", "actually"], answer: "definitely" }
+      "fillBlank": [
+        {
+          "sentence": "We need ___ investigate the cause.",
+          "options": [
+            "to",
+            "work",
+            "like",
+            "know"
+          ],
+          "answer": "to"
+        },
+        {
+          "sentence": "We need ___ take corrective action.",
+          "options": [
+            "to",
+            "work",
+            "like",
+            "know"
+          ],
+          "answer": "to"
+        },
+        {
+          "sentence": "The document ___ to be updated.",
+          "options": [
+            "needs",
+            "work",
+            "like",
+            "know"
+          ],
+          "answer": "needs"
+        },
+        {
+          "sentence": "We have ___ deadline tomorrow.",
+          "options": [
+            "a",
+            "work",
+            "like",
+            "know"
+          ],
+          "answer": "a"
+        },
+        {
+          "sentence": "I'm comfortable ___ with documentation.",
+          "options": [
+            "working",
+            "work",
+            "like",
+            "know"
+          ],
+          "answer": "working"
+        },
+        {
+          "sentence": "Tell me ___ your experience.",
+          "options": [
+            "about",
+            "work",
+            "like",
+            "know"
+          ],
+          "answer": "about"
+        }
       ],
-      multipleChoice: [
-        { q: 'What does "in my view" mean?', options: ["na minha visão", "no meu trabalho", "na minha casa", "na minha opinião"], answer: "na minha opinião" },
-        { q: 'What does "by the way" mean?', options: ["a propósito", "pelo caminho", "de repente", "às vezes"], answer: "a propósito" },
-        { q: 'What does "as far as I know" mean?', options: ["que eu saiba", "tão longe quanto", "por mais que", "apesar de"], answer: "que eu saiba" }
+      "multipleChoice": [
+        {
+          "q": "What does \"What are your main responsibilities?\" mean?",
+          "options": [
+            "Quais são suas principais responsabilidades?",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Quais são suas principais responsabilidades?"
+        },
+        {
+          "q": "What does \"Why are you interested in this position?\" mean?",
+          "options": [
+            "Por que você se interessa por esta vaga?",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Por que você se interessa por esta vaga?"
+        },
+        {
+          "q": "What does \"What are your career goals?\" mean?",
+          "options": [
+            "Quais são seus objetivos de carreira?",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Quais são seus objetivos de carreira?"
+        },
+        {
+          "q": "What does \"I want to work internationally.\" mean?",
+          "options": [
+            "Quero trabalhar internacionalmente.",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Quero trabalhar internacionalmente."
+        },
+        {
+          "q": "What does \"I'm looking for an opportunity to grow.\" mean?",
+          "options": [
+            "Estou procurando uma oportunidade para crescer.",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Estou procurando uma oportunidade para crescer."
+        },
+        {
+          "q": "What does \"I'm learning English for my career.\" mean?",
+          "options": [
+            "Estou aprendendo inglês para minha carreira.",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Estou aprendendo inglês para minha carreira."
+        },
+        {
+          "q": "What does \"I can learn new processes quickly.\" mean?",
+          "options": [
+            "Consigo aprender novos processos rapidamente.",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Consigo aprender novos processos rapidamente."
+        },
+        {
+          "q": "What does \"I try to communicate problems clearly.\" mean?",
+          "options": [
+            "Tento comunicar problemas com clareza.",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Tento comunicar problemas com clareza."
+        }
       ],
-      rearrange: [
-        { scrambled: ["think", "I", "technology", "is", "important", "very"], answer: "I think technology is very important" },
-        { scrambled: ["agree", "I", "with", "you", "that", "about"], answer: "I agree with you about that" },
-        { scrambled: ["my", "In", "English", "view", "learning", "is", "essential"], answer: "In my view learning English is essential" },
-        { scrambled: ["way", "By", "how", "the", "your", "is", "class"], answer: "By the way how is your class" }
+      "rearrange": [
+        {
+          "scrambled": [
+            "management",
+            "quality",
+            "in",
+            "work",
+            "I"
+          ],
+          "answer": "I work in quality management"
+        },
+        {
+          "scrambled": [
+            "projects",
+            "construction",
+            "in",
+            "experience",
+            "have",
+            "I"
+          ],
+          "answer": "I have experience in construction projects"
+        },
+        {
+          "scrambled": [
+            "project",
+            "energy",
+            "solar",
+            "a",
+            "on",
+            "worked",
+            "I"
+          ],
+          "answer": "I worked on a solar energy project"
+        },
+        {
+          "scrambled": [
+            "documentation",
+            "quality",
+            "with",
+            "work",
+            "I"
+          ],
+          "answer": "I work with quality documentation"
+        },
+        {
+          "scrambled": [
+            "requirements",
+            "and",
+            "documents",
+            "check",
+            "I"
+          ],
+          "answer": "I check documents and requirements"
+        },
+        {
+          "scrambled": [
+            "inspections",
+            "in",
+            "participate",
+            "I"
+          ],
+          "answer": "I participate in inspections"
+        },
+        {
+          "scrambled": [
+            "audit",
+            "the",
+            "for",
+            "evidence",
+            "need",
+            "We"
+          ],
+          "answer": "We need evidence for the audit"
+        },
+        {
+          "scrambled": [
+            "nonconformity",
+            "a",
+            "found",
+            "We"
+          ],
+          "answer": "We found a nonconformity"
+        }
       ],
-      listening: [
-        { audio: "I think technology is very important.", options: ["I think technology is very important.", "I think technology is not important.", "I don't think about technology."], answer: "I think technology is very important." },
-        { audio: "I agree with you about that.", options: ["I agree with you about that.", "I don't agree with you.", "I have no opinion."], answer: "I agree with you about that." },
-        { audio: "By the way, how is your English class?", options: ["By the way, how is your English class?", "By the way, where is your English class?", "By the way, when is your English class?"], answer: "By the way, how is your English class?" }
+      "listening": [
+        {
+          "audio": "I work in quality management.",
+          "options": [
+            "I work in quality management.",
+            "I have experience in construction projects.",
+            "I worked on a solar energy project."
+          ],
+          "answer": "I work in quality management."
+        },
+        {
+          "audio": "I have experience in construction projects.",
+          "options": [
+            "I have experience in construction projects.",
+            "I worked on a solar energy project.",
+            "I work with quality documentation."
+          ],
+          "answer": "I have experience in construction projects."
+        },
+        {
+          "audio": "I worked on a solar energy project.",
+          "options": [
+            "I worked on a solar energy project.",
+            "I work with quality documentation.",
+            "I check documents and requirements."
+          ],
+          "answer": "I worked on a solar energy project."
+        },
+        {
+          "audio": "I work with quality documentation.",
+          "options": [
+            "I work with quality documentation.",
+            "I check documents and requirements.",
+            "I participate in inspections."
+          ],
+          "answer": "I work with quality documentation."
+        },
+        {
+          "audio": "I check documents and requirements.",
+          "options": [
+            "I check documents and requirements.",
+            "I participate in inspections.",
+            "We need evidence for the audit."
+          ],
+          "answer": "I check documents and requirements."
+        },
+        {
+          "audio": "I participate in inspections.",
+          "options": [
+            "I participate in inspections.",
+            "We need evidence for the audit.",
+            "We found a nonconformity."
+          ],
+          "answer": "I participate in inspections."
+        },
+        {
+          "audio": "We need evidence for the audit.",
+          "options": [
+            "We need evidence for the audit.",
+            "We found a nonconformity.",
+            "We need to investigate the cause."
+          ],
+          "answer": "We need evidence for the audit."
+        },
+        {
+          "audio": "We found a nonconformity.",
+          "options": [
+            "We found a nonconformity.",
+            "We need to investigate the cause.",
+            "We need to take corrective action."
+          ],
+          "answer": "We found a nonconformity."
+        }
       ]
     },
-
-    speakingSentences: [
-      "I think technology is very important.",
-      "In my view, learning English is essential.",
-      "I agree with you about that.",
-      "Honestly, I think the weather is great today.",
-      "By the way, how is your English class?"
+    "speakingSentences": [
+      "I work in quality management.",
+      "I have experience in construction projects.",
+      "I worked on a solar energy project.",
+      "I work with quality documentation.",
+      "I check documents and requirements.",
+      "I participate in inspections.",
+      "We need evidence for the audit.",
+      "We found a nonconformity."
     ],
-
-    talkPrompts: [
-      "What do you think about technology?",
-      "Do you agree that learning English is essential?",
-      "What is your opinion about social media?",
-      "What do you think about the environment?",
-      "Do you think our generation has many challenges?",
-      "By the way, what do you do in your free time?"
-    ]
+    "talkPrompts": [
+      "What do you do?",
+      "Tell me about your professional experience.",
+      "What were your main responsibilities?",
+      "What is quality management?",
+      "What is a nonconformity?",
+      "How do you handle a problem at work?",
+      "How do you organize documents?",
+      "Have you participated in audits?"
+    ],
+    "reading": []
+  },
+  {
+    "id": "island10",
+    "number": 10,
+    "name": "Real English",
+    "emoji": "🌎",
+    "description": "Understand natural speech, fillers, reductions and spontaneous conversation.",
+    "unlockedByDefault": false,
+    "goal": "Understand and produce natural, spontaneous English.",
+    "vocabulary": [
+      {
+        "en": "natural speech",
+        "pt": "fala natural",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "contraction",
+        "pt": "contração",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "reduction",
+        "pt": "redução na fala",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "filler",
+        "pt": "palavra de preenchimento",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "actually",
+        "pt": "na verdade",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "basically",
+        "pt": "basicamente",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "literally",
+        "pt": "literalmente",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "honestly",
+        "pt": "honestamente",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "basically",
+        "pt": "basicamente",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "you know",
+        "pt": "sabe",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "I mean",
+        "pt": "quer dizer",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "well",
+        "pt": "bom/então",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "like",
+        "pt": "tipo",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "kind of",
+        "pt": "meio que",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "sort of",
+        "pt": "mais ou menos",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "gonna",
+        "pt": "going to",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "wanna",
+        "pt": "want to",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "gotta",
+        "pt": "have got to/ter que",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "lemme",
+        "pt": "let me",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "gimme",
+        "pt": "give me",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "dunno",
+        "pt": "don't know",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "figure out",
+        "pt": "descobrir/resolver",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "hang on",
+        "pt": "espera",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "hold on",
+        "pt": "espera",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "no worries",
+        "pt": "sem problema",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "fair enough",
+        "pt": "justo/entendi",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "sounds good",
+        "pt": "parece bom",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "my bad",
+        "pt": "foi mal",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "I didn't catch that",
+        "pt": "não entendi/captei",
+        "approx": "",
+        "ipa": ""
+      },
+      {
+        "en": "take your time",
+        "pt": "sem pressa",
+        "approx": "",
+        "ipa": ""
+      }
+    ],
+    "coreSentences": [
+      {
+        "en": "What have you been up to?",
+        "pt": "O que você tem feito?"
+      },
+      {
+        "en": "I'm just chilling.",
+        "pt": "Só estou de boa."
+      },
+      {
+        "en": "I'm gonna get some coffee.",
+        "pt": "Vou pegar um café."
+      },
+      {
+        "en": "I wanna show you something.",
+        "pt": "Quero te mostrar uma coisa."
+      },
+      {
+        "en": "I've gotta go soon.",
+        "pt": "Tenho que ir em breve."
+      },
+      {
+        "en": "Hang on a second.",
+        "pt": "Espera um segundo."
+      },
+      {
+        "en": "Give me a minute.",
+        "pt": "Me dá um minuto."
+      },
+      {
+        "en": "I didn't catch that.",
+        "pt": "Não entendi/captei isso."
+      },
+      {
+        "en": "Could you say that again?",
+        "pt": "Pode falar de novo?"
+      },
+      {
+        "en": "What do you mean?",
+        "pt": "O que você quer dizer?"
+      },
+      {
+        "en": "You know what I mean?",
+        "pt": "Sabe o que quero dizer?"
+      },
+      {
+        "en": "I mean, it's kind of complicated.",
+        "pt": "Quer dizer, é meio complicado."
+      },
+      {
+        "en": "Actually, I changed my mind.",
+        "pt": "Na verdade, mudei de ideia."
+      },
+      {
+        "en": "Basically, that's what happened.",
+        "pt": "Basicamente, foi isso que aconteceu."
+      },
+      {
+        "en": "No worries.",
+        "pt": "Sem problema."
+      },
+      {
+        "en": "Fair enough.",
+        "pt": "Justo/entendi."
+      },
+      {
+        "en": "Sounds good.",
+        "pt": "Parece bom."
+      },
+      {
+        "en": "My bad.",
+        "pt": "Foi mal."
+      },
+      {
+        "en": "Take your time.",
+        "pt": "Sem pressa."
+      },
+      {
+        "en": "Let me think.",
+        "pt": "Deixa eu pensar."
+      },
+      {
+        "en": "I'm not sure how to explain it.",
+        "pt": "Não sei bem como explicar."
+      },
+      {
+        "en": "It's hard to put into words.",
+        "pt": "É difícil colocar em palavras."
+      },
+      {
+        "en": "That's exactly what I mean.",
+        "pt": "É exatamente isso que quero dizer."
+      },
+      {
+        "en": "It depends on the situation.",
+        "pt": "Depende da situação."
+      },
+      {
+        "en": "I can follow you, but sometimes you speak too fast.",
+        "pt": "Consigo acompanhar, mas às vezes você fala rápido demais."
+      }
+    ],
+    "patterns": [
+      {
+        "title": "I'm gonna + verb",
+        "examples": [
+          "I'm gonna get some coffee.",
+          "What are you gonna do?"
+        ],
+        "variationBank": [
+          "I'm gonna get some coffee.",
+          "I'm not gonna...",
+          "What are you gonna do?"
+        ]
+      },
+      {
+        "title": "I wanna + verb",
+        "examples": [
+          "I wanna show you something.",
+          "What do you wanna do?"
+        ],
+        "variationBank": [
+          "I wanna show you something.",
+          "I don't wanna...",
+          "What do you wanna do?"
+        ]
+      },
+      {
+        "title": "I've gotta + verb",
+        "examples": [
+          "I've gotta go.",
+          "What have you gotta do?"
+        ],
+        "variationBank": [
+          "I've gotta go.",
+          "I haven't gotta...",
+          "What have you gotta do?"
+        ]
+      },
+      {
+        "title": "You know + clause",
+        "examples": [
+          "You know, it's complicated.",
+          "You know...?"
+        ],
+        "variationBank": [
+          "You know, it's complicated.",
+          "—",
+          "You know...?"
+        ]
+      },
+      {
+        "title": "I mean, + clarification",
+        "examples": [
+          "I mean, it's not exactly that.",
+          "What do you mean?"
+        ],
+        "variationBank": [
+          "I mean, it's not exactly that.",
+          "—",
+          "What do you mean?"
+        ]
+      },
+      {
+        "title": "It's kind of + adjective",
+        "examples": [
+          "It's kind of weird.",
+          "Is it kind of...?"
+        ],
+        "variationBank": [
+          "It's kind of weird.",
+          "It's not really...",
+          "Is it kind of...?"
+        ]
+      },
+      {
+        "title": "Hang on + time",
+        "examples": [
+          "Hang on a second.",
+          "Can you hang on?"
+        ],
+        "variationBank": [
+          "Hang on a second.",
+          "—",
+          "Can you hang on?"
+        ]
+      },
+      {
+        "title": "I didn't catch + object",
+        "examples": [
+          "I didn't catch that.",
+          "Did you catch that?"
+        ],
+        "variationBank": [
+          "I didn't catch that.",
+          "I caught that.",
+          "Did you catch that?"
+        ]
+      }
+    ],
+    "variations": [
+      {
+        "base": "I'm gonna get some coffee.",
+        "affirmative": "I'm gonna get some coffee.",
+        "negative": "I'm not gonna...",
+        "question": "What are you gonna do?",
+        "past": "",
+        "future": ""
+      },
+      {
+        "base": "I wanna show you something.",
+        "affirmative": "I wanna show you something.",
+        "negative": "I don't wanna...",
+        "question": "What do you wanna do?",
+        "past": "",
+        "future": ""
+      },
+      {
+        "base": "I've gotta go.",
+        "affirmative": "I've gotta go.",
+        "negative": "I haven't gotta...",
+        "question": "What have you gotta do?",
+        "past": "",
+        "future": ""
+      },
+      {
+        "base": "You know, it's complicated.",
+        "affirmative": "You know, it's complicated.",
+        "negative": "",
+        "question": "You know...?",
+        "past": "",
+        "future": ""
+      },
+      {
+        "base": "I mean, it's not exactly that.",
+        "affirmative": "I mean, it's not exactly that.",
+        "negative": "",
+        "question": "What do you mean?",
+        "past": "",
+        "future": ""
+      }
+    ],
+    "questions": [
+      {
+        "q": "What's up?",
+        "sample": "What have you been up to?"
+      },
+      {
+        "q": "What have you been up to?",
+        "sample": "I'm just chilling."
+      },
+      {
+        "q": "What do you mean?",
+        "sample": "I'm gonna get some coffee."
+      },
+      {
+        "q": "Can you say that again?",
+        "sample": "I wanna show you something."
+      },
+      {
+        "q": "Did you catch what I said?",
+        "sample": "I've gotta go soon."
+      },
+      {
+        "q": "How would you react if someone spoke very fast?",
+        "sample": "Hang on a second."
+      },
+      {
+        "q": "What fillers do native speakers use?",
+        "sample": "Give me a minute."
+      },
+      {
+        "q": "What is the difference between formal and casual English?",
+        "sample": "I didn't catch that."
+      },
+      {
+        "q": "When can you use 'gonna' or 'wanna'?",
+        "sample": "Could you say that again?"
+      },
+      {
+        "q": "How do you ask someone to slow down naturally?",
+        "sample": "What do you mean?"
+      },
+      {
+        "q": "How do you keep talking when you forget a word?",
+        "sample": "You know what I mean?"
+      },
+      {
+        "q": "How do you change the subject naturally?",
+        "sample": "I mean, it's kind of complicated."
+      },
+      {
+        "q": "How do you disagree without sounding rude?",
+        "sample": "Actually, I changed my mind."
+      },
+      {
+        "q": "How do you end a conversation naturally?",
+        "sample": "Basically, that's what happened."
+      },
+      {
+        "q": "Have a five-minute spontaneous conversation without translating.",
+        "sample": "No worries."
+      }
+    ],
+    "exercises": {
+      "translate": [
+        {
+          "pt": "O que você tem feito?",
+          "answer": "What have you been up to?"
+        },
+        {
+          "pt": "Só estou de boa.",
+          "answer": "I'm just chilling."
+        },
+        {
+          "pt": "Vou pegar um café.",
+          "answer": "I'm gonna get some coffee."
+        },
+        {
+          "pt": "Quero te mostrar uma coisa.",
+          "answer": "I wanna show you something."
+        },
+        {
+          "pt": "Tenho que ir em breve.",
+          "answer": "I've gotta go soon."
+        },
+        {
+          "pt": "Espera um segundo.",
+          "answer": "Hang on a second."
+        },
+        {
+          "pt": "Me dá um minuto.",
+          "answer": "Give me a minute."
+        },
+        {
+          "pt": "Não entendi/captei isso.",
+          "answer": "I didn't catch that."
+        }
+      ],
+      "fillBlank": [
+        {
+          "sentence": "Could you ___ that again?",
+          "options": [
+            "say",
+            "work",
+            "like",
+            "know"
+          ],
+          "answer": "say"
+        },
+        {
+          "sentence": "You know ___ I mean?",
+          "options": [
+            "what",
+            "work",
+            "like",
+            "know"
+          ],
+          "answer": "what"
+        },
+        {
+          "sentence": "I mean, ___ kind of complicated.",
+          "options": [
+            "it's",
+            "work",
+            "like",
+            "know"
+          ],
+          "answer": "it's"
+        },
+        {
+          "sentence": "Actually, I ___ my mind.",
+          "options": [
+            "changed",
+            "work",
+            "like",
+            "know"
+          ],
+          "answer": "changed"
+        }
+      ],
+      "multipleChoice": [
+        {
+          "q": "What does \"Sounds good.\" mean?",
+          "options": [
+            "Parece bom.",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Parece bom."
+        },
+        {
+          "q": "What does \"My bad.\" mean?",
+          "options": [
+            "Foi mal.",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Foi mal."
+        },
+        {
+          "q": "What does \"Take your time.\" mean?",
+          "options": [
+            "Sem pressa.",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Sem pressa."
+        },
+        {
+          "q": "What does \"Let me think.\" mean?",
+          "options": [
+            "Deixa eu pensar.",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Deixa eu pensar."
+        },
+        {
+          "q": "What does \"I'm not sure how to explain it.\" mean?",
+          "options": [
+            "Não sei bem como explicar.",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Não sei bem como explicar."
+        },
+        {
+          "q": "What does \"It's hard to put into words.\" mean?",
+          "options": [
+            "É difícil colocar em palavras.",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "É difícil colocar em palavras."
+        },
+        {
+          "q": "What does \"That's exactly what I mean.\" mean?",
+          "options": [
+            "É exatamente isso que quero dizer.",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "É exatamente isso que quero dizer."
+        },
+        {
+          "q": "What does \"It depends on the situation.\" mean?",
+          "options": [
+            "Depende da situação.",
+            "não sei",
+            "talvez",
+            "nenhuma das anteriores"
+          ],
+          "answer": "Depende da situação."
+        }
+      ],
+      "rearrange": [
+        {
+          "scrambled": [
+            "to",
+            "up",
+            "been",
+            "you",
+            "have",
+            "What"
+          ],
+          "answer": "What have you been up to"
+        },
+        {
+          "scrambled": [
+            "coffee",
+            "some",
+            "get",
+            "gonna",
+            "I'm"
+          ],
+          "answer": "I'm gonna get some coffee"
+        },
+        {
+          "scrambled": [
+            "something",
+            "you",
+            "show",
+            "wanna",
+            "I"
+          ],
+          "answer": "I wanna show you something"
+        },
+        {
+          "scrambled": [
+            "soon",
+            "go",
+            "gotta",
+            "I've"
+          ],
+          "answer": "I've gotta go soon"
+        },
+        {
+          "scrambled": [
+            "second",
+            "a",
+            "on",
+            "Hang"
+          ],
+          "answer": "Hang on a second"
+        },
+        {
+          "scrambled": [
+            "minute",
+            "a",
+            "me",
+            "Give"
+          ],
+          "answer": "Give me a minute"
+        },
+        {
+          "scrambled": [
+            "that",
+            "catch",
+            "didn't",
+            "I"
+          ],
+          "answer": "I didn't catch that"
+        }
+      ],
+      "listening": [
+        {
+          "audio": "What have you been up to?",
+          "options": [
+            "What have you been up to?",
+            "I'm just chilling.",
+            "I'm gonna get some coffee."
+          ],
+          "answer": "What have you been up to?"
+        },
+        {
+          "audio": "I'm just chilling.",
+          "options": [
+            "I'm just chilling.",
+            "I'm gonna get some coffee.",
+            "I wanna show you something."
+          ],
+          "answer": "I'm just chilling."
+        },
+        {
+          "audio": "I'm gonna get some coffee.",
+          "options": [
+            "I'm gonna get some coffee.",
+            "I wanna show you something.",
+            "I've gotta go soon."
+          ],
+          "answer": "I'm gonna get some coffee."
+        },
+        {
+          "audio": "I wanna show you something.",
+          "options": [
+            "I wanna show you something.",
+            "I've gotta go soon.",
+            "Hang on a second."
+          ],
+          "answer": "I wanna show you something."
+        },
+        {
+          "audio": "I've gotta go soon.",
+          "options": [
+            "I've gotta go soon.",
+            "Hang on a second.",
+            "Give me a minute."
+          ],
+          "answer": "I've gotta go soon."
+        },
+        {
+          "audio": "Hang on a second.",
+          "options": [
+            "Hang on a second.",
+            "Give me a minute.",
+            "I didn't catch that."
+          ],
+          "answer": "Hang on a second."
+        },
+        {
+          "audio": "Give me a minute.",
+          "options": [
+            "Give me a minute.",
+            "I didn't catch that.",
+            "Could you say that again?"
+          ],
+          "answer": "Give me a minute."
+        },
+        {
+          "audio": "I didn't catch that.",
+          "options": [
+            "I didn't catch that.",
+            "Could you say that again?",
+            "What do you mean?"
+          ],
+          "answer": "I didn't catch that."
+        }
+      ]
+    },
+    "speakingSentences": [
+      "What have you been up to?",
+      "I'm just chilling.",
+      "I'm gonna get some coffee.",
+      "I wanna show you something.",
+      "I've gotta go soon.",
+      "Hang on a second.",
+      "Give me a minute.",
+      "I didn't catch that."
+    ],
+    "talkPrompts": [
+      "What's up?",
+      "What have you been up to?",
+      "What do you mean?",
+      "Can you say that again?",
+      "Did you catch what I said?",
+      "How would you react if someone spoke very fast?",
+      "What fillers do native speakers use?",
+      "What is the difference between formal and casual English?"
+    ],
+    "reading": []
   }
 ];
 
-// Connections used by the "Connect the Islands" feature.
-// Each entry mixes questions from two islands once both have content.
 const CONNECTIONS = [
-  { islands: ["island01", "island02"], prompts: [
-    "What do you usually do with your family?",
-    "Does your family like technology too?"
-  ] },
-  { islands: ["island01", "island03"], prompts: [
-    "What do you usually do at night?",
-    "Do you study English every day?"
-  ] },
-  { islands: ["island02", "island05"], prompts: [
-    "Does your family visit your home often?",
-    "Who do you live with in your apartment?"
-  ] },
-  { islands: ["island03", "island06"], prompts: [
-    "What do you usually have for breakfast?",
-    "Do you cook during your daily routine?"
-  ] },
-  { islands: ["island04", "island08"], prompts: [
-    "What did you love doing as a child?",
-    "Has your taste in movies changed over time?"
-  ] },
-  { islands: ["island05", "island09"], prompts: [
-    "Do you want to live in another country?",
-    "What would you miss most about your home?"
-  ] },
-  { islands: ["island06", "island10"], prompts: [
-    "What do you think about Brazilian food?",
-    "Do you like trying food from other cultures?"
-  ] },
-  { islands: ["island07", "island08"], prompts: [
-    "What was your first job?",
-    "How has your career changed over time?"
-  ] },
-  { islands: ["island07", "island09"], prompts: [
-    "Do you want to work in another country?",
-    "How can English help your career?"
-  ] },
-  { islands: ["island08", "island10"], prompts: [
-    "What important lesson have you learned?",
-    "Do you think the past shapes who we are?"
-  ] },
-  { islands: ["island09", "island10"], prompts: [
-    "What do you think about tourism?",
-    "Is it important to learn about other cultures?"
-  ] }
+  { islands: ["island01","island03"], prompts: ["Introduce yourself to a new Discord friend.","Ask your friend three follow-up questions."] },
+  { islands: ["island02","island04"], prompts: ["Tell a story about a normal day that became unusual.","Describe what happened and what you learned."] },
+  { islands: ["island05","island06"], prompts: ["Compare relationships and culture in two countries.","How can cultural differences affect friendships?"] },
+  { islands: ["island07","island08"], prompts: ["Discuss whether AI changes human freedom.","Give one argument and respond to another perspective."] },
+  { islands: ["island08","island09"], prompts: ["Explain an AI project as if you were in a job interview.","Describe a technical problem and how you solved it."] },
+  { islands: ["island09","island10"], prompts: ["Practice a casual conversation about your career.","Explain your work using natural, informal English."] }
 ];
-
 if (typeof module !== "undefined") module.exports = { ISLANDS, CONNECTIONS };
